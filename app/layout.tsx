@@ -19,7 +19,7 @@ export const metadata: Metadata = {
 export default function RootLayout({children}: {children: React.ReactNode}) {
   return (
     <html lang="en">
-      <body>
+      <body className="text-white bg-gradient-to-b from-primary-500 to-primary-400">
         <NextTopLoader height={4} color="#fff" />
         {children}
       </body>

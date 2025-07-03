@@ -32,10 +32,10 @@ export default function Navigation() {
   ]
 
   return (
-    <nav className={`fixed w-full shadow-lg z-50 transition-colors duration-300`}>
+    <nav className={`fixed w-full z-50 transition-colors duration-300`}>
       <div
-        className={`w-full lg:container lg:mx-auto px-6 py-4 bg-gradient-to-b from-primary-500 to-primary-400 rounded-br-xl rounded-bl-xl ${
-          scrolled ? 'bg-opacity-60 backdrop-blur-sm' : ''
+        className={`w-full lg:container shadow-xl lg:mx-auto px-6 py-4 bg-gradient-to-b from-primary-500 to-primary-400 rounded-br-xl rounded-bl-xl ${
+          scrolled ? 'opacity-95' : ''
         }`}>
         {/* Mobile Menu Button */}
         <div className="lg:hidden flex items-center">

@@ -5,13 +5,15 @@ import HomeHubIntro from './components/pages/thehub/HomeHubIntro'
 import PowerfulPayhub from './components/pages/thehub/PowerfulPayhub'
 import BusinessesChoose from './components/pages/thehub/BusinessesChoose'
 import HereOrThere from './components/pages/thehub/HereOrThere'
+import CustomersFeedback from './components/pages/thehub/CustomersFeedback'
+import TrustedCompanies from './components/pages/thehub/TrustedCompanies'
 
 export default function Home() {
   return (
     <div className="min-h-screen">
       <Navigation />
       <div
-        className="py-20 min-h-[calc(100vh-200px)] bg-cover bg-top bg-no-repeat overflow-hidden"
+        className="pt-20 min-h-[calc(100vh-200px)] bg-cover bg-top bg-no-repeat overflow-hidden"
         style={{
           backgroundImage: 'url(/images/lines.webp)',
         }}>
@@ -20,6 +22,8 @@ export default function Home() {
         <PowerfulPayhub />
         <BusinessesChoose />
         <HereOrThere />
+        <CustomersFeedback />
+        <TrustedCompanies />
       </div>
       <Footer />
     </div>
