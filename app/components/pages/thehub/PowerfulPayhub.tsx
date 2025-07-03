@@ -66,7 +66,7 @@ export default function PowerfulPayhub() {
             </h3>
             <h3 className="text-md my-3 font-bold text-white text-left">Tailored for your business</h3>
             <p className="flex-1 text-sm my-3 text-white text-left">
-              From specialized token services to custom integration solutions, we're constantly expanding our ecosystem
+              From specialized token services to custom integration solutions, we`re constantly expanding our ecosystem
               to meet evolving business needs.
             </p>
             <button
