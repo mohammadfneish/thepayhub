@@ -5,13 +5,13 @@ import Image from 'next/image'
 export default function HereOrThere() {
   return (
     <div className="mt-20 lg:mt-10 h-auto min-h-[650px] sm:min-h-[800px] overflow-hidden">
-      <div className="container mx-1 px-1 sm:mx-5 sm:px-5 relative">
-        <div className="mx-1 px-1 sm:mx-5 sm:px-5 flex flex-col items-start justify-left">
-          <div className="mx-1 px-1 sm:mx-5 sm:px-5 flex flex-col items-start md:flex-row justify-left lg:flex-col">
+      <div className="px-2 md:px-5 lg:px-0 lg:container relative w-[90%] mx-auto">
+        <div className="flex flex-col items-start justify-left">
+          <div className="flex flex-col items-start md:flex-row justify-left lg:flex-col">
             <h2 className="text-2xl lg:text-4xl font-bold text-secondary-500 xl:text-white">Here or there,</h2>
             <h2 className="text-2xl lg:text-4xl font-bold text-secondary-500 xl:text-white">Pay, anywhere! </h2>
           </div>
-          <p className="mx-1 px-1 sm:mx-5 sm:px-5 mt-5 text-white xl:text-secondary-500 max-w-[450px]">
+          <p className="mt-5 text-white xl:text-secondary-500 max-w-[450px]">
             Operating across South America, North America, UAE, and Asia, with a growing footprint in emerging and
             established markets alike.
           </p>

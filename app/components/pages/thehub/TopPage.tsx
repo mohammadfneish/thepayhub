@@ -8,8 +8,15 @@ export default function TopPage() {
   return (
     <div className="py-20 h-auto" style={{backgroundImage: 'url(/images/body-pattern.webp)'}}>
       <div className="container mx-auto relative">
-        <div className="absolute top-[-100px] left-0 z-0 w-full max-w-[1000px]">
-          <Image src="/images/globo.gif" alt="globo" width={0} height={0} sizes="100vw" className="w-full h-auto" />
+        <div className="absolute top-[-50px] left-[25%] z-0 w-full max-w-[450px]">
+          <Image
+            src="/images/globo.gif"
+            alt="globo"
+            width={0}
+            height={0}
+            sizes="100vw"
+            className="w-[200px] md:w-[300px] lg:w-[400px] xl:w-[500px] h-auto"
+          />
         </div>
         <div className="z-1 relative mx-auto lg:ml-[50%] xl:ml-[60%] mt-5 pt-5 flex flex-col items-center w-full sm:max-w-[80%] md:max-w-[500px]">
           <div className="flex flex-col items-center lg:items-start">

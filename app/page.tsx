@@ -11,7 +11,7 @@ export default function Home() {
     <div className="min-h-screen">
       <Navigation />
       <div
-        className="py-20 min-h-[calc(100vh-200px)] bg-cover bg-top bg-no-repeat "
+        className="py-20 min-h-[calc(100vh-200px)] bg-cover bg-top bg-no-repeat overflow-hidden"
         style={{
           backgroundImage: 'url(/images/lines.webp)',
         }}>
