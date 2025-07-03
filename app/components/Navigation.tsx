@@ -48,7 +48,7 @@ export default function Navigation() {
           </div>
 
           <Link href="/" className="flex flex-1 justify-center">
-            <Image src={'/images/logo-mobile-header.png'} width={100} height={40} alt="ThePayHub Logo"></Image>
+            <Image src={'/images/logo-mobile-header.webp'} width={100} height={40} alt="ThePayHub Logo"></Image>
           </Link>
         </div>
 
@@ -119,7 +119,7 @@ export default function Navigation() {
                   {isMenuOpen ? <XMarkIcon className="h-6 w-6" /> : <Bars3Icon className="h-6 w-6" />}
                 </button>
                 <Image
-                  src={'/images/logo-mobile-header.png'}
+                  src={'/images/logo-mobile-header.webp'}
                   width={100}
                   height={40}
                   alt="ThePayHub Logo"

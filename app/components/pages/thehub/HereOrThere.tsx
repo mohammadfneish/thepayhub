@@ -1,0 +1,44 @@
+'use client'
+
+import Image from 'next/image'
+
+export default function HereOrThere() {
+  return (
+    <div className="mt-20 lg:mt-10 h-auto min-h-[650px] sm:min-h-[800px] overflow-hidden">
+      <div className="container mx-1 px-1 sm:mx-5 sm:px-5 relative">
+        <div className="mx-1 px-1 sm:mx-5 sm:px-5 flex flex-col items-start justify-left">
+          <div className="mx-1 px-1 sm:mx-5 sm:px-5 flex flex-col items-start md:flex-row justify-left lg:flex-col">
+            <h2 className="text-2xl lg:text-4xl font-bold text-secondary-500 xl:text-white">Here or there,</h2>
+            <h2 className="text-2xl lg:text-4xl font-bold text-secondary-500 xl:text-white">Pay, anywhere! </h2>
+          </div>
+          <p className="mx-1 px-1 sm:mx-5 sm:px-5 mt-5 text-white xl:text-secondary-500 max-w-[450px]">
+            Operating across South America, North America, UAE, and Asia, with a growing footprint in emerging and
+            established markets alike.
+          </p>
+          <div className="relative h-[500px] w-1/2">
+            <div className="absolute left-0 top-0">
+              <Image
+                src={'/images/thepayhub-countries-group1.webp'}
+                alt="thepayhub-countries-group1"
+                width={500}
+                height={0}
+                sizes="500px"
+                className="w-auto h-auto"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div className="absolute right-[-10%] md:right-[-30%] lg:right-[-20%] xl:right-[-10%] top-[300px] sm:top-[200px] md:top-[150px] lg:top-0">
+          <Image
+            src={'/images/thepayhub-countries-group2.webp'}
+            alt="thepayhub-countries-group2"
+            width={700}
+            height={0}
+            className="w-auto h-auto lg:max-w-[700px] md:max-w-[500px] sm:max-w-[400px] max-w-[300px]"
+          />
+        </div>
+      </div>
+    </div>
+  )
+}

@@ -35,7 +35,7 @@ export default function Footer() {
             <div className="flex flex-col items-center md:items-start px-3">
               <div className="flex flex-col sm:flex-row items-start gap-1">
                 <Image
-                  src={'/images/logo-mobile-header.png'}
+                  src={'/images/logo-mobile-header.webp'}
                   width={170}
                   height={60}
                   alt="ThePayHub Logo"

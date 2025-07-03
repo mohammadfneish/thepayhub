@@ -14,6 +14,6 @@ body {
   background: rgb(var(--background-rgb));
 }
 
-.nav-link {
-  @apply text-white hover:text-red-500 transition-colors duration-200;
+.bg-card {
+  background-image: linear-gradient(to right, #293754, #293754);
 }

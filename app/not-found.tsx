@@ -46,7 +46,7 @@ export default function NotFound() {
               </linearGradient>
             </defs>
           </svg>
-          <h1 className="text-4xl font-bold text-white">404</h1>
+          <h2 className="text-4xl font-bold text-white">404</h2>
           <h1 className="text-4xl font-bold text-secondary-500 my-5">Page Not Found</h1>
           <p className="text-sm font-bold text-secondary-500 mb-5 text-center px-5 text-white">
             Try again later or click on the button below
@@ -58,7 +58,7 @@ export default function NotFound() {
               Explore our solutions
             </button>
             <button
-              className="text-white border-white bg-transparent px-4 py-2 text-lg font-semibold rounded-full transition-transform duration-300 ease-in-out hover:scale-105 active:scale-95"
+              className="text-white border bg-transparent px-4 py-2 text-lg font-semibold rounded-full transition-transform duration-300 ease-in-out hover:scale-105 active:scale-95"
               onClick={() => router.push('/')}>
               Return to home
             </button>
