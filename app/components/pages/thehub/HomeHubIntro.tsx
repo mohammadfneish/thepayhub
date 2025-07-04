@@ -17,10 +17,10 @@ export default function HomeHubIntro() {
               <Image
                 src={'/images/people-polygon.webp'}
                 alt="globo"
-                width={100}
-                height={100}
-                sizes="100px"
-                className="w-auto h-auto"
+                width={80}
+                height={80}
+                sizes="80px"
+                className="w-[80px] h-[80px]"
               />
               <h3 className="text-md font-bold text-secondary-500 px-5 text-center lg:text-left">
                 Trusted by Over 4,000 Clients
@@ -34,10 +34,10 @@ export default function HomeHubIntro() {
               <Image
                 src={'/images/people-polygon.webp'}
                 alt="globo"
-                width={100}
-                height={100}
-                sizes="100px"
-                className="w-auto h-auto"
+                width={80}
+                height={80}
+                sizes="80px"
+                className="w-[80px] h-[80px]"
               />
               <h3 className="text-md font-bold text-secondary-500 px-5 text-center lg:text-left">
                 High-Impact Transactions
@@ -51,10 +51,10 @@ export default function HomeHubIntro() {
               <Image
                 src={'/images/people-polygon.webp'}
                 alt="globo"
-                width={100}
-                height={100}
-                sizes="100px"
-                className="w-auto h-auto"
+                width={80}
+                height={80}
+                sizes="80px"
+                className="w-[80px] h-[80px]"
               />
               <h3 className="text-md font-bold text-secondary-500 px-5 text-center lg:text-left">
                 Significant Costs Savings

@@ -22,7 +22,9 @@ export default function Footer() {
                   placeholder="Your email address"
                   className="px-4 py-2 w-full rounded-l-lg text-black outline-none bg-gray-200"
                 />
-                <button type="button" className="bg-secondary-500 px-4 py-2 text-black rounded-r-lg">
+                <button
+                  type="button"
+                  className="bg-secondary-500 px-4 py-2 text-black rounded-r-lg relative left-[-2px]">
                   Subscribe
                 </button>
               </div>

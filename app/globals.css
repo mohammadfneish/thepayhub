@@ -7,3 +7,11 @@
 .bg-card {
   background-image: linear-gradient(to right, #293754, #293754);
 }
+
+.scrollable-container {
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none; /* Firefox, Safari 18.2+, Chromium 121+ */
+}
+.scrollable-container::-webkit-scrollbar {
+  display: none; /* Older Safari and Chromium */
+}
