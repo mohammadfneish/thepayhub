@@ -1,6 +1,12 @@
 'use client'
 
+import {useState} from 'react'
+import {openPositions} from '../../../data/careers'
+
 export default function OpenPositions() {
+  const allDepartments = 'All Departments'
+  const [activePosition, setActivePosition] = useState<string>(allDepartments)
+
   return (
     <div className="pt-10 h-auto">
       <div className="lg:container lg:mx-auto mx-5 relative">
@@ -13,115 +19,53 @@ export default function OpenPositions() {
           </p>
           <div className="flex flex-col md:flex-row items-center md:items-stretch gap-5 w-full">
             <div className="flex flex-row gap-2 w-full overflow-x-auto scrollable-container items-center justify-center">
-              <div className="bg-card border border-secondary-500 rounded-full px-5 py-2 whitespace-nowrap">
-                All Departments
+              <div
+                onClick={() => setActivePosition(allDepartments)}
+                className={`bg-card border rounded-full px-5 py-2 whitespace-nowrap ${
+                  activePosition === allDepartments ? 'border-secondary-500' : 'border-primary-500'
+                }`}>
+                {allDepartments}
               </div>
-              <div className="bg-card border border-primary-500 rounded-full px-5 py-2 whitespace-nowrap">
-                Engineering
-              </div>
-              <div className="bg-card border border-primary-500 rounded-full px-5 py-2 whitespace-nowrap">Product</div>
-              <div className="bg-card border border-primary-500 rounded-full px-5 py-2 whitespace-nowrap">
-                Opertaions
-              </div>
-              <div className="bg-card border border-primary-500 rounded-full px-5 py-2 whitespace-nowrap">
-                Sales and Marketing
-              </div>
+              {Object.keys(openPositions).map((key, index) => (
+                <div
+                  key={index}
+                  onClick={() => setActivePosition(key)}
+                  className={`bg-card border rounded-full px-5 py-2 whitespace-nowrap ${
+                    activePosition === key ? 'border-secondary-500' : 'border-primary-500'
+                  }`}>
+                  {key}
+                </div>
+              ))}
             </div>
           </div>
           <div className="flex flex-col items-center gap-5 mt-5 w-full">
-            <div className="bg-card rounded-2xl p-5 flex flex-col gap-5 w-full">
-              <h3 className="text-md font-bold text-white">Senior Backend Engineer</h3>
-              <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-5">
-                <div className="flex flex-row items-center gap-2">
-                  <div className="flex flex-row items-center gap-2">
-                    <div className="bg-primary-400 rounded-full w-7 h-7 flex items-center justify-center">D</div>
-                    <div className="text-sm text-gray-400">Engineering</div>
+            {Object.keys(openPositions).map((key, i) => {
+              if (activePosition === allDepartments || key === activePosition) {
+                return openPositions[key].map((position, j) => (
+                  <div key={`${i}-${j}`} className="bg-card rounded-2xl p-5 flex flex-col gap-5 w-full max-w-[900px]">
+                    <h3 className="text-md font-bold text-white">{position.title}</h3>
+                    <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-5">
+                      <div className="flex flex-row items-center gap-2">
+                        <div className="flex flex-row items-center gap-2">
+                          <div className="bg-primary-400 rounded-full w-7 h-7 flex items-center justify-center">D</div>
+                          <div className="text-sm text-gray-400">{key}</div>
+                        </div>
+                        <div className="flex flex-row items-center gap-2">
+                          <div className="bg-primary-400 rounded-full w-7 h-7 flex items-center justify-center">L</div>
+                          <div className="text-sm text-gray-400">{position.location}</div>
+                        </div>
+                        <div className="flex flex-row items-center gap-2">
+                          <div className="bg-primary-400 rounded-full w-7 h-7 flex items-center justify-center">T</div>
+                          <div className="text-sm text-gray-400">{position.time}</div>
+                        </div>
+                      </div>
+                      <button className="text-sm text-white px-5 py-2 rounded-full bg-primary-300">Apply Now</button>
+                    </div>
+                    <p className="text-sm text-gray-400">{position.desc}</p>
                   </div>
-                  <div className="flex flex-row items-center gap-2">
-                    <div className="bg-primary-400 rounded-full w-7 h-7 flex items-center justify-center">L</div>
-                    <div className="text-sm text-gray-400">Remote</div>
-                  </div>
-                  <div className="flex flex-row items-center gap-2">
-                    <div className="bg-primary-400 rounded-full w-7 h-7 flex items-center justify-center">T</div>
-                    <div className="text-sm text-gray-400">Full-time</div>
-                  </div>
-                </div>
-                <button className="text-sm text-white px-5 py-2 rounded-full bg-primary-300">Apply Now</button>
-              </div>
-              <p className="text-sm text-gray-400">
-                Design and build high-performance, scalable systems that power our global financial infrastructure.
-              </p>
-            </div>
-            <div className="bg-card rounded-2xl p-5 flex flex-col gap-5 w-full">
-              <h3 className="text-md font-bold text-white">Product Manager - Payments</h3>
-              <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-5">
-                <div className="flex flex-row items-center gap-2">
-                  <div className="flex flex-row items-center gap-2">
-                    <div className="bg-primary-400 rounded-full w-7 h-7 flex items-center justify-center">D</div>
-                    <div className="text-sm text-gray-400">Product</div>
-                  </div>
-                  <div className="flex flex-row items-center gap-2">
-                    <div className="bg-primary-400 rounded-full w-7 h-7 flex items-center justify-center">L</div>
-                    <div className="text-sm text-gray-400">London or Remote</div>
-                  </div>
-                  <div className="flex flex-row items-center gap-2">
-                    <div className="bg-primary-400 rounded-full w-7 h-7 flex items-center justify-center">T</div>
-                    <div className="text-sm text-gray-400">Full-time</div>
-                  </div>
-                </div>
-                <button className="text-sm text-white px-5 py-2 rounded-full bg-primary-300">Apply Now</button>
-              </div>
-              <p className="text-sm text-gray-400">
-                Lead the strategy and execution of our payment products, working closely with engineering, design, and
-                business teams.
-              </p>
-            </div>
-            <div className="bg-card rounded-2xl p-5 flex flex-col gap-5 w-full">
-              <h3 className="text-md font-bold text-white">Compliance Specialist</h3>
-              <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-5">
-                <div className="flex flex-row items-center gap-2">
-                  <div className="flex flex-row items-center gap-2">
-                    <div className="bg-primary-400 rounded-full w-7 h-7 flex items-center justify-center">D</div>
-                    <div className="text-sm text-gray-400">Operations</div>
-                  </div>
-                  <div className="flex flex-row items-center gap-2">
-                    <div className="bg-primary-400 rounded-full w-7 h-7 flex items-center justify-center">L</div>
-                    <div className="text-sm text-gray-400">Singapore</div>
-                  </div>
-                  <div className="flex flex-row items-center gap-2">
-                    <div className="bg-primary-400 rounded-full w-7 h-7 flex items-center justify-center">T</div>
-                    <div className="text-sm text-gray-400">Full-time</div>
-                  </div>
-                </div>
-                <button className="text-sm text-white px-5 py-2 rounded-full bg-primary-300">Apply Now</button>
-              </div>
-              <p className="text-sm text-gray-400">
-                Ensure our operations meet global regulatory requirements and help build our compliance infrastructure.
-              </p>
-            </div>
-            <div className="bg-card rounded-2xl p-5 flex flex-col gap-5 w-full">
-              <h3 className="text-md font-bold text-white">Enterprise Sales Executive</h3>
-              <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-5">
-                <div className="flex flex-row items-center gap-2">
-                  <div className="flex flex-row items-center gap-2">
-                    <div className="bg-primary-400 rounded-full w-7 h-7 flex items-center justify-center">D</div>
-                    <div className="text-sm text-gray-400">Sales & Marketing</div>
-                  </div>
-                  <div className="flex flex-row items-center gap-2">
-                    <div className="bg-primary-400 rounded-full w-7 h-7 flex items-center justify-center">L</div>
-                    <div className="text-sm text-gray-400">New York</div>
-                  </div>
-                  <div className="flex flex-row items-center gap-2">
-                    <div className="bg-primary-400 rounded-full w-7 h-7 flex items-center justify-center">T</div>
-                    <div className="text-sm text-gray-400">Full-time</div>
-                  </div>
-                </div>
-                <button className="text-sm text-white px-5 py-2 rounded-full bg-primary-300">Apply Now</button>
-              </div>
-              <p className="text-sm text-gray-400">
-                Drive revenue growth by building relationships with enterprise clients and showcasing our solutions.
-              </p>
-            </div>
+                ))
+              }
+            })}
           </div>
         </div>
       </div>

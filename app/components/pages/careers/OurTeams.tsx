@@ -10,7 +10,7 @@ export default function OurTeams() {
           <div className="flex justify-center items-center w-full md:w-1/2">
             <div className="flex flex-col text-left max-w-[500px] px-5 mb-5">
               <h2 className="text-2xl lg:text-4xl font-bold text-secondary-500">Our C-Team</h2>
-              <p className="text-sm mt-2 text-gray-400 text-base/8 ">
+              <p className="text-sm mt-2 text-gray-400 text-base/8 leading-10">
                 At the core of our company is a leadership team driven by precision, strategy, and innovation. In a
                 fast-evolving financial landscape, we believe that strong leadership isn`t just about managing—it`s
                 about envisioning the future and executing bold moves with confidence. Our C-level executives bring

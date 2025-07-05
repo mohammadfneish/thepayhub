@@ -9,7 +9,9 @@ export default function NotFound() {
   return (
     <div className="min-h-screen">
       <Navigation />
-      <div className="py-20 h-auto" style={{backgroundImage: 'url(/images/body-pattern.webp)'}}>
+      <div
+        className="py-40 h-auto bg-no-repeat bg-top bg-no-repeat overflow-hidden"
+        style={{backgroundImage: 'url(/images/body-pattern.webp)'}}>
         <div className="my-5 py-5 flex flex-col items-center justify-center">
           <svg width="140" height="160" viewBox="0 0 140 160" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path
