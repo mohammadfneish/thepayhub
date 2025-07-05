@@ -5,15 +5,21 @@ import {Bars3Icon, XMarkIcon} from '@heroicons/react/24/outline'
 import Link from 'next/link'
 import {motion, AnimatePresence} from 'framer-motion'
 import Image from 'next/image'
+import {usePathname} from 'next/navigation'
 
 export default function Navigation() {
+  const pathname = usePathname()
+
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const [activeMenu, setActiveMenu] = useState('/')
 
-  // Listen for scroll events to update background
+  useEffect(() => {
+    setActiveMenu(pathname)
+  }, [pathname])
+
   useEffect(() => {
     const handleScroll = () => {
-      // Set scrolled state based on scrollY threshold (e.g., 50px)
       setScrolled(window.scrollY > 50)
     }
 
@@ -96,7 +102,12 @@ export default function Navigation() {
           </Link>
           <div className="flex space-x-8">
             {menuItems.map(item => (
-              <Link key={item.label} href={item.href} className="nav-link">
+              <Link
+                key={item.label}
+                href={item.href}
+                className={`nav-link border border-transparent rounded-full px-4 py-2 text-sm font-semibold transition-colors duration-200 ${
+                  activeMenu === item.href ? 'active' : ' hover:text-secondary-500'
+                }`}>
                 {item.label}
               </Link>
             ))}
@@ -123,12 +134,14 @@ export default function Navigation() {
                   width={100}
                   height={40}
                   alt="ThePayHub Logo"
-                  className="my-5"></Image>
+                  className="mt-5 mb-10"></Image>
                 {menuItems.map(item => (
                   <Link
                     key={item.label}
                     href={item.href}
-                    className="block py-2 px-4 nav-link hover:bg-secondary-700 hover:text-white transition-colors duration-200"
+                    className={`block py-2 px-4 nav-link rounded-full hover:bg-secondary-700 hover:text-white transition-colors duration-200 ${
+                      activeMenu === item.href ? 'active' : ''
+                    }`}
                     onClick={() => setIsMenuOpen(false)}>
                     {item.label}
                   </Link>
