@@ -5,7 +5,7 @@ import Image from 'next/image'
 
 export default function TopPage() {
   return (
-    <div className="py-20 h-auto bg-no-repeat bg-center lg:bg-[url(/images/contact-header-bg.webp)]">
+    <div className="py-20 h-auto bg-no-repeat bg-center lg:bg-[url(/images/contact/header-bg.webp)]">
       <div className="lg:h-[500px]"></div>
       <div className="pt-20 container mx-auto relative">
         <div className="flex flex-col items-center justify-center">

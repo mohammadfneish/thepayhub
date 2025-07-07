@@ -18,7 +18,7 @@ export default function PowerfulPayhub() {
           <div className="w-[90%] md:w-1/3">
             <div className="flex flex-col p-5 bg-card border border-primary-300 rounded-2xl h-full">
               <Image
-                src={'/images/xpayz.webp'}
+                src={'/images/home/xpayz.webp'}
                 alt="xpz"
                 width={100}
                 height={0}
@@ -40,7 +40,7 @@ export default function PowerfulPayhub() {
           <div className="w-[90%] md:w-1/3">
             <div className="flex flex-col p-5 bg-card border border-primary-300 rounded-2xl h-full">
               <Image
-                src={'/images/payxglobal.webp'}
+                src={'/images/home/payxglobal.webp'}
                 alt="payxglobal"
                 width={100}
                 height={0}

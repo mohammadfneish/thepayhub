@@ -32,7 +32,7 @@ export default function LatestNews() {
           ))}
         </div>
       </div>
-      <div className="my-10 flex flex-row items-stretch gap-5 w-full overflow-x-auto scrollable-container">
+      <div className="my-10 flex flex-row items-stretch lg:justify-center gap-5 w-full overflow-x-auto scrollable-container">
         {newsData.map(
           (item, index) =>
             (activeCategory === allNews || item.category == activeCategory) && (

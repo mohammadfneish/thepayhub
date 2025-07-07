@@ -7,7 +7,7 @@ export default function HereOrThere() {
     <div className="mt-10 h-auto">
       <div
         className="relative h-[300px] md:h-[500px] lg:container w-[90%] mx-auto bg-contain bg-center bg-no-repeat"
-        style={{backgroundImage: 'url(/images/customers-feedback.webp)'}}>
+        style={{backgroundImage: 'url(/images/home/customers-feedback.webp)'}}>
         <div className="flex flex-col opacity-70 absolute bottom-10 right-10">
           <div className="bg-card rounded-2xl p-5 border border-secondary-300 max-w-[400px]">
             <h2 className="text-md lg:text-xl font-bold text-secondary-500">

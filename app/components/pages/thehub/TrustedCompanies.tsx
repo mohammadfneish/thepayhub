@@ -32,7 +32,7 @@ export default function HereOrThere() {
           their international expansion.
         </p>
         <Image
-          src={'/images/trusted-companies.webp'}
+          src={'/images/home/trusted-companies.webp'}
           alt="trusted-companies"
           width={0}
           height={0}
@@ -40,7 +40,7 @@ export default function HereOrThere() {
           className="w-full h-auto mt-5"
         />
         <Image
-          src={'/images/our-clients.webp'}
+          src={'/images/home/our-clients.webp'}
           alt="our-clients"
           width={0}
           height={0}
@@ -62,7 +62,7 @@ export default function HereOrThere() {
           </div>
           <div className="w-full md:w-1/2">
             <Image
-              src={'/images/crypto-img.webp'}
+              src={'/images/home/crypto-img.webp'}
               alt="crypto-currency"
               width={0}
               height={0}

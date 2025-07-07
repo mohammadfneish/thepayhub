@@ -22,21 +22,21 @@ export const supportsData: Array<Supports> = [
 export const ourOfficesData: Array<OurOffices> = [
   {
     location: 'London',
-    img: '/images/london.webp',
+    img: '/images/contact/london.webp',
     address: ['123 Fintech Street', 'Canary Wharf', 'London, E14 5AB', 'United Kingdom'],
     phone: '+44 20 1234 5678',
     email: 'london@thepayhub.io',
   },
   {
     location: 'New York',
-    img: '/images/newyork.webp',
+    img: '/images/contact/newyork.webp',
     address: ['456 Finance Avenue', 'Floor 21', 'New York, NY 10001', 'United States'],
     phone: '+1 212 345 6789',
     email: 'newyork@thepayhub.io',
   },
   {
     location: 'Singapore',
-    img: '/images/singapore.webp',
+    img: '/images/contact/singapore.webp',
     address: ['789 Innovation Way', 'Marina Bay Financial Centre', 'Singapore 018983'],
     phone: '+65 6543 2109',
     email: 'singapore@thepayhub.io',

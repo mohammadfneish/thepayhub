@@ -23,7 +23,7 @@ export default function OurTeams() {
           </div>
           <div className="flex flex-col text-left w-full md:w-1/2">
             <Image
-              src={'/images/our-teams.webp'}
+              src={'/images/careers/our-teams.webp'}
               alt="globo"
               width={0}
               height={0}

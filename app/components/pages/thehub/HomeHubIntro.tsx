@@ -8,7 +8,7 @@ export default function HomeHubIntro() {
       <div className="container mx-auto flex flex-col lg:flex-row items-stretch">
         <div
           className="order-first lg:order-last bg-center bg-cover bg-no-repeat w-full lg:w-1/2 min-h-[350px]"
-          style={{backgroundImage: 'url(/images/screen-person.webp)'}}>
+          style={{backgroundImage: 'url(/images/home/screen-person.webp)'}}>
           &nbsp;
         </div>
         <div className="order-last lg:order-first w-full lg:w-1/2 px-5 mt-5 md:mt-1">

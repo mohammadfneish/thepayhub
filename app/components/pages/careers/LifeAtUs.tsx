@@ -4,7 +4,7 @@ import {teamMembersExperience} from '../../../data/careers'
 
 export default function LifeAtUs() {
   return (
-    <div className="pt-10 h-auto" style={{backgroundImage: 'url(/images/body-pattern.webp)'}}>
+    <div className="pt-10 h-auto">
       <div className="lg:container lg:mx-auto mx-5 relative">
         <div className="flex flex-col items-center justify-center">
           <h1 className="text-2xl lg:text-4xl font-bold text-secondary-500 px-5 text-center max-w-[500px]">

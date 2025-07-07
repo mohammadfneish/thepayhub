@@ -18,28 +18,28 @@ export const newsCategories: Array<NewsCategory> = [
 
 export const newsData: Array<News> = [
   {
-    img: '/images/news1.webp',
+    img: '/images/news/news1.webp',
     category: 'Product Updates',
     date: 'May 10, 2025',
     title: 'ThePayHub Launches Enhanced API for Enterprise Clients',
     desc: 'Our new enterprise API offers advanced features including real-time reporting, customizable workflows, and enhanced security protocols.',
   },
   {
-    img: '/images/news2.webp',
+    img: '/images/news/news2.webp',
     category: 'Industry Insights',
     date: 'May 5, 2025',
     title: 'The Future of Cross-Border Payments: Trends to Watch in 2025',
     desc: 'Our analysis of emerging trends in global payments and how businesses can prepare for the evolving landscape.',
   },
   {
-    img: '/images/news3.webp',
+    img: '/images/news/news3.webp',
     category: 'Company News',
     date: 'April 28, 2025',
     title: 'ThePayHub Opens New Office in Singapore to Serve APAC Clients',
     desc: 'Our expansion into Singapore marks a significant milestone in our mission to provide global financial infrastructure.',
   },
   {
-    img: '/images/news4.webp',
+    img: '/images/news/news4.webp',
     category: 'Company News',
     date: 'April 15, 2025',
     title: 'The Basics about  Cryptocurrency',

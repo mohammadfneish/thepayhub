@@ -10,7 +10,7 @@ export default function BuildingTogether() {
         <div className="bg-primary-600 flex flex-col lg:flex-row lg:items-stretch items-center justify-center gap-5">
           <div className="w-full lg:w-1/2 h-[200px] lg:h-auto">
             <Image
-              src="/images/career-building-together.webp"
+              src="/images/careers/career-building-together.webp"
               alt="building together"
               width={0}
               height={0}

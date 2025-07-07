@@ -6,11 +6,11 @@ import {useRouter} from 'next/navigation'
 export default function TopPage() {
   const router = useRouter()
   return (
-    <div className="py-20 h-auto" style={{backgroundImage: 'url(/images/body-pattern.webp)'}}>
+    <div className="py-20 h-auto" style={{backgroundImage: 'url(/images/cubes.webp)'}}>
       <div className="container mx-auto relative">
         <div className="absolute top-[-50px] left-[25%] z-0 w-full max-w-[450px]">
           <Image
-            src="/images/globo.gif"
+            src="/images/home/globo.gif"
             alt="globo"
             width={0}
             height={0}

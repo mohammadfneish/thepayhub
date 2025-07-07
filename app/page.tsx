@@ -15,7 +15,7 @@ export default function Home() {
       <div
         className="pt-20 min-h-[calc(100vh-200px)] bg-cover bg-top bg-no-repeat overflow-hidden"
         style={{
-          backgroundImage: 'url(/images/lines.webp)',
+          backgroundImage: 'url(/images/home/lines.webp)',
         }}>
         <TopPage />
         <HomeHubIntro />
