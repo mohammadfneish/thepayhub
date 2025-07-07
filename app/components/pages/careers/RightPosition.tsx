@@ -2,7 +2,7 @@
 
 import {useRouter} from 'next/navigation'
 
-export default function TopPage() {
+export default function RightPosition() {
   const router = useRouter()
   return (
     <div className="py-20 h-auto">
