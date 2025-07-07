@@ -27,7 +27,7 @@ export default function TopPage() {
           </div>
           <div className="w-full md:w-1/2">
             <Image
-              src={'/images/crypto-img.webp'}
+              src={'/images/news/crypto-img.webp'}
               alt="crypto-currency"
               width={0}
               height={0}
@@ -40,7 +40,7 @@ export default function TopPage() {
         <div className="flex flex-col md:flex-row items-stretch justify-center gap-0 md:gap-5 my-5 mx-auto rounded-xl bg-gradient-to-r from-primary-500 to-primary-400 max-w-[1000px] min-h-[250px]">
           <div className="w-full md:w-1/2">
             <Image
-              src={'/images/earth.webp'}
+              src={'/images/news/earth.webp'}
               alt="crypto-currency"
               width={0}
               height={0}
