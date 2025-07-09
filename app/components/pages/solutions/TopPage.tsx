@@ -28,12 +28,12 @@ export default function TopPage() {
               <h3 className="text-md font-bold text-white">Trusted By</h3>
               <p className="text-sm text-gray-400">Over 4,000+ clients</p>
             </div>
-            <div className="w-full h-[1px] md:w-[1px] md:h-full bg-gray-400">&nbsp;</div>
+            <div className="w-full h-px md:w-px md:h-full bg-gray-400">&nbsp;</div>
             <div className="flex flex-col items-center justify-center gap-2">
               <h3 className="text-md font-bold text-white">Active API integrations</h3>
               <p className="text-sm text-gray-400">2545</p>
             </div>
-            <div className="w-full h-[1px] md:w-[1px] md:h-full bg-gray-400">&nbsp;</div>
+            <div className="w-full h-px md:w-px md:h-full bg-gray-400">&nbsp;</div>
             <div className="flex flex-col items-center justify-center gap-2">
               <h3 className="text-md font-bold text-white">Monthly transaction volume</h3>
               <p className="text-sm text-gray-400">R$65,000,000 USD</p>

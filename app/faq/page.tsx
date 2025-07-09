@@ -6,7 +6,7 @@ import TopPage from '../components/pages/faq/TopPage'
 
 export default function Careers() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-primary-500 to-primary-400 ">
+    <div className="min-h-screen bg-linear-to-b from-primary-500 to-primary-400 ">
       <Navigation />
       <div
         className="min-h-[calc(100vh-200px)] bg-cover bg-top bg-no-repeat overflow-hidden"

@@ -40,7 +40,7 @@ export default function Navigation() {
   return (
     <nav className={`fixed w-full z-50 transition-colors duration-300`}>
       <div
-        className={`w-full lg:container shadow-xl lg:mx-auto px-6 py-4 bg-gradient-to-b from-primary-500 to-primary-400 rounded-br-xl rounded-bl-xl ${
+        className={`w-full lg:container shadow-xl lg:mx-auto px-6 py-4 bg-linear-to-b from-primary-500 to-primary-400 rounded-br-xl rounded-bl-xl ${
           scrolled ? 'opacity-95' : ''
         }`}>
         {/* Mobile Menu Button */}
@@ -122,7 +122,7 @@ export default function Navigation() {
               animate={{x: 0, opacity: 1}}
               exit={{x: -300, opacity: 0}}
               transition={{duration: 0.3, ease: 'easeOut'}}
-              className={`fixed top-0 left-0 h-full w-[300px] z-50 shadow-lg bg-gradient-to-r from-primary-500 to-primary-400`}>
+              className={`fixed top-0 left-0 h-full w-[300px] z-50 shadow-lg bg-linear-to-r from-primary-500 to-primary-400`}>
               <div className="mt-[20px] flex flex-col space-y-4 p-4">
                 <button
                   onClick={() => setIsMenuOpen(!isMenuOpen)}

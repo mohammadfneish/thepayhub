@@ -32,7 +32,7 @@ export default function MostQuestions() {
                   </div>
                 </div>
                 {open === index && (
-                  <div className="leading-20 text-base/8 text-sm mt-2 text-gray-400 text-center lg:text-left p-5 flex-1 bg-primary-500 rounded-b-2xl">
+                  <div className="leading-6 text-sm mt-2 text-gray-400 p-5 flex-1 bg-primary-500 rounded-b-2xl">
                     {item.answer}
                   </div>
                 )}

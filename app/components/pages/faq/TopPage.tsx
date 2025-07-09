@@ -16,7 +16,7 @@ export default function TopPage() {
             {faqCategories.map((item, index) => (
               <div
                 key={index}
-                className="mx-auto md:mx-0 bg-card border border-primary-300 rounded-2xl p-5 flex flex-col items-center lg:items-start max-w-[90%] md:max-w-[100%]">
+                className="mx-auto md:mx-0 bg-card border border-primary-300 rounded-2xl p-5 flex flex-col items-center lg:items-start max-w-[90%] md:max-w-full">
                 <Image
                   src={'/images/people-polygon.webp'}
                   alt="globo"

@@ -38,7 +38,7 @@ export default function TopPage() {
                 future, offering businesses a single platform for all their global payment needs.
               </p>
             </div>
-            <div className="bg-gradient-to-r lg:bg-gradient-to-b from-secondary-400 to-primary-400 w-full lg:w-1 h-1 lg:h-auto"></div>
+            <div className="bg-linear-to-r lg:bg-linear-to-b from-secondary-400 to-primary-400 w-full lg:w-1 h-1 lg:h-auto"></div>
             <div className="flex flex-col md:flex-row lg:flex-col items-stretch lg:items-start justify-start gap-5 lg:max-w-[300px]">
               <div className="flex flex-col flex-1">
                 <h3 className="text-lg font-bold text-secondary-500 text-left">2016</h3>
@@ -69,7 +69,7 @@ export default function TopPage() {
         </div>
       </div>
       <div
-        className="bg-center bg-size-cover bg-no-repeat w-full sm:h-[400px] lg:h-[600px] md:mt-5 flex flex-col items-end justify-center"
+        className="mt-10 bg-center bg-size-cover bg-no-repeat w-full sm:h-[400px] lg:h-[600px] md:mt-5 flex flex-col items-end justify-center"
         style={{backgroundImage: 'url(/images/company/thepayhub.webp)'}}>
         <p
           className="visible text-xl mt-2 mr-2 md:mr-10 font-bold text-black md:text-white max-w-[500px] p-5 md:bg-transparent bg-white/50 rounded-2xl"

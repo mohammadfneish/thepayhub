@@ -4,13 +4,13 @@ import Image from 'next/image'
 
 export default function OurPartners() {
   return (
-    <div className="mt-10 pt-50 h-auto">
+    <div className="mt-10 pt-10 h-auto">
       <div className="container px-5 md:px-0 lg:px-5 lg:px-auto relative w-full mx-auto flex flex-col items-center">
         <h2 className="text-2xl lg:text-4xl font-bold text-secondary-500">Our Partners</h2>
         <p className="text-lg mt-2 text-gray-400">Strategic collaborations that power our global infrastructure</p>
         <div className="my-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 flex items-stretch justify-center">
           <div className="bg-card p-5 rounded-2xl flex flex-col items-center gap-5">
-            <div className="bg-gradient-to-r from-primary-500 to-primary-400 p-2 rounded-2xl w-[90%] h-[60px] flex items-center justify-center gap-5">
+            <div className="bg-linear-to-r from-primary-500 to-primary-400 p-2 rounded-2xl w-[90%] h-[60px] flex items-center justify-center gap-5">
               <Image
                 src="/images/company/alchemy.webp"
                 alt="Alchemy"
@@ -25,7 +25,7 @@ export default function OurPartners() {
             </p>
           </div>
           <div className="bg-card p-5 rounded-2xl flex flex-col items-center gap-5">
-            <div className="bg-gradient-to-r from-primary-500 to-primary-400 p-2 rounded-2xl w-[90%] h-[60px] flex items-center justify-center gap-5">
+            <div className="bg-linear-to-r from-primary-500 to-primary-400 p-2 rounded-2xl w-[90%] h-[60px] flex items-center justify-center gap-5">
               <Image
                 src="/images/company/metamap.webp"
                 alt="metamap"
@@ -41,7 +41,7 @@ export default function OurPartners() {
             </p>
           </div>
           <div className="bg-card p-5 rounded-2xl flex flex-col items-center gap-5">
-            <div className="bg-gradient-to-r from-primary-500 to-primary-400 p-2 rounded-2xl w-[90%] h-[60px] flex items-center justify-center gap-5">
+            <div className="bg-linear-to-r from-primary-500 to-primary-400 p-2 rounded-2xl w-[90%] h-[60px] flex items-center justify-center gap-5">
               <Image
                 src="/images/company/aws--logo.webp"
                 alt="metamap"
@@ -56,7 +56,7 @@ export default function OurPartners() {
             </p>
           </div>
           <div className="bg-card p-5 rounded-2xl flex flex-col items-center gap-5">
-            <div className="bg-gradient-to-r from-primary-500 to-primary-400 p-2 rounded-2xl w-[90%] h-[60px] flex items-center justify-center gap-5">
+            <div className="bg-linear-to-r from-primary-500 to-primary-400 p-2 rounded-2xl w-[90%] h-[60px] flex items-center justify-center gap-5">
               <Image
                 src="/images/company/polygon.webp"
                 alt="metamap"

@@ -24,7 +24,7 @@
 //       onClick={handleClick}
 //     >
 //       {/* Gradient Border Overlay */}
-//       {/* <span className="absolute inset-0 rounded-full border-2 border-transparent bg-gradient-to-r from-white/45 to-transparent p-[2px]"></span> */}
+//       {/* <span className="absolute inset-0 rounded-full border-2 border-transparent bg-linear-to-r from-white/45 to-transparent p-[2px]"></span> */}
 
 //       {/* Button Content */}
 //       <span className="relative flex items-center gap-2 px-6 py-3 rounded-full bg-[radial-gradient(105.53%_364.49%_at_31.67%_66.56%,rgba(220,39,38,0.9)_0%,rgba(220,39,38,0.405)_100%)] border-2 border-white/45"

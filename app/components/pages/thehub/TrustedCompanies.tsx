@@ -6,7 +6,7 @@ import ContactUs from './ContactUs'
 export default function HereOrThere() {
   return (
     <div className="mt-10 h-auto w-full bg-primary-600">
-      <div className="h-3 w-full bg-gradient-to-r from-primary-400 to-secondary-500"></div>
+      <div className="h-3 w-full bg-linear-to-r from-primary-400 to-secondary-500"></div>
       <div className="lg:container w-[90%] mx-auto flex flex-col items-center py-5">
         <h1 className="text-md lg:text-4xl font-bold text-secondary-500 mt-5 pt-5">Trusted by Companies Worldwide</h1>
         <p className="text-sm my-4 text-white text-center max-w-[500px]">
@@ -47,7 +47,7 @@ export default function HereOrThere() {
           sizes="100vw"
           className="w-full h-auto my-5"
         />
-        <div className="flex flex-col md:flex-row items-stretch justify-center gap-0 md:gap-5 my-5 rounded-xl bg-gradient-to-r from-primary-500 to-primary-400 max-w-[1000px] min-h-[250px]">
+        <div className="flex flex-col md:flex-row items-stretch justify-center gap-0 md:gap-5 my-5 rounded-xl bg-linear-to-r from-primary-500 to-primary-400 max-w-[1000px] min-h-[250px]">
           <div className="flex flex-col p-5 w-full md:w-1/2">
             <div className="border border-secondary-500 rounded-full w-fit py-1 px-2 flex items-center justify-center">
               <span>Featured</span>

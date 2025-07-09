@@ -8,11 +8,11 @@ export default function LatestNews() {
   const allNews = 'All'
   const [activeCategory, setActiveCategory] = useState<string>(allNews)
   return (
-    <div className="container mx-3 md:mx-auto flex flex-col w-full items-center">
+    <div className="container mx-3 lg:mx-auto flex flex-col w-full items-center">
       <h1 className="text-4xl font-bold text-secondary-500 mt-5 p-5">Latest News</h1>
 
       <div className="flex flex-col md:flex-row items-center md:items-stretch gap-5 w-full">
-        <div className="flex flex-row gap-2 w-full overflow-x-auto scrollable-container items-center justify-center">
+        <div className="flex flex-row gap-2 w-full overflow-x-auto scrollable-container items-center justify-start lg:justify-center">
           <div
             onClick={() => setActiveCategory(allNews)}
             className={`bg-card border rounded-full px-5 py-2 whitespace-nowrap ${

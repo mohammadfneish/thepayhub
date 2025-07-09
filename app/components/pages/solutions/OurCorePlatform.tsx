@@ -45,7 +45,7 @@ export default function OurCorePlatform() {
                     integration for businesses that need speed and transparency in their financial operations.
                   </p>
                 </div>
-                <div className="w-full h-[1px] md:w-[1px] md:h-auto bg-gray-400">&nbsp;</div>
+                <div className="w-full h-px md:w-px md:h-auto bg-gray-400">&nbsp;</div>
                 <div className="flex flex-col gap-5 items-start justify-center p-5">
                   <Image
                     src={`/images/solutions/${selectedPlatform.symbol}.webp`}

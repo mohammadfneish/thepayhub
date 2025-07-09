@@ -12,7 +12,7 @@ export default function TopPage() {
             Stay updated with the latest developments, announcements, and insights from ThePayHub
           </p>
         </div>
-        <div className="flex flex-col md:flex-row items-stretch justify-center gap-0 md:gap-5 my-5 mx-auto rounded-xl bg-gradient-to-r from-primary-500 to-primary-400 max-w-[1000px] min-h-[250px]">
+        <div className="flex flex-col md:flex-row items-stretch justify-center gap-0 md:gap-5 my-5 mx-auto rounded-xl bg-linear-to-r from-primary-500 to-primary-400 max-w-[1000px] min-h-[250px]">
           <div className="flex flex-col p-5 w-full md:w-1/2">
             <div className="border border-secondary-500 rounded-full w-fit py-1 px-2 flex items-center justify-center">
               <span>Featured</span>
@@ -37,7 +37,7 @@ export default function TopPage() {
           </div>
         </div>
         <h2 className="text-3xl font-bold text-secondary-500 px-5 text-center my-10">Latest announcement</h2>
-        <div className="flex flex-col md:flex-row items-stretch justify-center gap-0 md:gap-5 my-5 mx-auto rounded-xl bg-gradient-to-r from-primary-500 to-primary-400 max-w-[1000px] min-h-[250px]">
+        <div className="flex flex-col md:flex-row items-stretch justify-center gap-0 md:gap-5 my-5 mx-auto rounded-xl bg-linear-to-r from-primary-500 to-primary-400 max-w-[1000px] min-h-[250px]">
           <div className="w-full md:w-1/2">
             <Image
               src={'/images/news/earth.webp'}

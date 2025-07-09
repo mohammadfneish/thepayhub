@@ -5,7 +5,7 @@ import {pressReleases} from '../../../data/news'
 
 export default function PressReleases() {
   return (
-    <div className="mb-10 pb-10 container mx-3 md:mx-auto flex flex-col w-full items-center">
+    <div className="mb-10 pb-10 container mx-3 mx-auto flex flex-col w-full items-center">
       <h1 className="text-4xl font-bold text-secondary-500 mt-5">Press Releases</h1>
       <p className="text-md mt-2 text-white text-center p-5 my-5">Official announcements from ThePayHub</p>
       <div className="flex flex-col gap-5 w-full items-center">

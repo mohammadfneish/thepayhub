@@ -15,6 +15,7 @@ export default function TopPage() {
             width={0}
             height={0}
             sizes="100vw"
+            unoptimized
             className="w-[200px] md:w-[300px] lg:w-[400px] xl:w-[500px] h-auto"
           />
         </div>

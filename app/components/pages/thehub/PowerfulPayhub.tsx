@@ -64,7 +64,7 @@ export default function PowerfulPayhub() {
               <div className="border border-secondary-500 rounded-full w-fit py-1 px-2 flex items-center justify-center">
                 <span>SOON</span>
               </div>
-              <h3 className="text-lg my-3 font-bold text-left bg-gradient-to-r from-secondary-50 to-secondary-500 bg-clip-text text-transparent">
+              <h3 className="text-lg my-3 font-bold text-left bg-linear-to-r from-secondary-50 to-secondary-500 bg-clip-text text-transparent">
                 New
                 <br />
                 Solutions

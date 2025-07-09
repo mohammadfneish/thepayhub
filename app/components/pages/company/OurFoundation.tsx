@@ -2,7 +2,7 @@
 
 export default function OurFoundation() {
   return (
-    <div className="pt-50 h-auto">
+    <div className="h-auto">
       <div className="container px-5 lg:px-auto relative w-full mx-auto flex flex-col items-center">
         <h2 className="text-2xl lg:text-4xl font-bold text-secondary-500">Our Foundation</h2>
         <p className="text-lg mt-2 text-gray-400">The mission and vision that shape our journey</p>

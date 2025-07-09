@@ -16,7 +16,7 @@ export default function RedureTaxes() {
           <div className="flex flex-col items-center justify-center gap-5">
             <p className="text-sm text-gray-400">Transaction volume</p>
             <div className="max-w-[80%] w-[500px] h-[10px] bg-gray-400 flex flex-row rounded-full relative">
-              <div className="w-[50%] h-[10px] rounded-full bg-gradient-to-r from-secondary-200 to-secondary-500"></div>
+              <div className="w-[50%] h-[10px] rounded-full bg-linear-to-r from-secondary-200 to-secondary-500"></div>
               <Image
                 src="/images/cube.webp"
                 alt="cube"

@@ -3,8 +3,8 @@ import Link from 'next/link'
 
 export default function Footer() {
   return (
-    <footer className="h-auto w-full bg-gradient-to-t from-primary-900 to-primary-400">
-      <div className="h-3 w-full bg-gradient-to-r from-primary-400 to-secondary-500"></div>
+    <footer className="h-auto w-full bg-linear-to-t from-primary-900 to-primary-400">
+      <div className="h-3 w-full bg-linear-to-r from-primary-400 to-secondary-500"></div>
       <div className="pt-12 md:px-6 mt-5 ">
         <div className="container mx-auto max-w-7xl">
           {/* Stay Updated Section */}
@@ -20,7 +20,7 @@ export default function Footer() {
                 <input
                   type="email"
                   placeholder="Your email address"
-                  className="px-4 py-2 w-full rounded-l-lg text-black outline-none bg-gray-200"
+                  className="px-4 py-2 w-full rounded-l-lg text-black outline-hidden bg-gray-200"
                 />
                 <button
                   type="button"

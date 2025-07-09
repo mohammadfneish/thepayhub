@@ -7,7 +7,7 @@ import NeedTechSupport from '../components/pages/contact/NeedTechSupport'
 
 export default function Careers() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-primary-900 to-primary-600">
+    <div className="min-h-screen bg-linear-to-b from-primary-900 to-primary-600">
       <Navigation />
       <div
         className="min-h-[calc(100vh-200px)] bg-cover bg-top bg-no-repeat overflow-hidden"
