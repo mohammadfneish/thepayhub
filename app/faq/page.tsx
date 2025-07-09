@@ -4,7 +4,7 @@ import MostQuestions from '../components/pages/faq/MostQuestions'
 import StillHaveQuestions from '../components/pages/faq/StillHaveQuestions'
 import TopPage from '../components/pages/faq/TopPage'
 
-export default function Careers() {
+export default function FAQ() {
   return (
     <div className="min-h-screen bg-linear-to-b from-primary-500 to-primary-400 ">
       <Navigation />

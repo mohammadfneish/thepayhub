@@ -26,14 +26,19 @@ export default function MostQuestions() {
                     {item.question}
                   </h3>
                   <div
-                    onClick={() => setOpen(index)}
+                    onClick={() => setOpen(index == open ? -1 : index)}
                     className="cursor-pointer flex flex-col justify-center items-center border border-primary-300 rounded-full w-8 h-8 bg-gray-500">
                     <span className="text-2xl font-bold ">{open === index ? '-' : '+'}</span>
                   </div>
                 </div>
                 {open === index && (
-                  <div className="leading-6 text-sm mt-2 text-gray-400 p-5 flex-1 bg-primary-500 rounded-b-2xl">
-                    {item.answer}
+                  <div className="leading-6 text-sm mt-2 text-gray-400 p-5 flex-1 bg-primary-500 rounded-b-2xl w-full">
+                    <div className="mb-1">{item.answer}</div>
+                    {item.extras?.map((extra, index) => (
+                      <div key={index} className="ml-2 mb-1">
+                        {extra}
+                      </div>
+                    ))}
                   </div>
                 )}
               </div>

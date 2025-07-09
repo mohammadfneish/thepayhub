@@ -5,7 +5,7 @@ import ContactUs from '../components/pages/contact/ContactUs'
 import OurOffices from '../components/pages/contact/OurOffices'
 import NeedTechSupport from '../components/pages/contact/NeedTechSupport'
 
-export default function Careers() {
+export default function Contact() {
   return (
     <div className="min-h-screen bg-linear-to-b from-primary-900 to-primary-600">
       <Navigation />

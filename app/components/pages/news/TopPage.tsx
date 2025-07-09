@@ -28,7 +28,7 @@ export default function TopPage() {
           <div className="w-full md:w-1/2">
             <Image
               src={'/images/news/crypto-img.webp'}
-              alt="crypto-currency"
+              alt="crypto-img"
               width={0}
               height={0}
               sizes="100vw"
@@ -41,7 +41,7 @@ export default function TopPage() {
           <div className="w-full md:w-1/2">
             <Image
               src={'/images/news/earth.webp'}
-              alt="crypto-currency"
+              alt="earth"
               width={0}
               height={0}
               sizes="100vw"

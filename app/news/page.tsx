@@ -4,7 +4,7 @@ import TopPage from '../components/pages/news/TopPage'
 import LatestNews from '../components/pages/news/LatestNews'
 import PressReleases from '../components/pages/news/PressReleases'
 
-export default function Careers() {
+export default function News() {
   return (
     <div className="min-h-screen bg-linear-to-b from-primary-500 to-primary-400 ">
       <Navigation />

@@ -12,36 +12,38 @@ export default function OurOffices() {
           Want to reach us directly? Visit us at one of our locations around the world
         </p>
       </div>
-      <div className="flex flex-col md:flex-row items-center md:items-stretch justify-center gap-5 w-full">
+      <div className="w-[100%] overflow-x-auto scrollable-container items-start justify-start flex flex-row items-stretch gap-6 px-5 sm:w-auto sm:inline-grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         {ourOfficesData.map((item, index) => (
-          <div
-            key={index}
-            className="flex flex-col bg-card border border-primary-300 rounded-2xl w-[90%] max-w-[400px] md:w-[30%] md:max-w-1/3">
+          <div key={index} className="flex flex-col bg-card border border-primary-300 rounded-2xl w-[250px]">
             <Image
               src={item.img}
               alt={item.location}
               width={0}
               height={0}
               sizes="100px"
-              className="w-full h-[180px] rounded-t-2xl"
+              className="w-full h-[150px] rounded-t-2xl"
             />
-            <div className="p-5 flex flex-col gap-3 flex-1">
-              <h3 className="text-md my-3 font-bold text-white text-left">{item.location}</h3>
-              <p className="text-sm my-3 text-white text-left whitespace-pre flex-1">{item.address.join('\n')}</p>
-              <div className="flex flex-col gap-1">
-                <p className="text-sm text-white text-left">
-                  <span className="font-bold">Phone:</span>{' '}
-                  <a href={`tel:${item.phone}`} className="font-semibold text-secondary-500">
-                    {item.phone}
-                  </a>
-                </p>
-                <p className="text-sm text-white text-left">
-                  <span className="font-bold">Email:</span>{' '}
-                  <a href={`mailto:${item.email}`} className="font-semibold text-secondary-500">
-                    {item.email}
-                  </a>
-                </p>
-              </div>
+            <div className="px-5 flex flex-col gap-3 flex-1">
+              <h3 className="text-md mt-5 mb-2 font-bold text-white text-left whitespace-nowrap">{item.location}</h3>
+              {item.address?.length > 0 && (
+                <p className="text-sm my-3 text-white text-left whitespace-pre flex-1">{item.address.join('\n')}</p>
+              )}
+              {(item.phone?.length > 0 || item.email?.length > 0) && (
+                <div className="flex flex-col gap-1">
+                  <p className="text-sm text-white text-left">
+                    <span className="font-bold">Phone:</span>{' '}
+                    <a href={`tel:${item.phone}`} className="font-semibold text-secondary-500">
+                      {item.phone}
+                    </a>
+                  </p>
+                  <p className="text-sm text-white text-left">
+                    <span className="font-bold">Email:</span>{' '}
+                    <a href={`mailto:${item.email}`} className="font-semibold text-secondary-500">
+                      {item.email}
+                    </a>
+                  </p>
+                </div>
+              )}
             </div>
           </div>
         ))}

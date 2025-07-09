@@ -1,7 +1,6 @@
 'use client'
 
 import {faqCategories} from '../../../data/faq'
-import Image from 'next/image'
 
 export default function TopPage() {
   return (
@@ -17,14 +16,12 @@ export default function TopPage() {
               <div
                 key={index}
                 className="mx-auto md:mx-0 bg-card border border-primary-300 rounded-2xl p-5 flex flex-col items-center lg:items-start max-w-[90%] md:max-w-full">
-                <Image
-                  src={'/images/people-polygon.webp'}
-                  alt="globo"
-                  width={80}
-                  height={80}
-                  sizes="80px"
-                  className="w-[80px] h-[80px]"
-                />
+                <div className="relative w-[70px] h-[70px] flex items-center justify-center">
+                  <div
+                    className="absolute w-[70px] h-[70px] bg-contain bg-no-repeat bg-center opacity-60 z-0"
+                    style={{backgroundImage: 'url(/images/cube.webp)'}}></div>
+                  <div className="z-1">{item.icon}</div>
+                </div>
                 <h3 className="text-md font-bold text-secondary-500 px-5 text-center lg:text-left">{item.title}</h3>
                 <p className="text-sm mt-2 text-gray-400 text-center lg:text-left px-5 flex-1">{item.desc}</p>
               </div>

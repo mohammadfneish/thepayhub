@@ -36,12 +36,30 @@ export default function Footer() {
             {/* Left - Branding */}
             <div className="flex flex-col items-center md:items-start px-3">
               <div className="flex flex-col sm:flex-row items-start gap-1">
-                <Image
-                  src={'/images/logo-mobile-header.webp'}
-                  width={170}
-                  height={60}
-                  alt="ThePayHub Logo"
-                  className="ml-5 sm:ml-0"></Image>
+                <svg
+                  className="ml-5 sm:ml-0"
+                  width="170"
+                  height="50"
+                  viewBox="0 0 208 61"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M117.516 8.51172V17.9584H101.89V52.9873H92.4437V17.9584H77.4492V8.51172H117.516Z"
+                    fill="#DBDAD8"
+                  />
+                  <path
+                    d="M162.182 21.0017C162.182 24.2134 160.978 27.2782 158.793 29.6285C157.482 31.0405 155.89 32.1163 154.136 32.8058C154.136 32.8058 154.04 32.8918 152.382 33.302C150.725 33.7109 150.446 33.7175 150.446 33.7175H135.205V52.7959H125.758V24.2134H135.205V24.2333H149.502C151.283 24.2333 152.735 22.7829 152.735 21.0017C152.735 19.2179 151.283 17.7688 149.502 17.7688C149.424 17.7688 149.353 17.7715 149.292 17.7768L149.268 17.7794L149.203 17.7887H147.67V17.7688H125.758V10.0922L125.759 8.32031H150.103C150.103 8.32031 151.114 8.4447 152.036 8.62335C152.959 8.80333 153.623 9.00315 153.623 9.00315C158.624 10.7155 162.182 15.4596 162.182 21.0017Z"
+                    fill="#DBDAD8"
+                  />
+                  <path
+                    d="M208.001 7.93359V52.2175H198.569V33.3486H178.132V52.2175H168.701V7.93359H178.132V23.9254H198.569V7.93359H208.001Z"
+                    fill="#DBDAD8"
+                  />
+                  <path
+                    d="M0.0443306 17.6106V5.91124L10.1485 0.0742188L20.2654 5.91124V17.6106L10.1485 23.4477L0.0443306 17.6106ZM43.425 17.6106V5.91124L53.5292 0.0742188L63.6461 5.91124V17.6106L53.5292 23.4477L43.425 17.6106ZM0 55.0077V43.3083L10.1042 37.4713L20.2211 43.3083V55.0077L10.1042 60.8448L0 55.0077ZM43.386 55.0077V43.3083L53.4902 37.4713L63.6071 43.3083V55.0077L53.4902 60.8448L43.386 55.0077ZM10.9254 36.4011V24.7028L21.0296 18.8657L31.1465 24.7028V36.4011L21.0296 42.2392L10.9254 36.4011ZM32.6432 36.4011V24.7028L42.7474 18.8657L52.8643 24.7028V36.4011L42.7474 42.2392L32.6432 36.4011Z"
+                    fill="#D8E60C"
+                  />
+                </svg>
                 <p className="flex-1 text-sm mt-2 px-5 text-gray-400">
                   Proprietary infrastructure for modern B2B finance, unifying tokenized and banking payments in a single
                   global ecosystem.
@@ -141,17 +159,17 @@ export default function Footer() {
               <div className="flex flex-col mt-4 gap-2">
                 <h3 className="text-gray-400">Company</h3>
                 <nav className="flex flex-col text-gray-400 text-xs md:text-sm gap-2">
-                  <Link href="/about-us" className="hover:text-white">
-                    About us
-                  </Link>
-                  <Link href="/careers" className="hover:text-white">
-                    Careers
-                  </Link>
-                  <Link href="/partners" className="hover:text-white">
-                    Partners
-                  </Link>
                   <Link href="/contact" className="hover:text-white">
-                    Contact
+                    Contact us
+                  </Link>
+                  <Link href="/news" className="hover:text-white">
+                    News
+                  </Link>
+                  <Link href="/solutions" className="hover:text-white">
+                    Solutions
+                  </Link>
+                  <Link href="/signup" className="hover:text-white">
+                    Sign Up
                   </Link>
                 </nav>
               </div>

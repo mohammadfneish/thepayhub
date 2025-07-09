@@ -13,7 +13,7 @@ export default function Home() {
     <div className="min-h-screen">
       <Navigation />
       <div
-        className="pt-20 min-h-[calc(100vh-200px)] bg-cover bg-top bg-no-repeat overflow-hidden"
+        className="pt-30 min-h-[calc(100vh-200px)] bg-cover bg-top bg-no-repeat overflow-hidden"
         style={{
           backgroundImage: 'url(/images/home/lines.webp)',
         }}>

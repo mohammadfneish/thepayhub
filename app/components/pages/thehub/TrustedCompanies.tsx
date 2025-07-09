@@ -39,15 +39,8 @@ export default function HereOrThere() {
           sizes="100vw"
           className="w-full h-auto mt-5"
         />
-        <Image
-          src={'/images/home/our-clients.webp'}
-          alt="our-clients"
-          width={0}
-          height={0}
-          sizes="100vw"
-          className="w-full h-auto my-5"
-        />
-        <div className="flex flex-col md:flex-row items-stretch justify-center gap-0 md:gap-5 my-5 rounded-xl bg-linear-to-r from-primary-500 to-primary-400 max-w-[1000px] min-h-[250px]">
+
+        <div className="mt-10 flex flex-col md:flex-row items-stretch justify-center gap-0 md:gap-5 my-5 rounded-xl bg-linear-to-r from-primary-500 to-primary-400 max-w-[1000px] min-h-[250px]">
           <div className="flex flex-col p-5 w-full md:w-1/2">
             <div className="border border-secondary-500 rounded-full w-fit py-1 px-2 flex items-center justify-center">
               <span>Featured</span>
@@ -62,7 +55,7 @@ export default function HereOrThere() {
           </div>
           <div className="w-full md:w-1/2">
             <Image
-              src={'/images/home/crypto-img.webp'}
+              src={'/images/home/crypto.webp'}
               alt="crypto-currency"
               width={0}
               height={0}
