@@ -15,16 +15,16 @@ export default function JoinUs() {
             Discover how our vision and technology can help your business thrive in the global marketplace
           </p>
           <div className="flex flex-col sm:flex-row gap-5">
-            <button
+            <a
               className="text-white bg-primary-300 px-4 py-2 text-lg font-semibold rounded-full transition-transform duration-300 ease-in-out hover:scale-105 active:scale-95"
-              onClick={() => console.log('Get in Touch')}>
+              href="mailto:contact@thepayhub.io">
               Get in Touch
-            </button>
-            <button
+            </a>
+            <a
               className="text-white bg-transparent border border-white px-4 py-2 text-lg font-semibold rounded-full transition-transform duration-300 ease-in-out hover:scale-105 active:scale-95"
-              onClick={() => console.log('Join Our Team')}>
-              Join Our Team
-            </button>
+              href="mailto:support@thepayhub.io">
+              Contact Support
+            </a>
           </div>
         </div>
       </div>

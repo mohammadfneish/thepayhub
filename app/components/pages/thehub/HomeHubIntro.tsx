@@ -64,18 +64,6 @@ export default function HomeHubIntro() {
                 efficiency, transparency, and real value.
               </p>
             </div>
-            <div className="flex flex-col sm:flex-row gap-5 mt-5">
-              <button
-                className="text-black bg-primary-400 px-4 py-2 text-lg font-semibold rounded-full transition-transform duration-300 ease-in-out hover:scale-105 active:scale-95"
-                onClick={() => console.log('learn more')}>
-                Learn more
-              </button>
-              <button
-                className="text-white border bg-transparent px-4 py-2 text-lg font-semibold rounded-full transition-transform duration-300 ease-in-out hover:scale-105 active:scale-95"
-                onClick={() => console.log('Get in touch with our team')}>
-                Get in touch with our team
-              </button>
-            </div>
           </div>
         </div>
       </div>

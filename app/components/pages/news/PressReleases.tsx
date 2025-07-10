@@ -16,11 +16,6 @@ export default function PressReleases() {
             <h5 className="text-sm font-bold text-secondary-500 whitespace-nowrap">{item.date}</h5>
             <h3 className="text-md font-bold text-white text-left">{item.title}</h3>
             <p className="text-sm mt-1 mb-2 text-gray-400 text-left flex-1">{item.desc}</p>
-            <button
-              className="w-fit text-white bg-primary-300 px-4 py-2 text-sm font-semibold rounded-full transition-transform duration-300 ease-in-out hover:scale-105 active:scale-95"
-              onClick={() => console.log('Read Full Release -- ' + index)}>
-              Read Full Release
-            </button>
           </div>
         ))}
       </div>

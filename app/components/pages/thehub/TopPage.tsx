@@ -34,8 +34,8 @@ export default function TopPage() {
                 Explore our solutions
               </button>
               <button
-                className="text-white border bg-transparent px-4 py-2 text-lg font-semibold rounded-full transition-transform duration-300 ease-in-out hover:scale-105 active:scale-95"
-                onClick={() => console.log('schedule a demo')}>
+                className="cursor-pointer text-white border bg-transparent px-4 py-2 text-lg font-semibold rounded-full transition-transform duration-300 ease-in-out hover:scale-105 active:scale-95"
+                onClick={() => open('https://calendly.com/thepayhub-sales/30min', '_blank')}>
                 Schedule a demo
               </button>
             </div>

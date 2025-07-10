@@ -66,7 +66,7 @@ export default function Footer() {
                 </p>
               </div>
               <div className="flex flex-row gap-1 mt-2">
-                <a href="https://facebook.com/thepayhub" target="_blank" rel="noopener noreferrer">
+                {/* <a href="https://facebook.com/thepayhub" target="_blank" rel="noopener noreferrer">
                   <svg width="40" height="41" viewBox="0 0 40 41" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <rect
                       y="0.600098"
@@ -149,7 +149,7 @@ export default function Footer() {
                       </linearGradient>
                     </defs>
                   </svg>
-                </a>
+                </a> */}
               </div>
             </div>
 
@@ -168,8 +168,8 @@ export default function Footer() {
                   <Link href="/solutions" className="hover:text-white">
                     Solutions
                   </Link>
-                  <Link href="/signup" className="hover:text-white">
-                    Sign Up
+                  <Link href="/register" className="hover:text-white">
+                    Register
                   </Link>
                 </nav>
               </div>

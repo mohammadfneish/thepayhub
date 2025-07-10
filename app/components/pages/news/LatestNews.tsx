@@ -32,11 +32,13 @@ export default function LatestNews() {
           ))}
         </div>
       </div>
-      <div className="my-10 flex flex-row items-stretch lg:justify-center gap-5 w-full overflow-x-auto scrollable-container">
+      <div className="mt-5 w-[100%] overflow-x-auto scrollable-container gap-6 flex flex-row items-stretch mb-5">
         {newsData.map(
           (item, index) =>
             (activeCategory === allNews || item.category == activeCategory) && (
-              <div key={index} className="flex flex-col bg-card border border-primary-300 rounded-2xl w-[300px]">
+              <div
+                key={index}
+                className="flex flex-col p-5 bg-card border border-primary-300 rounded-2xl min-w-[300px]">
                 <Image
                   src={item.img}
                   alt={item.title}
@@ -45,7 +47,7 @@ export default function LatestNews() {
                   sizes="100px"
                   className="w-full h-[180px] rounded-t-2xl"
                 />
-                <div className="flex flex-row justify-between items-center px-5 py-2">
+                <div className="flex flex-row justify-between items-start px-5 py-2">
                   <h5 className="text-sm font-bold text-secondary-500 whitespace-nowrap">{item.category}</h5>
                   <h5 className="text-sm font-bold text-secondary-500 whitespace-nowrap">{item.date}</h5>
                 </div>

@@ -2,20 +2,20 @@ export const supportsData: Array<Supports> = [
   {
     title: 'Technical Support',
     desc: 'Need help with integration or experiencing technical issues? Our support engineers are here to assist.',
-    button: 'Get Support',
-    action: () => console.log('Get Support'),
+    mailToText: 'Get Support',
+    mailTo: 'mailto:contact@thepayhub.io',
   },
   {
     title: 'Sales Inquiry',
     desc: 'Interested in our solutions? Our sales team is ready to discuss how ThePayHub can help your business.',
-    button: 'Contact Sales',
-    action: () => console.log('Contact Sales'),
+    mailToText: 'Contact Sales',
+    mailTo: 'mailto:sales@thepayhub.io',
   },
   {
     title: 'Partnership Opportunities',
     desc: 'Interested in partnering with ThePayHub? Let`s explore how we can create value together.',
-    button: 'Discuss Partnership',
-    action: () => console.log('Discuss Partnership'),
+    mailToText: 'Discuss Partnership',
+    mailTo: 'mailto:support@thepayhub.io',
   },
 ]
 

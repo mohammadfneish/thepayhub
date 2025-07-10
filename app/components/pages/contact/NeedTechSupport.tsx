@@ -10,16 +10,16 @@ export default function NeedTechSupport() {
         </p>
       </div>
       <div className="flex flex-col md:flex-row items-center justify-center gap-5 w-full">
-        <button
+        <a
           className="text-black bg-secondary-500 px-4 py-2 text-sm font-semibold rounded-full transition-transform duration-300 ease-in-out hover:scale-105 active:scale-95"
-          onClick={() => console.log('Visit Developer Hub')}>
-          Visit Developer Hub
-        </button>
-        <button
+          href="mailto:contact@thepayhub.io">
+          Contact Our Team
+        </a>
+        <a
           className="text-white bg-transparent border border-white px-4 py-2 text-sm font-semibold rounded-full transition-transform duration-300 ease-in-out hover:scale-105 active:scale-95"
-          onClick={() => console.log('Visit Developer Hub')}>
-          Visit Developer Hub
-        </button>
+          href="mailto:support@thepayhub.io">
+          E-mail support
+        </a>
       </div>
     </div>
   )

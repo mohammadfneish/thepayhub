@@ -17,12 +17,11 @@ export default function TopPage() {
             <div className="border border-secondary-500 rounded-full w-fit py-1 px-2 flex items-center justify-center">
               <span>Featured</span>
             </div>
-            <h3 className="text-md font-bold text-white mt-2">
-              Cryptocurrency Explained With Pros and Cons for Investment
-            </h3>
+            <h3 className="text-md font-bold text-white mt-2">Why We Use Blockchain</h3>
             <p className="text-sm my-3 text-white">
-              Discover what cryptocurrency is, how it works, and whether it`s the right investment for you by exploring
-              its key advantages and risks.
+              Blockchain helps power the TPH ecosystem by making payments faster, more secure, and fully transparent. It
+              keeps a clear record of every transaction so our clients and partners can trust the system and operate
+              with confidence.
             </p>
           </div>
           <div className="w-full md:w-1/2">

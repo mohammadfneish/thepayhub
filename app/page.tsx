@@ -5,7 +5,6 @@ import HomeHubIntro from './components/pages/thehub/HomeHubIntro'
 import PowerfulPayhub from './components/pages/thehub/PowerfulPayhub'
 import BusinessesChoose from './components/pages/thehub/BusinessesChoose'
 import HereOrThere from './components/pages/thehub/HereOrThere'
-import CustomersFeedback from './components/pages/thehub/CustomersFeedback'
 import TrustedCompanies from './components/pages/thehub/TrustedCompanies'
 
 export default function Home() {
@@ -22,7 +21,6 @@ export default function Home() {
         <PowerfulPayhub />
         <BusinessesChoose />
         <HereOrThere />
-        <CustomersFeedback />
         <TrustedCompanies />
       </div>
       <Footer />

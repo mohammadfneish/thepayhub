@@ -35,7 +35,7 @@ export default function Navigation() {
     {href: '/news', label: 'News'},
     {href: '/faq', label: 'FAQ'},
     {href: '/contact', label: 'Contact'},
-    {href: '/signup', label: 'Sign Up'},
+    {href: '/register', label: 'Register'},
   ]
 
   return (
@@ -97,7 +97,7 @@ export default function Navigation() {
                 href={item.href}
                 className={`nav-link border rounded-full px-4 py-2 text-sm font-semibold transition-colors duration-200 ${
                   activeMenu === item.href ? 'active' : ' hover:text-secondary-500'
-                } ${'/signup' === item.href ? 'border-secondary-500' : 'border-transparent'}`}>
+                } ${'/register' === item.href ? 'border-secondary-500' : 'border-transparent'}`}>
                 {item.label}
               </Link>
             ))}
@@ -149,7 +149,7 @@ export default function Navigation() {
                     href={item.href}
                     className={`block py-2 px-4 border nav-link rounded-full hover:bg-secondary-700 hover:text-white transition-colors duration-200 ${
                       activeMenu === item.href ? 'active' : ''
-                    } ${'/signup' === item.href ? 'border-secondary-500' : 'border-transparent'}`}
+                    } ${'/register' === item.href ? 'border-secondary-500' : 'border-transparent'}`}
                     onClick={() => setIsMenuOpen(false)}>
                     {item.label}
                   </Link>

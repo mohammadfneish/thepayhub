@@ -26,11 +26,11 @@ export default function TopPage() {
                 />
                 <h3 className="text-md font-bold text-white">{item.title}</h3>
                 <p className="text-sm text-gray-400 flex-1">{item.desc}</p>
-                <button
+                <a
                   className="text-black bg-secondary-500 px-4 py-2 text-sm font-semibold rounded-full transition-transform duration-300 ease-in-out hover:scale-105 active:scale-95"
-                  onClick={() => item.action()}>
-                  {item.button}
-                </button>
+                  href={item.mailTo}>
+                  {item.mailToText}
+                </a>
               </div>
             ))}
           </div>

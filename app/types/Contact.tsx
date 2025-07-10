@@ -1,8 +1,8 @@
 interface Supports {
   title: string
   desc: string
-  button: string
-  action: CallableFunction
+  mailToText: string
+  mailTo: string
 }
 
 interface OurOffices {
