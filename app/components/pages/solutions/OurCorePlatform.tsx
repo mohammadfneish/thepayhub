@@ -29,62 +29,32 @@ export default function OurCorePlatform() {
             ))}
           </div>
           <div className="mt-5 bg-card flex flex-col md:flex-row items-center md:items-stretch justify-between w-full max-w-[90%] gap-5 bg-card border border-primary-300 rounded-2xl">
-            {selectedPlatform.name === 'Xpayz (XPZ)' && (
+            {!!selectedPlatform && (
               <>
                 <div className="flex flex-col p-5 flex-1">
                   <h3 className="text-2xl my-3 font-bold text-secondary-500 text-left">The Problem</h3>
-                  <p className="text-lg my-4 text-white text-left max-w-[500px]">
-                    In a world where instant transactions are the expectation, why do B2B payments still take days to
-                    process? Why do global companies still face delays, unpredictable fees, and lack of transparency in
-                    their financial operations?
-                  </p>
+                  <p className="text-lg my-4 text-white text-left max-w-[500px]">{selectedPlatform.problem}</p>
                   <h3 className="text-2xl my-3 font-bold text-secondary-500 text-left">Our Solution</h3>
-                  <p className="text-lg my-4 text-white text-left max-w-[500px]">
-                    Xpayz (XPZ) is our blockchain platform that revolutionizes B2B payments through distributed ledger
-                    technology. We offer high-speed checkout, immutable transaction recording, and plug-and-play
-                    integration for businesses that need speed and transparency in their financial operations.
-                  </p>
+                  <p className="text-lg my-4 text-white text-left max-w-[500px]">{selectedPlatform.solution}</p>
                 </div>
                 <div className="w-full h-px md:w-px md:h-auto bg-gray-400">&nbsp;</div>
                 <div className="flex flex-col gap-5 items-start justify-center p-5">
                   <Image
-                    src={`/images/solutions/${selectedPlatform.symbol}.webp`}
+                    src={selectedPlatform.img}
                     alt="xpz-pxg-dashboards"
                     width={0}
                     height={0}
                     sizes="100vw"
                     className="w-full h-auto object-contain"
                   />
-                  <div className="flex flex-row items-center gap-3">
-                    <div className="text-black flex items-center justify-center w-[40px] h-[40px] bg-secondary-500 rounded-full">
-                      ✓
+                  {selectedPlatform.lists.map((list, index) => (
+                    <div key={index} className="flex flex-row items-center gap-3">
+                      <div className="text-black flex items-center justify-center w-[30px] h-[30px] bg-secondary-500 rounded-full">
+                        ✓
+                      </div>
+                      <h5 className="text-white text-lg">{list}</h5>
                     </div>
-                    <h5 className="text-white text-lg">Tokenized Payments</h5>
-                  </div>
-                  <div className="flex flex-row items-center gap-3">
-                    <div className="text-black flex items-center justify-center w-[40px] h-[40px] bg-secondary-500 rounded-full">
-                      ✓
-                    </div>
-                    <h5 className="text-white text-lg">Merchant Gateway</h5>
-                  </div>
-                  <div className="flex flex-row items-center gap-3">
-                    <div className="text-black flex items-center justify-center w-[40px] h-[40px] bg-secondary-500 rounded-full">
-                      ✓
-                    </div>
-                    <h5 className="text-white text-lg">Blockchain Ledger Interface</h5>
-                  </div>
-                  <div className="flex flex-row items-center gap-3">
-                    <div className="text-black flex items-center justify-center w-[40px] h-[40px] bg-secondary-500 rounded-full">
-                      ✓
-                    </div>
-                    <h5 className="text-white text-lg">High-Speed Checkout</h5>
-                  </div>
-                  <div className="flex flex-row items-center gap-3">
-                    <div className="text-black flex items-center justify-center w-[40px] h-[40px] bg-secondary-500 rounded-full">
-                      ✓
-                    </div>
-                    <h5 className="text-white text-lg">No Custody Services</h5>
-                  </div>
+                  ))}
                 </div>
               </>
             )}

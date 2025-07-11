@@ -32,10 +32,10 @@ export default function Footer() {
           </div>
 
           {/* Center Section */}
-          <div className="flex flex-col lg:flex-row justify-between items-center mt-5">
+          <div className="flex flex-col lg:flex-row justify-between items-start mt-5">
             {/* Left - Branding */}
             <div className="flex flex-col items-center md:items-start px-3">
-              <div className="flex flex-col sm:flex-row items-start gap-1">
+              <div className="flex flex-col sm:flex-row items-center gap-1 mt-2">
                 <svg
                   className="ml-5 sm:ml-0"
                   width="170"
@@ -60,7 +60,7 @@ export default function Footer() {
                     fill="#D8E60C"
                   />
                 </svg>
-                <p className="flex-1 text-sm mt-2 px-5 text-gray-400">
+                <p className="flex-1 text-sm mt-2 px-5 text-gray-400 text-center sm:text-left">
                   Proprietary infrastructure for modern B2B finance, unifying tokenized and banking payments in a single
                   global ecosystem.
                 </p>

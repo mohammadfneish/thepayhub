@@ -1,6 +1,10 @@
 interface Platforms {
   name: string
   symbol: string
+  problem: string
+  solution: string
+  img: string
+  lists: Array<string>
 }
 
 interface TailoredSolution {

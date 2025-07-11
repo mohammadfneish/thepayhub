@@ -1,11 +1,35 @@
 export const platformsData: Array<Platforms> = [
   {
+    img: '/images/solutions/xpz.webp',
     name: 'Xpayz (XPZ)',
     symbol: 'xpz',
+    problem:
+      'In a world where instant transactions are the expectation, why do B2B payments still take days to process? Why do global companies still face delays, unpredictable fees, and lack of transparency in their financial operations?',
+    solution:
+      'Xpayz (XPZ) is our blockchain platform that revolutionizes B2B payments through distributed ledger technology. We offer high-speed checkout, immutable transaction recording, and plug-and-play integration for businesses that need speed and transparency in their financial operations.',
+    lists: [
+      'Tokenized Payments',
+      'Merchant Gateway',
+      'Blockchain Ledger Interface',
+      'High-Speed Checkout',
+      'No Custody Services',
+    ],
   },
   {
+    img: '/images/solutions/pxg.webp',
     name: 'PayXGlobal (PXG)',
     symbol: 'pxg',
+    problem:
+      'B2B Businesses Face Slow and unreliable cross-border payments. B2B companies—especially in emerging markets—struggle to receive international payments quickly and securely. Traditional banking is slow, expensive, and full of compliance friction, often delaying or blocking legitimate transactions.',
+    solution:
+      'Fast Settlements We process SWIFT and FedWire payments within 15–30 minutes through trusted banking partners. Reliable Account Access Clients get standalone digital accounts, improving transparency and reducing dependency on intermediaries. Simplified Compliance Our shared KYC across PXG, XPZ, and partners makes onboarding and ongoing compliance faster and easier.',
+    lists: [
+      'Tokenized Payments',
+      'Merchant Gateway',
+      'Blockchain Ledger Interface',
+      'High-Speed Checkout',
+      'No Custody Services',
+    ],
   },
 ]
 
