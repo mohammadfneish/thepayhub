@@ -2,7 +2,7 @@
 
 function getEmailBody($data) {
 $docLinksHtml = '';
-foreach ($docs as $docUrl) {
+foreach ($data['docs'] as $docUrl) {
     $docLinksHtml .= "<tr><td colspan=\"2\"><a href=\"$docUrl\">$docUrl</a></td></tr>\n";
 }
 

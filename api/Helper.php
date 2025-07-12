@@ -11,11 +11,13 @@ class Helper {
   public $log;
 
   public function __construct() {
-    $log = new Logger('ThePayHub');
-    $handler = new StreamHandler(__DIR__ . '../logs/app.log', Logger::DEBUG);
+    $this->log = new Logger('ThePayHub');
+    $handler = new StreamHandler(__DIR__ . '/../logs/app.log', Logger::DEBUG);
     $formatter = new LineFormatter(null, null, true, true);
     $handler->setFormatter($formatter);
-    $log->pushHandler($handler);
+    $this->log->pushHandler($handler);
+
+    $this->setHeaders();
   }
 
   private function sendEmailBySendGrid($data, $templateId='contact') {
@@ -90,9 +92,9 @@ class Helper {
 
   public function sendEmail($data, $templateId='contact') {
     if ($_ENV['MAIL_DRIVER'] == 'sendgrid') {
-      return sendEmailBySendGrid($data, $templateId);
+      return $this->sendEmailBySendGrid($data, $templateId);
     }
-    return sendEmailByGoogle($data, $templateId);
+    return $this->sendEmailByGoogle($data, $templateId);
   }
 
   public function setHeaders () {

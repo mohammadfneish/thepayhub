@@ -1,14 +1,13 @@
 <?php
 
-require_once 'func.php';
-
-$helper = new Helper();
-$helper->setHeaders();
-
-$dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '../.env');
-$dotenv->load();
+require_once 'Helper.php';
+$helper = null;
 
 try {
+  $helper = new Helper();
+  $dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/..');
+  $dotenv->load();
+
   if (empty($_REQUEST['func'])) {
     die($helper->json(false, "Invalid request"));
   }
@@ -130,6 +129,9 @@ try {
 
   die($helper->json(false, "Invalid method"));
 } catch (Exception $e) {
-  $helper->log->error($e->getMessage());
+  if ($helper) {
+    $helper->log->error($e->getMessage());
+  }
+  
   die($helper->json(false, $e->getMessage()));
 }

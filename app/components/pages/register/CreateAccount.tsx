@@ -7,6 +7,8 @@ import {toast} from 'react-hot-toast'
 export default function CreateAccount() {
   const [selectedProfile, setSelectedProfile] = useState('Bussiness')
   const [loading, setLoading] = useState(false)
+  const [uploadFiles, setUploadFiles] = useState<Array<string>>([])
+
   const sendData = async () => {
     if (loading) return
 
@@ -88,6 +90,17 @@ export default function CreateAccount() {
       ;(input as HTMLInputElement).checked = false
     })
     setSelectedProfile('Bussiness')
+  }
+
+  const handleFile = (e: any) => {
+    let fileNames = []
+    const files = e.target.files
+    if (files && files.length > 0) {
+      for (let i = 0; i < files.length; i++) {
+        fileNames.push(files[i].name + ` (${(files[i].size / (1024 * 1024)).toFixed(2)} MB)`)
+      }
+    }
+    setUploadFiles(fileNames)
   }
 
   return (
@@ -188,15 +201,24 @@ export default function CreateAccount() {
             <div className="my-5 w-full h-px bg-linear-to-r from-secondary-500 to-secondary-400">&nbsp;</div>
             <h5 className="text-lg mb-1 text-secondary-500">4. KYC Upload</h5>
             <p className="text-sm mb-3 text-secondary-500">Upload your required documents once:</p>
-            <div className="flex flex-row justify-between items-center">
+            <div className="flex flex-col gap-2">
               <button
-                className="bg-transparent border border-gray-200 p-4 rounded-lg text-sm"
+                className="bg-transparent border border-gray-200 p-4 rounded-lg text-sm w-[200px]"
                 onClick={() => {
                   document.getElementById('docs')?.click()
                 }}>
                 Upload Documents
               </button>
-              <input type="file" className="hidden" id="docs" multiple />
+              <input type="file" className="hidden" id="docs" multiple onChange={handleFile} />
+              {uploadFiles?.length > 0 && (
+                <div className="flex flex-row gap-2 overflow-x-auto scrollable-container items-center justify-center">
+                  {uploadFiles.map((item, index) => (
+                    <div key={index} className="m-2 rounded-lg border-b-1 border-gray-500 px-2 opacity-80">
+                      {item}
+                    </div>
+                  ))}
+                </div>
+              )}
             </div>
             {loading ? (
               <div className="bg-transparent border border-secondary-500 p-4 rounded-xl flex items-center justify-center w-[100px]">
