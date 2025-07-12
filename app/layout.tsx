@@ -1,6 +1,7 @@
 import './globals.css'
 import type {Metadata} from 'next'
 import NextTopLoader from 'nextjs-toploader'
+import {Toaster} from 'react-hot-toast'
 
 export const themeColor = '#2A4D81'
 
@@ -26,6 +27,7 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
     <html lang="en">
       <body className="text-white bg-linear-to-b from-primary-500 to-primary-400">
         <NextTopLoader height={4} color="#fff" />
+        <Toaster position="top-right" reverseOrder={true} />
         {children}
       </body>
     </html>

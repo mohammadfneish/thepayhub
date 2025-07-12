@@ -12,3 +12,13 @@ interface OurOffices {
   phone: string
   email: string
 }
+
+interface ApiResult {
+  success: boolean
+  message: string
+  data: any
+}
+interface ApiResponse {
+  status: Number
+  data: ApiResult
+}

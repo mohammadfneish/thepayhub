@@ -1,4 +1,60 @@
+import {useState} from 'react'
+import {toast} from 'react-hot-toast'
+
 export default function ContactUsForm() {
+  const [loading, setLoading] = useState(false)
+
+  const sendData = async () => {
+    if (loading) return
+
+    const fields = ['firstName', 'lastName', 'email', 'phone', 'company', 'message', 'inquiry']
+    try {
+      const formData = new FormData()
+      formData.append('func', 'contact')
+
+      let hasError = false
+      for (let i = 0; i < fields.length; i++) {
+        const field = fields[i]
+        const val = (document.getElementById(field) as HTMLInputElement)?.value
+        if (!val) {
+          toast.error(`${field} is required`)
+          hasError = true
+          break
+        } else {
+          formData.append(field, val)
+        }
+      }
+
+      if (hasError) {
+        return
+      }
+
+      setLoading(true)
+      const resp: Response = await fetch(process.env.NEXT_PUBLIC_API_URL ?? '/api', {
+        method: 'POST',
+        headers: {
+          Accept: 'application/json',
+        },
+        body: formData,
+      })
+      const json = await resp.json()
+
+      if (json.success) {
+        toast.success(json.message)
+      } else {
+        toast.error(json.message)
+      }
+    } catch (error) {
+      console.error(error)
+      toast.error('Something went wrong')
+    }
+    setLoading(false)
+    // reset the form
+    for (let i = 0; i < fields.length; i++) {
+      ;(document.getElementById(fields[i]) as HTMLInputElement).value = ''
+    }
+  }
+
   return (
     <div className="form w-full h-full flex flex-col items-center gap-3">
       <div className="w-full flex flex-col md:flex-row items-center gap-4">
@@ -93,9 +149,17 @@ export default function ContactUsForm() {
         </div>
       </div>
       <div className="w-full flex flex-row items-center justify-center gap-4">
-        <button className="bg-secondary-500 hover:bg-secondary-600 text-black py-2 px-4 rounded-lg">
-          Submit message
-        </button>
+        {loading ? (
+          <div className="bg-transparent border border-secondary-500 p-4 rounded-xl flex items-center justify-center w-[100px]">
+            <div className="loader"></div>
+          </div>
+        ) : (
+          <button
+            onClick={sendData}
+            className="bg-secondary-500 hover:bg-secondary-600 text-black py-2 px-4 rounded-lg">
+            Submit message
+          </button>
+        )}
       </div>
     </div>
   )

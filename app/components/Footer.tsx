@@ -1,7 +1,40 @@
-import Image from 'next/image'
+'use client'
+
 import Link from 'next/link'
+import {useState} from 'react'
+import {toast} from 'react-hot-toast'
 
 export default function Footer() {
+  const [loading, setLoading] = useState(false)
+  const subscribe = async () => {
+    try {
+      const formData = new FormData()
+      formData.append('func', 'subscribe')
+      formData.append('email', (document.getElementById('subscribe-email') as HTMLInputElement)?.value)
+
+      setLoading(true)
+      const resp: Response = await fetch(process.env.NEXT_PUBLIC_API_URL ?? '/api', {
+        method: 'POST',
+        headers: {
+          Accept: 'application/json',
+        },
+        body: formData,
+      })
+      const json = await resp.json()
+
+      if (json.success) {
+        toast.success(json.message)
+      } else {
+        toast.error(json.message)
+      }
+    } catch (error) {
+      console.error(error)
+      toast.error('Something went wrong')
+    }
+
+    ;(document.getElementById('subscribe-email') as HTMLInputElement).value = ''
+    setLoading(false)
+  }
   return (
     <footer className="h-auto w-full bg-linear-to-t from-primary-900 to-primary-400">
       <div className="h-3 w-full bg-linear-to-r from-primary-400 to-secondary-500"></div>
@@ -18,15 +51,23 @@ export default function Footer() {
             <div className="flex flex-row gap-0 mt-5 py-5">
               <div className="flex flex-row items-center justify-center">
                 <input
+                  id="subscribe-email"
                   type="email"
                   placeholder="Your email address"
                   className="px-4 py-2 w-full rounded-l-lg text-black outline-hidden bg-gray-200"
                 />
-                <button
-                  type="button"
-                  className="bg-secondary-500 px-4 py-2 text-black rounded-r-lg relative left-[-2px]">
-                  Subscribe
-                </button>
+                {loading ? (
+                  <div className="bg-transparent border border-secondary-500 px-4 py-4 rounded-r-lg flex items-center justify-center w-[100px]">
+                    <div className="loader"></div>
+                  </div>
+                ) : (
+                  <button
+                    type="button"
+                    className="bg-secondary-500 px-4 py-2 text-black rounded-r-lg relative left-[-2px]"
+                    onClick={subscribe}>
+                    Subscribe
+                  </button>
+                )}
               </div>
             </div>
           </div>

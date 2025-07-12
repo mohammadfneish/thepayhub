@@ -2,9 +2,94 @@
 
 import {useState} from 'react'
 import {regiterProfiles, regiterPlatforms} from '../../../data/register'
+import {toast} from 'react-hot-toast'
 
 export default function CreateAccount() {
-  const [selectedProfile, setSelectedProfile] = useState('business')
+  const [selectedProfile, setSelectedProfile] = useState('Bussiness')
+  const [loading, setLoading] = useState(false)
+  const sendData = async () => {
+    if (loading) return
+
+    const fields = ['firstName', 'lastName', 'email', 'phone', 'company']
+    try {
+      const formData = new FormData()
+      formData.append('func', 'create-account')
+
+      if (!selectedProfile) {
+        toast.error('Please select a profile')
+        return false
+      } else {
+        formData.append('profile', selectedProfile)
+      }
+
+      let hasError = false
+      for (let i = 0; i < fields.length; i++) {
+        const field = fields[i]
+        const val = (document.getElementById(field) as HTMLInputElement)?.value
+        if (!val) {
+          toast.error(`${field} is required`)
+          hasError = true
+          break
+        } else {
+          formData.append(field, val)
+        }
+      }
+
+      if (hasError) {
+        return false
+      }
+
+      const platforms = document.querySelectorAll('input[type=checkbox]:checked')
+      if (!platforms.length) {
+        toast.error('Please select at least one platform')
+        return false
+      }
+      platforms.forEach(function (input, key) {
+        formData.append(`platforms[${key}]`, (input as HTMLInputElement).value)
+      })
+
+      const files: FileList | null = (document.getElementById('docs') as HTMLInputElement).files
+      if (!files?.length) {
+        toast.error('Please select at least one document')
+        return false
+      }
+      Array.from(files).forEach(function (file, key) {
+        formData.append(`files[${key}]`, file)
+      })
+
+      setLoading(true)
+      const resp: Response = await fetch(process.env.NEXT_PUBLIC_API_URL ?? '/api', {
+        method: 'POST',
+        headers: {
+          Accept: 'application/json',
+        },
+        body: formData,
+      })
+      const json = await resp.json()
+
+      if (json.success) {
+        toast.success(json.message)
+      } else {
+        toast.error(json.message)
+      }
+    } catch (error) {
+      console.error(error)
+      toast.error('Something went wrong')
+    }
+
+    setLoading(false)
+
+    // reset the form
+    ;(document.getElementById('docs') as HTMLInputElement).files = null
+    for (let i = 0; i < fields.length; i++) {
+      ;(document.getElementById(fields[i]) as HTMLInputElement).value = ''
+    }
+    document.querySelectorAll('input[type=checkbox]:checked').forEach(function (input) {
+      ;(input as HTMLInputElement).checked = false
+    })
+    setSelectedProfile('Bussiness')
+  }
+
   return (
     <div className="mb-20 py-20 h-auto bg-no-repeat bg-[url(/images/cubes.webp)]">
       <div className="pt-20 container mx-auto relative px-5 flex flex-col lg:flex-row items-center justify:between lg:justify-around gap-5">
@@ -16,7 +101,7 @@ export default function CreateAccount() {
               {regiterProfiles.map((item, index) => (
                 <button
                   key={index}
-                  className={`text-sm px-5 py-2 rounded-2xl ${
+                  className={`cursor-pointer text-sm px-5 py-2 rounded-2xl ${
                     item.type == selectedProfile ? 'bg-primary-500 text-white' : 'bg-white text-primary-500'
                   }`}
                   onClick={() => setSelectedProfile(item.type)}>
@@ -94,8 +179,8 @@ export default function CreateAccount() {
             <p className="text-sm mb-3 text-secondary-500">Select which platforms you want access to:</p>
             <div className="flex sm:flex-row flex-col sm:items-center gap-5 justify-between">
               {regiterPlatforms.map((item, index) => (
-                <label className="flex flex-row items-center gap-1" key={index}>
-                  <input type="checkbox" name={item.name} value={item.type} />
+                <label className="cursor-pointer flex flex-row items-center gap-1" key={index}>
+                  <input type="checkbox" name="platforms" value={item.type} />
                   {item.name}
                 </label>
               ))}
@@ -113,11 +198,18 @@ export default function CreateAccount() {
               </button>
               <input type="file" className="hidden" id="docs" multiple />
             </div>
-            <button
-              type="submit"
-              className="bg-secondary-500 text-primary-500 text-sm px-5 py-2 rounded-2xl w-full mt-5">
-              Submit
-            </button>
+            {loading ? (
+              <div className="bg-transparent border border-secondary-500 p-4 rounded-xl flex items-center justify-center w-[100px]">
+                <div className="loader"></div>
+              </div>
+            ) : (
+              <button
+                type="submit"
+                className="bg-secondary-500 text-primary-500 text-sm px-5 py-2 rounded-2xl w-full mt-5"
+                onClick={sendData}>
+                Submit
+              </button>
+            )}
           </div>
         </div>
         <div className="flex flex-col md:flex-row lg:flex-col items-stretch justify-between gap-5">
