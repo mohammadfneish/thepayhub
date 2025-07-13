@@ -11,11 +11,12 @@ export const payHubSolutions: Array<PayHubSolution> = [
   },
   {
     img: '/images/home/gks.webp',
-    title: 'Digital economy',
+    title: 'Global compliance and fund routing',
     desc: 'Atrusted partner in transforming traditional B2B operations through secure, efficient, and transparent ledger-based systems. By harnessing the power of blockchain and tokenization.',
   },
   {
     img: '/images/home/moonlight.webp',
+    title: 'FX and Merchant Services',
     desc: 'Moonlight is a financial service provider that facilitates currency conversion and liquidity management for stablecoin transactions within connected digital payment platforms.',
   },
   {
@@ -24,14 +25,17 @@ export const payHubSolutions: Array<PayHubSolution> = [
   },
   {
     img: '/images/home/mazzera.webp',
+    title: 'Cross-Border Liquidity Provider',
     desc: 'Mazzera is a cross-border payment processor and liquidity provider that facilitates international settlements through secure banking rails and supports fiat conversions for digital asset ecosystems.',
   },
   {
     img: '/images/home/stm.webp',
+    title: 'Crypto OTC Provider',
     desc: 'STM is a fully licensed crypto OTC desk and exchange, providing secure crypto-to-fiat and fiat-to-crypto services for institutional clients across Europe, with ongoing expansion into the South America.',
   },
   {
     img: '/images/home/nsegundos.webp',
+    title: 'Fiat Payment Provider',
     desc: 'NSegundos is a licensed financial services provider that offers fast fiat on-ramp and off-ramp solutions across Latin America, enabling seamless currency exchange and payouts for digital transactions.',
   },
 ]

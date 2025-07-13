@@ -14,7 +14,7 @@ export default function OurOffices() {
       </div>
       <div className="w-[100%] overflow-x-auto scrollable-container items-start justify-start flex flex-row items-stretch gap-6 px-5 sm:w-auto sm:inline-grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         {ourOfficesData.map((item, index) => (
-          <div key={index} className="flex flex-col bg-card border border-primary-300 rounded-2xl w-[250px]">
+          <div key={index} className="flex flex-col bg-card border border-primary-300 rounded-2xl min-w-[250px]">
             <Image
               src={item.img}
               alt={item.location}

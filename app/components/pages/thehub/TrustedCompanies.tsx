@@ -10,7 +10,7 @@ export default function HereOrThere() {
       <div className="lg:container w-[90%] mx-auto flex flex-col items-center py-5">
         <h1 className="text-md lg:text-4xl font-bold text-secondary-500 mt-5 pt-5">Trusted by Companies Worldwide</h1>
         <p className="text-sm my-4 text-white text-center max-w-[500px]">
-          Over 4,000 businesses rely on our infrastructure to process more than $65 billion in monthly transaction
+          Over 4,000 businesses rely on our infrastructure to process more than $65 million in monthly transaction
           volume. Join the growing network of forward-thinking companies transforming how they manage global payments.
         </p>
         <div className="flex flex-row items-stretch justify-center gap-5 my-5">
@@ -45,7 +45,7 @@ export default function HereOrThere() {
             <div className="border border-secondary-500 rounded-full w-fit py-1 px-2 flex items-center justify-center">
               <span>Featured</span>
             </div>
-            <h3 className="text-md font-bold text-white mt-2">Why We Use Blockchain</h3>
+            <h3 className="text-md font-bold text-white mt-2">Why We Use Blockchain?</h3>
             <p className="text-sm my-3 text-white">
               Blockchain helps power the TPH ecosystem by making payments faster, more secure, and fully transparent. It
               keeps a clear record of every transaction so our clients and partners can trust the system and operate

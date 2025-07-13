@@ -23,7 +23,7 @@ export default function TopPage() {
             sizes="100vw"
             className="w-full h-auto object-contain"
           />
-          <div className="bg-card rounded-xl p-5 w-full flex flex-col md:flex-row items-center justify-around gap-5 opacity-75 relative top-[-80px]">
+          <div className="bg-card rounded-xl p-5 w-full flex flex-col md:flex-row items-center justify-around gap-5 opacity-75 relative top-[-10px] md:top-[-25px] lg:top-[-40px]">
             <div className="flex flex-col items-center justify-center gap-2">
               <h3 className="text-md font-bold text-white">Trusted By</h3>
               <p className="text-sm text-gray-400">Over 4,000+ clients</p>

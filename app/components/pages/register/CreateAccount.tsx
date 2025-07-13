@@ -104,10 +104,10 @@ export default function CreateAccount() {
   }
 
   return (
-    <div className="mb-20 py-20 h-auto bg-no-repeat bg-[url(/images/cubes.webp)]">
-      <div className="pt-20 container mx-auto relative px-5 flex flex-col lg:flex-row items-center justify:between lg:justify-around gap-5">
-        <div className="relative p-[2px] rounded-xl bg-gradient-to-r from-primary-500 to-secondary-500 rounded-2xl">
-          <div className="bg-card p-5 rounded-xl  flex flex-col items-start flex-1">
+    <div className="mb-20 lg:py-20 h-auto">
+      <div className="pt-20 container mx-auto relative px-2 md:px-5 flex flex-col lg:flex-row items-center lg:items-stretch justify:between lg:justify-around gap-5">
+        <div className="relative p-[2px] rounded-xl bg-gradient-to-r from-primary-500 to-secondary-500 rounded-2xl w-full lg:w-2/3">
+          <div className="bg-card p-5 rounded-xl flex flex-col items-start flex-1">
             <h2 className="text-2xl font-bold text-secondary-500">Create Your TPH Account</h2>
             <h5 className="text-lg my-3 text-secondary-500">1. Choose Your Profile</h5>
             <div className="w-full flex sm:flex-row flex-col sm:items-center gap-2 justify-between">
@@ -190,11 +190,13 @@ export default function CreateAccount() {
             <div className="my-5 w-full h-px bg-linear-to-r from-secondary-500 to-secondary-400">&nbsp;</div>
             <h5 className="text-lg mb-1 text-secondary-500">3. Platform Access Preferences</h5>
             <p className="text-sm mb-3 text-secondary-500">Select which platforms you want access to:</p>
-            <div className="flex sm:flex-row flex-col sm:items-center gap-5 justify-between">
+            <div className="flex flex-col gap-5">
               {regiterPlatforms.map((item, index) => (
-                <label className="cursor-pointer flex flex-row items-center gap-1" key={index}>
-                  <input type="checkbox" name="platforms" value={item.type} />
-                  {item.name}
+                <label className="cursor-pointer flex flex-row items-start gap-1" key={index}>
+                  <input type="checkbox" name="platforms" value={item.type} className="mt-1" />
+                  <span>
+                    {item.name} - {item.desc}
+                  </span>
                 </label>
               ))}
             </div>
@@ -255,22 +257,20 @@ export default function CreateAccount() {
             </p>
           </div>
           <div className="bg-card flex flex-col p-5 rounded-xl items-start flex-1">
-            <svg width="40" height="40" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect width="60" height="60" rx="30" fill="#DCFF01" />
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24">
+              <rect width="24" height="24" rx="30" fill="#DCFF01" />
               <path
-                d="M30 40C30 40 38 36 38 30V23L30 20L22 23V30C22 36 30 40 30 40Z"
-                stroke="#070E28"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
+                fill="#222"
+                d="M8.626 7.536a6.25 6.25 0 1 1 0 8.929a.75.75 0 1 0-1.05 1.07a7.75 7.75 0 1 0 0-11.071a.75.75 0 1 0 1.05 1.072"
+              />
+              <path
+                fill="#222"
+                d="M12.53 8.47a.75.75 0 1 0-1.06 1.06l1.72 1.72H4a.75.75 0 0 0 0 1.5h9.19l-1.72 1.72a.75.75 0 1 0 1.06 1.06l3-3a.75.75 0 0 0 0-1.06z"
               />
             </svg>
-
-            <h3 className="text-lg my-3 font-bold text-secondary-500 text-left">Secure. Unified. Scalable.</h3>
+            <h3 className="text-lg my-3 font-bold text-secondary-500 text-left">New to TPH?</h3>
             <p className="text-sm my-4 text-white text-left max-w-[500px]">
-              Experience seamless onboarding across our global infrastructure.
-              <br />
-              Let ThePayHub be your gateway to compliant, fast, and modern financial operations.
+              You’re signing up to join our ecosystem — one gateway to all our platforms, services, and fintech tools.
             </p>
           </div>
           <div className="bg-card flex flex-col p-5 rounded-xl items-start flex-1">

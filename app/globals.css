@@ -60,14 +60,6 @@
   background-image: linear-gradient(to right, #293754, #293754);
 }
 
-.scrollable-container {
-  -ms-overflow-style: none; /* Internet Explorer 10+ */
-  scrollbar-width: none; /* Firefox, Safari 18.2+, Chromium 121+ */
-}
-.scrollable-container::-webkit-scrollbar {
-  display: none; /* Older Safari and Chromium */
-}
-
 .nav-link.active {
   @apply text-primary-500 font-semibold bg-secondary-500;
 }
@@ -105,4 +97,38 @@ button:disabled {
     box-shadow: 20px 0 #fff2, -20px 0 #fff;
     background: #fff;
   }
+}
+
+.scrollable-container {
+  padding-bottom: 10px;
+}
+/* Scrollbar style (Webkit - Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2); /* soft thumb */
+  border-radius: 10px;
+  transition: background-color 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* Firefox scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch; /* smoother scroll on iOS */
 }

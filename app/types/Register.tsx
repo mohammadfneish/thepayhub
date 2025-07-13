@@ -6,4 +6,5 @@ interface RegiterProfiles {
 interface RegisterPlatforms {
   name: string
   type: string
+  desc: string
 }

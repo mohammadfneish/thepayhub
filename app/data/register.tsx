@@ -17,11 +17,11 @@ export const regiterProfiles: Array<RegiterProfiles> = [
   },
 ]
 export const regiterPlatforms: Array<RegisterPlatforms> = [
-  {name: 'PXG', type: 'PXG'},
-  {name: 'XPZ', type: 'XPZ'},
-  {name: 'Moonlight', type: 'Moonlight'},
-  {name: 'Mazzera', type: 'Mazzera'},
-  {name: 'STM', type: 'STM'},
-  {name: 'NSegundos', type: 'NSegundos'},
-  {name: 'GKS', type: 'GKS'},
+  {name: 'PXG', type: 'PXG', desc: 'USD settlement & wire services'},
+  {name: 'XPZ', type: 'XPZ', desc: 'Token-based payment gateway'},
+  {name: 'Moonlight', type: 'Moonlight', desc: 'FX & liquidity services'},
+  {name: 'Mazzera', type: 'Mazzera', desc: 'Global compliance and fund routing'},
+  {name: 'STM', type: 'STM', desc: 'Crypto-to-fiat & fiat-to-crypto services in LATAM & Europe'},
+  {name: 'NSegundos', type: 'NSegundos', desc: 'Crypto-to-fiat & fiat-to-crypto services in LATAM & Europe'},
+  {name: 'GKS', type: 'GKS', desc: 'Global compliance and fund routing'},
 ]

@@ -17,16 +17,15 @@ export default function PowerfulPayhub() {
         <p className="text-sm my-4 text-white">Discover the tools that simplify global transactions.</p>
         <div className="w-[100%] overflow-x-auto scrollable-container gap-6 flex flex-row items-stretch mb-5">
           {payHubSolutions.map((item, index) => (
-            <div key={index} className="flex flex-col p-5 bg-card border border-primary-300 rounded-2xl min-w-[300px]">
+            <div key={index} className="flex flex-col p-5 bg-card border border-primary-300 rounded-2xl min-w-[350px]">
               <Image
                 src={item.img}
                 alt="xpz"
                 width={100}
                 height={0}
                 sizes="100px"
-                className="w-auto h-auto max-h-[100px] object-contain"
+                className="w-[260px] h-[100px] object-contain"
               />
-              <div className="flex-1">&nbsp;</div>
               <h3 className="text-md my-3 font-bold text-white text-left">{item.title}</h3>
               <p className="flex-1 text-sm my-3 text-white text-left">{item.desc}</p>
             </div>
@@ -35,12 +34,9 @@ export default function PowerfulPayhub() {
             <div className="border border-secondary-500 rounded-full w-fit py-1 px-2 flex items-center justify-center">
               <span>SOON</span>
             </div>
-            <h3 className="text-lg my-3 font-bold text-left bg-linear-to-r from-secondary-50 to-secondary-500 bg-clip-text text-transparent">
-              New
-              <br />
-              Solutions
+            <h3 className="text-lg my-5 font-bold text-left bg-linear-to-r from-secondary-50 to-secondary-500 bg-clip-text text-transparent">
+              New Solutions
             </h3>
-            <div className="flex-1">&nbsp;</div>
             <h3 className="text-md my-3 font-bold text-white text-left">Tailored for your business</h3>
             <p className="flex-1 text-sm my-3 text-white text-left">
               From specialized token services to custom integration solutions, we`re constantly expanding our ecosystem

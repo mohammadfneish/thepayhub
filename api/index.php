@@ -104,7 +104,7 @@ try {
 
           if (move_uploaded_file($files['tmp_name'][$i], $targetPath)) {
               $baseUrl = "https://" . $_SERVER['HTTP_HOST'] . '/cdn';
-              $uploadedUrls[] = $baseUrl . '/' . $targetPath;
+              $uploadedUrls[] = str_replace('cdn/../cdn', 'cdn', $baseUrl . '/' . $targetPath);
           }
       }
     }

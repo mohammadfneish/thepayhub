@@ -51,7 +51,9 @@ export default function ContactUsForm() {
     setLoading(false)
     // reset the form
     for (let i = 0; i < fields.length; i++) {
-      ;(document.getElementById(fields[i]) as HTMLInputElement).value = ''
+      if (fields[i] !== 'inquiry') {
+        ;(document.getElementById(fields[i]) as HTMLInputElement).value = ''
+      }
     }
   }
 
