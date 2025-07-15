@@ -4,7 +4,7 @@ import Image from 'next/image'
 
 export default function TopPage() {
   return (
-    <div className="py-20 h-auto bg-top bg-no-repeat" style={{backgroundImage: 'url(/images/cubes.webp)'}}>
+    <div className="py-20 h-auto bg-top bg-no-repeat" style={{backgroundImage: 'url(/images/cubes.webp?v=1)'}}>
       <div className="container px-5 lg:px-auto relative w-full mx-auto">
         <div className="flex flex-col items-center w-full lg:items-start justify-center lg:justify-start mt-5 pt-5">
           <svg width="300" height="75" viewBox="0 0 641 160" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -92,7 +92,7 @@ export default function TopPage() {
       </div>
       <div
         className="mt-10 bg-center bg-size-cover bg-no-repeat w-full sm:h-[400px] lg:h-[600px] md:mt-5 flex flex-col items-end justify-center"
-        style={{backgroundImage: 'url(/images/company/thepayhub.webp)'}}>
+        style={{backgroundImage: 'url(/images/company/thepayhub.webp?v=1)'}}>
         <p
           className="visible text-xl mt-2 mr-2 md:mr-10 font-bold text-black md:text-white max-w-[500px] p-5 md:bg-transparent bg-white/50 rounded-2xl"
           style={{textShadow: '0 0px 10px black'}}>

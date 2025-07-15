@@ -1,7 +1,7 @@
 interface Category {
   title: string
   desc: string
-  icon?: string
+  icon: CallableFunction
 }
 
 interface FAQ {

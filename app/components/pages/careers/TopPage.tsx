@@ -5,7 +5,7 @@ import {useRouter} from 'next/navigation'
 export default function TopPage() {
   const router = useRouter()
   return (
-    <div className="py-20 h-auto bg-top bg-no-repeat" style={{backgroundImage: 'url(/images/cubes.webp)'}}>
+    <div className="py-20 h-auto bg-top bg-no-repeat" style={{backgroundImage: 'url(/images/cubes.webp?v=1)'}}>
       <div className="container mx-auto relative">
         <div className="flex flex-col items-center justify-center">
           <h1 className="text-2xl lg:text-4xl font-bold text-secondary-500 px-5 text-center max-w-[500px]">

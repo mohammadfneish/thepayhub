@@ -10,7 +10,7 @@ export default function OurCoreValues() {
           <div className="bg-card p-5 rounded-2xl flex flex-col items-center gap-5 w-full md:w-1/2">
             <div
               className="bg-contain bg-no-repeat bg-center w-[70px] h-[70px] flex items-center justify-center"
-              style={{backgroundImage: 'url(/images/cube.webp)'}}>
+              style={{backgroundImage: 'url(/images/cube.webp?v=1)'}}>
               <span className="text-md font-bold text-black">S</span>
             </div>
             <h4 className="text-2xl font-bold">Simplicity</h4>
@@ -22,7 +22,7 @@ export default function OurCoreValues() {
           <div className="bg-card p-5 rounded-2xl flex flex-col items-center gap-5 w-full md:w-1/2">
             <div
               className="bg-contain bg-no-repeat bg-center w-[70px] h-[70px] flex items-center justify-center"
-              style={{backgroundImage: 'url(/images/cube.webp)'}}>
+              style={{backgroundImage: 'url(/images/cube.webp?v=1)'}}>
               <span className="text-md font-bold text-black">I</span>
             </div>
             <h4 className="text-2xl font-bold">Accessible Innovation</h4>
@@ -34,7 +34,7 @@ export default function OurCoreValues() {
           <div className="bg-card p-5 rounded-2xl flex flex-col items-center gap-5 w-full md:w-1/2">
             <div
               className="bg-contain bg-no-repeat bg-center w-[70px] h-[70px] flex items-center justify-center"
-              style={{backgroundImage: 'url(/images/cube.webp)'}}>
+              style={{backgroundImage: 'url(/images/cube.webp?v=1)'}}>
               <span className="text-md font-bold text-black">T</span>
             </div>
             <h4 className="text-2xl font-bold">Trust</h4>

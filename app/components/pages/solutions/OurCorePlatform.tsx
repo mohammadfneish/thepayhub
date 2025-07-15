@@ -28,7 +28,7 @@ export default function OurCorePlatform() {
               </button>
             ))}
           </div>
-          <div className="mt-5 bg-card flex flex-col md:flex-row items-center md:items-stretch justify-between w-full max-w-[90%] gap-5 bg-card border border-primary-300 rounded-2xl">
+          <div className="mt-5 bg-card flex flex-col md:flex-row items-center md:items-stretch justify-between w-full lg:max-w-[90%] gap-5 bg-card border border-primary-300 rounded-2xl">
             {!!selectedPlatform && (
               <>
                 <div className="flex flex-col p-5 flex-1">

@@ -18,7 +18,7 @@ export default function HereOrThere() {
           <div className="relative h-[500px] w-1/2">
             <div className="absolute left-0 top-0">
               <Image
-                src={'/images/home/thepayhub-countries-group1.webp'}
+                src={'/images/home/thepayhub-countries-group1.webp?v=1'}
                 alt="thepayhub-countries-group1"
                 width={500}
                 height={0}
@@ -31,7 +31,7 @@ export default function HereOrThere() {
 
         <div className="absolute right-[-10%] md:right-[-30%] lg:right-[-20%] xl:right-[-10%] top-[300px] sm:top-[200px] md:top-[150px] lg:top-0">
           <Image
-            src={'/images/home/thepayhub-countries-group2.webp'}
+            src={'/images/home/thepayhub-countries-group2.webp?v=1'}
             alt="thepayhub-countries-group2"
             width={650}
             height={0}

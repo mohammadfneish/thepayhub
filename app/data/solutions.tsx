@@ -1,6 +1,6 @@
 export const platformsData: Array<Platforms> = [
   {
-    img: '/images/solutions/xpz.webp',
+    img: '/images/solutions/xpz.webp?v=1',
     name: 'Xpayz (XPZ)',
     symbol: 'xpz',
     problem:
@@ -16,7 +16,7 @@ export const platformsData: Array<Platforms> = [
     ],
   },
   {
-    img: '/images/solutions/pxg.webp',
+    img: '/images/solutions/pxg.webp?v=1',
     name: 'PayXGlobal (PXG)',
     symbol: 'pxg',
     problem:
@@ -24,11 +24,11 @@ export const platformsData: Array<Platforms> = [
     solution:
       'Fast Settlements We process SWIFT and FedWire payments within 15–30 minutes through trusted banking partners. Reliable Account Access Clients get standalone digital accounts, improving transparency and reducing dependency on intermediaries. Simplified Compliance Our shared KYC across PXG, XPZ, and partners makes onboarding and ongoing compliance faster and easier.',
     lists: [
-      'Tokenized Payments',
-      'Merchant Gateway',
-      'Blockchain Ledger Interface',
-      'High-Speed Checkout',
-      'No Custody Services',
+      'B2B Payment Platform',
+      'Banking & SWIFT Access',
+      'KYC-Integrated',
+      'Ledger-Based Top-Ups',
+      'Ecosystem-Connected',
     ],
   },
 ]

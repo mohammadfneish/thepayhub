@@ -13,7 +13,7 @@ export default function Company() {
       <div
         className="pt-20 min-h-[calc(100vh-200px)] bg-cover bg-top bg-no-repeat overflow-hidden"
         style={{
-          backgroundImage: 'url(/images/company/lines.webp)',
+          backgroundImage: 'url(/images/company/lines.webp?v=1)',
         }}>
         <TopPage />
         <OurFoundation />

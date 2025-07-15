@@ -3,6 +3,7 @@ interface Supports {
   desc: string
   mailToText: string
   mailTo: string
+  icon: CallableFunction
 }
 
 interface OurOffices {

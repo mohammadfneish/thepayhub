@@ -1,11 +1,10 @@
 'use client'
 
 import {supportsData} from '../../../data/contact'
-import Image from 'next/image'
 
 export default function TopPage() {
   return (
-    <div className="py-20 h-auto bg-no-repeat bg-center lg:bg-[url(/images/contact/header-bg.webp)]">
+    <div className="py-20 h-auto bg-no-repeat bg-center lg:bg-[url(/images/contact/header-bg.webp?v=1)]">
       <div className="lg:h-[500px]"></div>
       <div className="pt-20 container mx-auto relative">
         <div className="flex flex-col items-center justify-center">
@@ -16,14 +15,12 @@ export default function TopPage() {
               <div
                 key={index}
                 className="bg-card p-5 border border-primary-300 rounded-2xl flex flex-col justify-center items-center gap-3">
-                <Image
-                  src={'/images/support-icon.webp'}
-                  alt="support-icon"
-                  width={100}
-                  height={100}
-                  sizes="80px"
-                  className="w-[80px] h-[80px]"
-                />
+                <div className="relative w-[80px] h-[80px] flex items-center justify-center">
+                  <div
+                    className="absolute w-[80px] h-[80px] bg-contain bg-no-repeat bg-center z-0"
+                    style={{backgroundImage: 'url(/images/cube.webp?v=1)'}}></div>
+                  <div className="z-1 mb-[5px]">{item.icon()}</div>
+                </div>
                 <h3 className="text-md font-bold text-white">{item.title}</h3>
                 <p className="text-sm text-gray-400 flex-1">{item.desc}</p>
                 <a

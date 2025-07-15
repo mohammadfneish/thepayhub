@@ -11,7 +11,7 @@ export default function FAQ() {
       <div
         className="min-h-[calc(100vh-200px)] bg-cover bg-top bg-no-repeat overflow-hidden"
         style={{
-          backgroundImage: 'url(/images/faq/lines.webp)',
+          backgroundImage: 'url(/images/faq/lines.webp?v=1)',
         }}>
         <TopPage />
         <MostQuestions />

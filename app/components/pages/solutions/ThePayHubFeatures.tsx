@@ -39,7 +39,7 @@ export default function ThePayHubFeatures() {
               ))}
             </tbody>
           </table>
-          <div className="inline sm:hidden flex flex-col items-center gap-6 w-full">
+          <div className="sm:hidden flex flex-col items-center gap-4 w-full">
             {payHubFeatures.map((item, index) => (
               <div
                 key={index}
