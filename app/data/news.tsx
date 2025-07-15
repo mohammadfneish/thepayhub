@@ -9,9 +9,6 @@ export const newsCategories: Array<NewsCategory> = [
     title: 'Industry Insights',
   },
   {
-    title: 'Press Releases',
-  },
-  {
     title: 'Events',
   },
 ]

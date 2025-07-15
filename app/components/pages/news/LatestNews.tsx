@@ -38,7 +38,7 @@ export default function LatestNews() {
             (activeCategory === allNews || item.category == activeCategory) && (
               <div
                 key={index}
-                className="flex flex-col p-5 bg-card border border-primary-300 rounded-2xl min-w-[300px]">
+                className="flex flex-col p-5 bg-card border border-primary-300 rounded-2xl min-w-[300px] max-w-[300px]">
                 <Image
                   src={item.img}
                   alt={item.title}
