@@ -75,8 +75,8 @@ export const newsData: Array<News> = [
 export const pressReleases: Array<PressReleases> = [
   {
     date: 'May 15, 2025',
-    title: 'ThePayHub Secures $50M Series B Funding to Accelerate Global Expansion',
-    desc: 'Funding round led by Global Ventures with participation from existing investors to fuel expansion into new markets and accelerate product development.',
+    title: 'ThePayHub Nears Series A Funding Milestone to Accelerate Global Expansion',
+    desc: 'ThePayHub, the proprietary financial infrastructure platform unifying tokenized and banking payments, is nearing the close of its first Series A funding round, with strong interest from global venture firms and fintech-focused investors. The anticipated capital will support ThePayHub’s expansion into key markets across Asia and Latin America, accelerate product development, and deepen partnerships with financial institutions worldwide.',
   },
   {
     date: 'April 20, 2025',
