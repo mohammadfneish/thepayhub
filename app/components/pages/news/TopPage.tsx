@@ -52,13 +52,13 @@ export default function TopPage() {
               <span>Company News May 02, 2025</span>
             </div>
             <h3 className="text-lg font-bold text-white mt-2">
-              ThePayHub Secures $50M Series B Funding to Accelerate Global Expansion
+              ThePayHub Nears Series A Funding Milestone to Accelerate Global Expansion
             </h3>
             <p className="text-sm my-3 text-white">
-              ThePayHub, the proprietary financial infrastructure platform unifying tokenized and banking payments,
-              today announced it has secured $50 million in Series B funding led by Global Ventures with participation
-              from existing investors. The new capital will fuel ThePayHub`s expansion into new markets across Asia and
-              Latin America, accelerate product development, and strengthen strategic partnerships with financial
+              ThePayHub, the proprietary financial infrastructure platform unifying tokenized and banking payments, is
+              nearing the close of its first Series A funding round, with strong interest from global venture firms and
+              fintech-focused investors. The anticipated capital will support ThePayHub’s expansion into key markets
+              across Asia and Latin America, accelerate product development, and deepen partnerships with financial
               institutions worldwide.
             </p>
             <button className="px-4 py-2 bg-primary-300 text-white rounded-full mt-auto w-fit">Read Full Story</button>
