@@ -219,17 +219,17 @@ export default function Footer() {
               <div className="flex flex-col mt-4 gap-2">
                 <h3 className="text-gray-400">Solutions</h3>
                 <nav className="flex flex-col text-gray-400 text-xs md:text-sm gap-2">
-                  <Link href="#" className="hover:text-white">
+                  <Link href="/solutions#xpz" className="hover:text-white">
                     Xpayz (XPZ)
                   </Link>
-                  <Link href="#" className="hover:text-white">
+                  <Link href="/solutions#pxg" className="hover:text-white">
                     PayXGlobal (PXG)
                   </Link>
-                  <Link href="#" className="hover:text-white">
-                    Token Services
+                  <Link href="/usxp" className="hover:text-white">
+                    USXP
                   </Link>
-                  <Link href="#" className="hover:text-white">
-                    Integrations
+                  <Link href="https://gkssolution.com" target="_blank" className="hover:text-white">
+                    GKS Solution
                   </Link>
                 </nav>
               </div>

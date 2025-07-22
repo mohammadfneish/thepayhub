@@ -1,14 +1,30 @@
 'use client'
 
+import {useEffect, useState} from 'react'
 import Image from 'next/image'
 import {platformsData} from '../../../data/solutions'
-import {useState} from 'react'
 
 export default function OurCorePlatform() {
   const [selectedPlatform, setSelectedPlatform] = useState<Platforms>(platformsData[0])
+
+  useEffect(() => {
+    const handleHashChange = () => {
+      const hash = window.location.hash.replace('#', '')
+      if (hash === 'xpz' || hash === 'pxg') {
+        ;(document.getElementById('platforms-section') as HTMLDivElement).scrollIntoView({behavior: 'smooth'})
+        setSelectedPlatform(platformsData.find(platform => platform.symbol === hash) || platformsData[0])
+      }
+    }
+
+    window.addEventListener('hashchange', handleHashChange)
+    handleHashChange()
+
+    return () => window.removeEventListener('hashchange', handleHashChange)
+  }, [])
+
   return (
     <div className="mb-10 h-auto">
-      <div className="container px-5 lg:px-auto relative w-full mx-auto">
+      <div className="container px-5 lg:px-auto relative w-full mx-auto" id="platforms-section">
         <div className="flex flex-col items-center w-full justify-center mt-5 pt-5">
           <h1 className="text-2xl lg:text-4xl font-bold text-secondary-500 px-5 text-center max-w-[500px]">
             Our Core Platforms
@@ -18,14 +34,15 @@ export default function OurCorePlatform() {
           </p>
           <div className="flex flex-col md:flex-row gap-5">
             {platformsData.map((platform, index) => (
-              <button
+              <a
+                href={`#${platform.symbol}`}
                 key={index}
                 className={`text-white bg-transparent border px-4 py-2 text-lg font-semibold rounded-full transition-transform duration-300 ease-in-out hover:scale-105 active:scale-95 ${
                   selectedPlatform.name === platform.name ? 'border-secondary-500' : 'border-white'
                 }`}
                 onClick={() => setSelectedPlatform(platform)}>
                 {platform.name}
-              </button>
+              </a>
             ))}
           </div>
           <div className="mt-5 bg-card flex flex-col md:flex-row items-center md:items-stretch justify-between w-full lg:max-w-[90%] gap-5 bg-card border border-primary-300 rounded-2xl">

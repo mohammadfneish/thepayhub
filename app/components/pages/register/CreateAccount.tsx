@@ -106,7 +106,7 @@ export default function CreateAccount() {
   return (
     <div className="mb-20 lg:py-20 h-auto">
       <div className="pt-20 container mx-auto relative px-2 md:px-5 flex flex-col lg:flex-row items-center lg:items-stretch justify:between lg:justify-around gap-5">
-        <div className="relative p-[2px] rounded-xl bg-gradient-to-r from-primary-500 to-secondary-500 rounded-2xl w-full lg:w-2/3">
+        <div className="relative p-[2px] bg-gradient-to-r from-primary-500 to-secondary-500 rounded-2xl w-full lg:w-2/3">
           <div className="bg-card p-5 rounded-xl flex flex-col items-start flex-1">
             <h2 className="text-2xl font-bold text-secondary-500">Create Your TPH Account</h2>
             <h5 className="text-lg my-3 text-secondary-500">1. Choose Your Profile</h5>

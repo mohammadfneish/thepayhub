@@ -17,7 +17,7 @@ export default function NotFound() {
             <path
               d="M0.535156 120.042V39.9581L69.9582 0L139.465 39.9581V120.042L69.9582 160L0.535156 120.042Z"
               fill="url(#paint0_linear_39_13994)"
-              fill-opacity="0.15"
+              fillOpacity="0.15"
             />
             <path
               d="M30.8691 65.6921V51.2955L43.3152 44.1123L55.7763 51.2955V65.6921L43.3152 72.8754L30.8691 65.6921Z"
@@ -43,8 +43,8 @@ export default function NotFound() {
                 x2="-33.4648"
                 y2="60.2057"
                 gradientUnits="userSpaceOnUse">
-                <stop stop-color="white" stop-opacity="0.6" />
-                <stop offset="1" stop-color="#2A4D81" stop-opacity="0.6" />
+                <stop stopColor="white" stopOpacity="0.6" />
+                <stop offset="1" stopColor="#2A4D81" stopOpacity="0.6" />
               </linearGradient>
             </defs>
           </svg>
