@@ -37,7 +37,7 @@ export default function HomeHubIntro() {
                 </div>
               </div>
               <h3 className="text-md font-bold text-secondary-500 px-5 text-center lg:text-left">
-                Trusted by Over 4,000 Clients
+                Trusted by Over 60,000 Clients
               </h3>
               <p className="text-sm mt-2 text-gray-400 text-center lg:text-left px-5">
                 Empowering a diverse network of clients across fintech, e-commerce, and enterprise sectors — all
@@ -68,7 +68,7 @@ export default function HomeHubIntro() {
                 High-Impact Transactions
               </h3>
               <p className="text-sm mt-2 text-gray-400 text-center lg:text-left px-5">
-                Handling an average of $65M USD in monthly transaction volume and facilitating over $35M USD in
+                Handling an average of $90M USD in monthly transaction volume and facilitating over $75M USD in
                 settlements, ensuring scale and reliability at every level.
               </p>
             </div>
