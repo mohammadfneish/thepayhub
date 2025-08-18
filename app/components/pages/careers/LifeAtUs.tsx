@@ -22,7 +22,7 @@ export default function LifeAtUs() {
                 <div className="flex flex-row items-center justify-start gap-5">
                   <div
                     className="bg-contain bg-no-repeat bg-center w-[70px] h-[70px] flex items-center justify-center"
-                    style={{backgroundImage: 'url(/images/cube.webp?v=1)'}}>
+                    style={{backgroundImage: 'url(/images/cube.webp?v=3)'}}>
                     <span className="text-md font-bold text-black">
                       {member.firstName.charAt(0)}
                       {member.lastName.charAt(0)}

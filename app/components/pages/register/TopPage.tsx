@@ -2,8 +2,8 @@
 
 export default function TopPage() {
   return (
-    <div className="pt-20 h-auto bg-no-repeat bg-[url(/images/cubes.webp?v=1)]">
-      <div className="pt-20 relative px-5 bg-no-repeat bg-contain bg-right lg:ml-[6rem] xl:ml-[10rem] lg:bg-[url(/images/register/globo.webp?v=1)]">
+    <div className="pt-20 h-auto bg-no-repeat bg-[url(/images/cubes.webp?v=3)]">
+      <div className="pt-20 relative px-5 bg-no-repeat bg-contain bg-right lg:ml-[6rem] xl:ml-[10rem] lg:bg-[url(/images/register/globo.webp?v=3)]">
         <div className="pt-20 flex flex-col items-center lg:items-start justify-start">
           <h1 className="text-4xl font-bold text-secondary-500 text-left">Welcome to ThePayHub Sign-Up Portal</h1>
           <p className="leading-10 text-xl mt-4 text-white text-left my-5 max-w-[600px]">

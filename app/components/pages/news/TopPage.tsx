@@ -4,7 +4,7 @@ import Image from 'next/image'
 
 export default function TopPage() {
   return (
-    <div className="pt-20 h-auto bg-no-repeat bg-[url(/images/cubes.webp?v=1)]">
+    <div className="pt-20 h-auto bg-no-repeat bg-[url(/images/cubes.webp?v=3)]">
       <div className="pt-20 container mx-auto relative px-5">
         <div className="flex flex-col items-center justify-center">
           <h1 className="text-4xl font-bold text-secondary-500 px-5 text-center ">ThePayHub News</h1>
@@ -26,7 +26,7 @@ export default function TopPage() {
           </div>
           <div className="w-full md:w-1/2">
             <Image
-              src={'/images/news/crypto-img.webp?v=1'}
+              src={'/images/news/crypto-img.webp?v=3'}
               alt="crypto-img"
               width={0}
               height={0}
@@ -39,7 +39,7 @@ export default function TopPage() {
         <div className="flex flex-col md:flex-row items-stretch justify-center gap-0 md:gap-5 my-5 mx-auto rounded-xl bg-linear-to-r from-primary-500 to-primary-400 max-w-[1000px] min-h-[250px]">
           <div className="w-full md:w-1/2">
             <Image
-              src={'/images/news/earth.webp?v=1'}
+              src={'/images/news/earth.webp?v=3'}
               alt="earth"
               width={0}
               height={0}

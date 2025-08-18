@@ -4,7 +4,7 @@ import {supportsData} from '../../../data/contact'
 
 export default function TopPage() {
   return (
-    <div className="py-20 h-auto bg-no-repeat bg-center lg:bg-[url(/images/contact/header-bg.webp?v=1)]">
+    <div className="py-20 h-auto bg-no-repeat bg-center lg:bg-[url(/images/contact/header-bg.webp?v=3)]">
       <div className="lg:h-[500px]"></div>
       <div className="pt-20 container mx-auto relative">
         <div className="flex flex-col items-center justify-center">
@@ -18,7 +18,7 @@ export default function TopPage() {
                 <div className="relative w-[80px] h-[80px] flex items-center justify-center">
                   <div
                     className="absolute w-[80px] h-[80px] bg-contain bg-no-repeat bg-center z-0"
-                    style={{backgroundImage: 'url(/images/cube.webp?v=1)'}}></div>
+                    style={{backgroundImage: 'url(/images/cube.webp?v=3)'}}></div>
                   <div className="z-1 mb-[5px]">{item.icon()}</div>
                 </div>
                 <h3 className="text-md font-bold text-white">{item.title}</h3>

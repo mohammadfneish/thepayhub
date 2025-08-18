@@ -18,7 +18,7 @@ export default function RedureTaxes() {
             <div className="max-w-[80%] w-[500px] h-[10px] bg-gray-400 flex flex-row rounded-full relative">
               <div className="w-[50%] h-[10px] rounded-full bg-linear-to-r from-secondary-200 to-secondary-500"></div>
               <Image
-                src="/images/cube.webp?v=1"
+                src="/images/cube.webp?v=3"
                 alt="cube"
                 width={0}
                 height={0}

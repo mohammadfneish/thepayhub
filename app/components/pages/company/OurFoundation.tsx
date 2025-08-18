@@ -10,7 +10,7 @@ export default function OurFoundation() {
           <div className="bg-card p-5 rounded-2xl flex flex-col items-center gap-5 w-full md:w-1/2">
             <div
               className="bg-contain bg-no-repeat bg-center w-[70px] h-[70px] flex items-center justify-center"
-              style={{backgroundImage: 'url(/images/cube.webp?v=1)'}}>
+              style={{backgroundImage: 'url(/images/cube.webp?v=3)'}}>
               <span className="text-md font-bold text-black">M</span>
             </div>
             <h4 className="text-2xl font-bold">Mission</h4>
@@ -23,7 +23,7 @@ export default function OurFoundation() {
           <div className="bg-card p-5 rounded-2xl flex flex-col items-center gap-5 w-full md:w-1/2">
             <div
               className="bg-contain bg-no-repeat bg-center w-[70px] h-[70px] flex items-center justify-center"
-              style={{backgroundImage: 'url(/images/cube.webp?v=1)'}}>
+              style={{backgroundImage: 'url(/images/cube.webp?v=3)'}}>
               <span className="text-md font-bold text-black">V</span>
             </div>
             <h4 className="text-2xl font-bold">Vision</h4>

@@ -4,7 +4,7 @@ import {faqCategories} from '../../../data/faq'
 
 export default function TopPage() {
   return (
-    <div className="py-20 h-auto bg-no-repeat bg-[url(/images/cubes.webp?v=1)]">
+    <div className="py-20 h-auto bg-no-repeat bg-[url(/images/cubes.webp?v=3)]">
       <div className="pt-20 container mx-auto relative">
         <div className="flex flex-col items-center justify-center">
           <h1 className="text-4xl font-bold text-secondary-500 px-5 text-center ">Frequently Asked Questions</h1>
@@ -19,7 +19,7 @@ export default function TopPage() {
                 <div className="relative w-[80px] h-[80px] flex items-center justify-center">
                   <div
                     className="absolute w-[80px] h-[80px] bg-contain bg-no-repeat bg-center z-0"
-                    style={{backgroundImage: 'url(/images/cube.webp?v=1)'}}></div>
+                    style={{backgroundImage: 'url(/images/cube.webp?v=3)'}}></div>
                   <div className="z-1 mb-[5px]">{item.icon()}</div>
                 </div>
                 <h3 className="text-md font-bold text-secondary-500 px-5 text-center lg:text-left">{item.title}</h3>

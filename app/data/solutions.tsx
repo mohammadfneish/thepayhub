@@ -1,6 +1,6 @@
 export const platformsData: Array<Platforms> = [
   {
-    img: '/images/solutions/xpz.webp?v=1',
+    img: '/images/solutions/xpz.webp?v=3',
     name: 'Xpayz (XPZ)',
     symbol: 'xpz',
     problem:
@@ -16,7 +16,7 @@ export const platformsData: Array<Platforms> = [
     ],
   },
   {
-    img: '/images/solutions/pxg.webp?v=1',
+    img: '/images/solutions/pxg.webp?v=3',
     name: 'PayXGlobal (PXG)',
     symbol: 'pxg',
     problem:

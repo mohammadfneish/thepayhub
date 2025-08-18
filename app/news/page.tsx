@@ -11,7 +11,7 @@ export default function News() {
       <div
         className="min-h-[calc(100vh-200px)] bg-cover bg-top bg-no-repeat overflow-hidden"
         style={{
-          backgroundImage: 'url(/images/news/lines.webp?v=1)',
+          backgroundImage: 'url(/images/news/lines.webp?v=3)',
         }}>
         <TopPage />
         <LatestNews />

@@ -26,7 +26,7 @@ export default function HomeHubIntro() {
               <div className="relative w-[80px] h-[80px] flex items-center justify-center">
                 <div
                   className="absolute w-[80px] h-[80px] bg-contain bg-no-repeat bg-center z-0"
-                  style={{backgroundImage: 'url(/images/cube.webp?v=1)'}}></div>
+                  style={{backgroundImage: 'url(/images/cube.webp?v=3)'}}></div>
                 <div className="z-1 mb-[5px]">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                     <path
@@ -48,7 +48,7 @@ export default function HomeHubIntro() {
               <div className="relative w-[80px] h-[80px] flex items-center justify-center">
                 <div
                   className="absolute w-[80px] h-[80px] bg-contain bg-no-repeat bg-center z-0"
-                  style={{backgroundImage: 'url(/images/cube.webp?v=1)'}}></div>
+                  style={{backgroundImage: 'url(/images/cube.webp?v=3)'}}></div>
                 <div className="z-1 mb-[5px]">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                     <g
@@ -76,7 +76,7 @@ export default function HomeHubIntro() {
               <div className="relative w-[80px] h-[80px] flex items-center justify-center">
                 <div
                   className="absolute w-[80px] h-[80px] bg-contain bg-no-repeat bg-center z-0"
-                  style={{backgroundImage: 'url(/images/cube.webp?v=1)'}}></div>
+                  style={{backgroundImage: 'url(/images/cube.webp?v=3)'}}></div>
                 <div className="z-1 mb-[5px]">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                     <path

@@ -15,7 +15,7 @@ export default function Careers() {
       <div
         className="pt-20 min-h-[calc(100vh-200px)] bg-cover bg-top bg-no-repeat overflow-hidden"
         style={{
-          backgroundImage: 'url(/images/careers/lines.webp?v=1)',
+          backgroundImage: 'url(/images/careers/lines.webp?v=3)',
         }}>
         <TopPage />
         <WhyJoinUs />

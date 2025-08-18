@@ -12,7 +12,7 @@ export default function TrustedCompanies() {
           </h1>
           <div className="my-5 grid grid-cols-2 lg:grid-cols-4 gap-6 flex items-stretch justify-center">
             <Image
-              src="/images/solutions/aws.webp?v=1"
+              src="/images/solutions/aws.webp?v=3"
               alt="aws"
               width={0}
               height={0}
@@ -20,7 +20,7 @@ export default function TrustedCompanies() {
               className="w-full h-full"
             />
             <Image
-              src="/images/solutions/metamap.webp?v=1"
+              src="/images/solutions/metamap.webp?v=3"
               alt="metamap"
               width={0}
               height={0}
@@ -28,7 +28,7 @@ export default function TrustedCompanies() {
               className="w-full h-full"
             />
             <Image
-              src="/images/solutions/alchemy.webp?v=1"
+              src="/images/solutions/alchemy.webp?v=3"
               alt="alchemy"
               width={0}
               height={0}
@@ -36,7 +36,7 @@ export default function TrustedCompanies() {
               className="w-full h-full"
             />
             <Image
-              src="/images/solutions/polygon.webp?v=1"
+              src="/images/solutions/polygon.webp?v=3"
               alt="polygon"
               width={0}
               height={0}

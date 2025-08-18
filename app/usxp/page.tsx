@@ -9,7 +9,7 @@ export default function usxp() {
       <div
         className="min-h-[calc(100vh-200px)] bg-cover bg-top bg-no-repeat overflow-hidden"
         style={{
-          backgroundImage: 'url(/images/usxp/lines.webp?v=1)',
+          backgroundImage: 'url(/images/usxp/lines.webp?v=3)',
         }}>
         <TopPage />
       </div>

@@ -4,12 +4,12 @@ import Image from 'next/image'
 
 export default function TopPage() {
   return (
-    <div className="pt-20 h-auto bg-no-repeat bg-[url(/images/cubes.webp?v=1)]">
+    <div className="pt-20 h-auto bg-no-repeat bg-[url(/images/cubes.webp?v=3)]">
       <div className="lg:container mx-2 md:mx-auto mt-20 flex flex-col items-center justify-center">
         <div className="p-[2px] bg-gradient-to-r from-primary-500 to-secondary-500 rounded-2xl">
           <div className="bg-card rounded-2xl p-5 flex flex-col gap-5 w-full max-w-[500px]">
             <Image
-              src="/images/usxp/dollar.webp?v=2"
+              src="/images/usxp/dollar.webp?v=3"
               alt="usxp-logo"
               width={0}
               height={0}

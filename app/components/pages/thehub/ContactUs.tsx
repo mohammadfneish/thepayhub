@@ -16,7 +16,7 @@ export default function ContactUs() {
           Find out how PayHub is reshaping the way global businesses move money.
         </p>
         <Image
-          src={'/images/home/ContactUs.webp?v=1'}
+          src={'/images/home/ContactUs.webp?v=3'}
           alt="contact us"
           width={0}
           height={0}

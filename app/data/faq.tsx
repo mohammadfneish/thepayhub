@@ -90,7 +90,6 @@ export const faqsData: Array<FAQ> = [
       '● GKS Solutions - Operational liquidity and settlement processor',
       '● Mazzera - Cross-border liquidity and token conversion bridge',
       '● STM - Licensed OTC crypto desk (Poland + DMCC Dubai in process)',
-      '● Nsegundos - FinCEN-registered fiat payment access in Panama, Chile, Colombia, and Peru',
     ],
     category: 'About ThePayHub Ecosystem',
   },

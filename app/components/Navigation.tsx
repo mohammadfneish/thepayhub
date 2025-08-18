@@ -26,6 +26,22 @@ export default function Navigation() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
+  useEffect(() => {
+    const closeMenu = (e: Event) => {
+      let target = e.target as HTMLElement
+      if (
+        (!target.classList.contains('mobile-menu') && !target.closest('div.mobile-menu')) ||
+        target.classList.contains('mobile-menu-item') ||
+        target.closest('div.mobile-menu-item')
+      ) {
+        setIsMenuOpen(false)
+      }
+    }
+
+    document.addEventListener('click', closeMenu)
+    return () => document.removeEventListener('click', closeMenu)
+  }, [isMenuOpen])
+
   const menuItems = [
     {href: '/', label: 'The Hub'},
     {href: '/solutions', label: 'Solutions of Business'},
@@ -111,7 +127,7 @@ export default function Navigation() {
               animate={{x: 0, opacity: 1}}
               exit={{x: -300, opacity: 0}}
               transition={{duration: 0.3, ease: 'easeOut'}}
-              className={`fixed top-0 left-0 h-full w-[300px] z-50 shadow-lg bg-linear-to-r from-primary-500 to-primary-400`}>
+              className={`mobile-menu fixed top-0 left-0 h-full w-[300px] z-50 shadow-lg bg-linear-to-r from-primary-500 to-primary-400`}>
               <div className="mt-[20px] flex flex-col space-y-4 p-4">
                 <button
                   onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -146,7 +162,7 @@ export default function Navigation() {
                   <Link
                     key={item.label}
                     href={item.href}
-                    className={`block py-2 px-4 border nav-link rounded-full hover:bg-secondary-700 hover:text-white transition-colors duration-200 ${
+                    className={`mobile-menu-item block py-2 px-4 border nav-link rounded-full hover:bg-secondary-700 hover:text-white transition-colors duration-200 ${
                       activeMenu === item.href ? 'active' : ''
                     } ${'/register' === item.href ? 'border-secondary-500' : 'border-transparent'}`}
                     onClick={() => setIsMenuOpen(false)}>

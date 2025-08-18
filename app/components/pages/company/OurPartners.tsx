@@ -10,7 +10,7 @@ export default function OurPartners() {
         <p className="text-lg mt-2 text-gray-400">Strategic collaborations that power our global infrastructure</p>
         <div className="my-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 flex items-stretch justify-center">
           <Image
-            src="/images/company/aws.webp?v=1"
+            src="/images/company/aws.webp?v=3"
             alt="aws"
             width={0}
             height={0}
@@ -18,7 +18,7 @@ export default function OurPartners() {
             className="w-full h-full"
           />
           <Image
-            src="/images/company/metamap.webp?v=1"
+            src="/images/company/metamap.webp?v=3"
             alt="metamap"
             width={0}
             height={0}
@@ -26,7 +26,7 @@ export default function OurPartners() {
             className="w-full h-full"
           />
           <Image
-            src="/images/company/alchemy.webp?v=1"
+            src="/images/company/alchemy.webp?v=3"
             alt="alchemy"
             width={0}
             height={0}
@@ -34,7 +34,7 @@ export default function OurPartners() {
             className="w-full h-full"
           />
           <Image
-            src="/images/company/polygon.webp?v=1"
+            src="/images/company/polygon.webp?v=3"
             alt="polygon"
             width={0}
             height={0}

@@ -12,7 +12,7 @@ export default function Contact() {
       <div
         className="min-h-[calc(100vh-200px)] bg-cover bg-top bg-no-repeat overflow-hidden"
         style={{
-          backgroundImage: 'url(/images/contact/lines.webp?v=1)',
+          backgroundImage: 'url(/images/contact/lines.webp?v=3)',
         }}>
         <TopPage />
         <ContactUs />
