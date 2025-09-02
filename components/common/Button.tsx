@@ -28,9 +28,10 @@ export default function Button({
   small,
 }: props) {
   const styles = {
-    main: 'relative flex flex-row flex-nowrap gap-2 items-center justify-center h-fit px-6 py-2.5 rounded-full font-medium text-sm sm:text-base',
+    main: 'relative flex flex-row flex-nowrap gap-2 items-center justify-center h-fit p-2.5 rounded-full font-medium text-sm sm:text-base',
     primary: 'bg-primary-400 text-on-primary',
     secondary: 'bg-secondary-400 text-on-secondary',
+    plain: 'bg-transparent',
     outline: 'border bg-background border-secondary-400 text-secondary-400',
     custom: 'pointer-events-auto',
   }

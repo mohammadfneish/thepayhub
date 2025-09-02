@@ -1,0 +1,16 @@
+<svg width="34" height="38" viewBox="0 0 34 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 28.3939L0 9.60608L9.39392 14.8249V23.2272L16.9091 27.4545L24.4242 23.2272V14.8249L33.8182 9.60608V28.3939L16.9091 37.7878L0 28.3939Z" fill="#006BAF" />
+    <path
+      fillRule="evenodd"
+      clipRule="evenodd"
+      d="M4.69698 12.2156L0 9.60609L16.9091 0.212154L33.8182 9.60609L29.1212 12.2156V26.0455L16.9091 33.091L4.69697 26.0455L4.69698 12.2156ZM28.6124 12.4983L24.4242 14.825V14.7728L16.9091 10.5455L9.39392 14.7728V14.825L5.20581 12.4983V25.7565L16.9091 32.5084L28.6124 25.7565V12.4983Z"
+      fill="url(#logo-gradient)"
+    />
+    <defs>
+      <linearGradient id="logo-gradient" x1="4.69697" y1="7.51853" x2="30.0606" y2="7.51854" gradientUnits="userSpaceOnUse">
+        <stop stop-color="#C0CE00" />
+        <stop offset="0.5" stop-color="#EFFF03" />
+        <stop offset="1" stop-color="#C0CE00" />
+      </linearGradient>
+    </defs>
+  </svg>

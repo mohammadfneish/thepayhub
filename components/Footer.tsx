@@ -101,7 +101,7 @@ export default function Footer() {
 
   return (
     <footer className="h-auto max-w-full flex justify-center py-20 px-10 bg-soft-100/60">
-      <div className="flex flex-col md:flex-row gap-y-12 justify-between w-full max-w-[1200px]">
+      <div className="flex flex-col md:flex-row gap-8 gap-y-12 justify-between w-full max-w-[1200px]">
         <div className="flex flex-col gap-[30px]">
           <FooterLogo />
           <p className="max-w-[520px] text-base md:text-lg">
@@ -126,7 +126,7 @@ export default function Footer() {
               <p className="font-medium text-2xl">{link.title}</p>
               <ul className='flex flex-col gap-3'>
                 {link.items.map((item, j) => (
-                  <li>
+                  <li key={j}>
                     <Link href={item.href} className="text-sub-600 text-sm font-medium transition-colors hover:text-white">
                       {item.name}
                     </Link>
