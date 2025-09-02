@@ -31,9 +31,9 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
         <Toaster position="top-right" reverseOrder={true} />
           <Navigation />
         <div className="min-h-screen max-w-[1512px] mx-auto overflow-hidden">
-          <div className="p-3 ">{children}</div>
-          <Footer />
+          <div className="px-3 ">{children}</div>
         </div>
+          <Footer />
       </body>
     </html>
   )

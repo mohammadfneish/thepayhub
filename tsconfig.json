@@ -23,6 +23,7 @@
       "@/*": ["app/*"],
       "@components/*": ["components/*"],
       "@svg/*": ["assets/svg/*"],
+      "@images/*": ["assets/images/*"],
       "@styles/*": ["assets/styles/*"],
     }
   },

@@ -1,0 +1,109 @@
+import Image from 'next/image'
+import React from 'react'
+import UsxpCoin from '@images/usxp-coin.webp'
+import Typography from '@components/common/Typography'
+import Button from '@components/common/Button'
+import BardLine from '@svg/bardLine.svg'
+import VideoAiLine from '@svg/videoAiLine.svg'
+import HelpCircle from '@svg/helpCircle.svg'
+import Coins from '@svg/coins.svg'
+import SecurityLock from '@svg/securityLock.svg'
+import Asterisk from '@svg/asterisk.svg'
+
+interface FrameProps {
+  icon: React.ReactNode
+  title: string
+  description: string
+}
+
+function USXP() {
+  return (
+    <div className="flex flex-col gap-12 items-center">
+      {/* Top */}
+      <div className="rounded-3xl overflow-hidden w-full">
+        <div className="bg-[url('/images/usxp-top.webp')] bg-right-bottom bg-cover w-full h-[600px] md:h-[700px] lg:h-[800px] flex items-center relative">
+          <div className="flex gap-20 pl-8 sm:pl-12 md:pl-20 lg:pl-36">
+            <div className="flex flex-col gap-12">
+              <Typography
+                size="xxl"
+                className="max-w-[750px] text-transparent bg-clip-text bg-gradient-to-r from-white via-10% to-[#B9D8F4] text-shadow-lg text-shadow-white/10">
+                Powering transactions in our ecosystem
+              </Typography>
+
+              <Typography size="md2" className="max-w-[500px]">
+                The settlement token is a digital currency used within ThePayHub ecosystem. It enables fast, secure
+                payments across services like XPZ and PXG.
+              </Typography>
+
+              <div className="flex gap-6">
+                <Button variant="primary" className="min-w-fit" icon={<BardLine />}>
+                  Get Started
+                </Button>
+                <Button variant="secondary" className="min-w-fit" icon={<VideoAiLine />}>
+                  Schedule a Call
+                </Button>
+              </div>
+            </div>
+            <div className="max-w-[340px] max-h-[340px] min-w-[140px] min-h-[140px] ">
+              <Image src={UsxpCoin} alt="usxp-coin" width="340" height="340" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* What is USXP */}
+      <div className="flex flex-col gap-16 w-full max-w-[1200px] items-center relative">
+        <div className="absolute inset-10 bg-[radial-gradient(circle,#000_0%,#004280_100%)] blur-[140px] -z-1"></div>
+        <div className="max-w-[600px]">
+          <Frame
+            icon={<HelpCircle />}
+            title="What is USXP"
+            description="USXP is a settlement token used exclusively within ThePayHub ecosystem to facilitate transactions between
+              platforms and clients. It enables faster, more secure, and transparent payments by acting as an internal
+              unit of settlement across affiliated services like XPZ and PXG. is not available for public trading or
+              speculation and is strictly used to support operational efficiency, compliance, and reconciliation within
+              the ecosystem."
+          />
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 max-w-[600px]">
+          <Frame
+            icon={<Coins />}
+            title="Built for our Ecosystem"
+            description="Designed solely for ThePayHub ecosystem, it streamlines transactions between platforms and clients."
+          />
+          <Frame
+            icon={<SecurityLock />}
+            title="Faster & More Secure"
+            description="It facilitates quicker and safer payments by serving as a central settlement unit among connected services."
+          />
+        </div>
+      </div>
+
+      {/* How USXP Works? */}
+      <div className="flex flex-col gap-16 w-full max-w-[1200px] items-center relative">
+        {/* <div className="absolute inset-10 bg-[radial-gradient(circle,#000_0%,#004280_100%)] transform blur-[140px] -z-1"></div> */}
+
+       <div className='max-w-[600px]'>
+         <Frame
+           icon={<Asterisk />}
+           title="How USXP Works?"
+           description="When a customer makes a payment on XPZ, the merchant receives the equivalent amount in USXP. The merchant then transfers these USXP tokens to PXG, where GKS burns them and releases the corresponding fiat directly into the merchant's bank account."
+         />
+       </div>
+      </div>
+    </div>
+  )
+}
+
+export default USXP
+
+const Frame = ({icon, title, description}: FrameProps) => {
+  return (
+    <div className="flex flex-col gap-4">
+      {icon}
+      <Typography size="lg">{title}</Typography>
+      <Typography size="md">{description}</Typography>
+    </div>
+  )
+}
