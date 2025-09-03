@@ -44,6 +44,7 @@ export default function Navigation() {
     {href: '/products', label: 'Products'},
     {href: '/solutions', label: 'Solutions'},
     {href: '/industry', label: 'Industry'},
+    {href: '/usxp', label: 'USXP'},
     {href: '/about', label: 'About GKS'},
     {href: '/news', label: 'News'},
     {href: '/faq', label: 'FAQ'},

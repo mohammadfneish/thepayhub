@@ -18,9 +18,7 @@ export const metadata: Metadata = {
   keywords: 'crypto, payment, online payment, credit card, pay, payhub, thepayhub',
   creator: 'ThePayHub Tech Team',
   publisher: 'ThePayHub',
-  icons: [
-    {rel: 'icon', url: '/favicon.ico'},
-  ],
+  icons: [{rel: 'icon', url: '/favicon.ico'}],
 }
 
 export default function RootLayout({children}: {children: React.ReactNode}) {
@@ -29,11 +27,13 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
       <body className="text-white bg-black">
         <NextTopLoader height={4} color="#fff" />
         <Toaster position="top-right" reverseOrder={true} />
-          <Navigation />
         <div className="min-h-screen max-w-[1512px] mx-auto overflow-hidden">
-          <div className="px-3 ">{children}</div>
+          <div className="px-3 ">
+            <Navigation />
+            {children}
+          </div>
         </div>
-          <Footer />
+        <Footer />
       </body>
     </html>
   )

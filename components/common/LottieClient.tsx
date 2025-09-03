@@ -1,8 +1,8 @@
 'use client'
-import Lottie from 'lottie-react'
+import Lottie, { LottieComponentProps } from 'lottie-react'
 
-function LottieClient(props: any) {
-  return <Lottie loop autoplay {...props} />
+function LottieClient({animationData, ...props}: LottieComponentProps) {
+  return <Lottie animationData={animationData} loop autoplay {...props} />
 }
 
 export default LottieClient

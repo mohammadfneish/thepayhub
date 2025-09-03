@@ -17,6 +17,7 @@ import MetaMapLogo from '@svg/metaMapLogo.svg'
 import UsxpLineRoad from '@json/usxpLineRoad.json'
 import LottieClient from '@components/common/LottieClient'
 import Divider from '@components/common/Divider'
+import RadialGradientBlur from '@components/common/RadialGradientBlur'
 
 interface FrameProps {
   icon: React.ReactNode
@@ -30,8 +31,8 @@ function USXP() {
       {/* Top */}
       <div className="rounded-3xl overflow-hidden w-full">
         <div className="bg-[url('/images/usxp-top.webp')] bg-right-bottom bg-cover w-full h-[600px] md:h-[700px] lg:h-[800px] flex items-center relative">
-          <div className="flex gap-20 pl-8 sm:pl-12 md:pl-20 lg:pl-36">
-            <div className="flex flex-col gap-12">
+          <div className="flex flex-col sm:flex-row gap-6 sm:gap-10 md:gap-14 lg:gap-20 px-8 sm:pr-0 sm:pl-12 md:pl-20 lg:pl-36">
+            <div className="flex flex-col gap-12 z-1">
               <Typography size="xxl" className="max-w-[750px]">
                 Powering transactions in our ecosystem
               </Typography>
@@ -41,7 +42,7 @@ function USXP() {
                 payments across services like XPZ and PXG.
               </Typography>
 
-              <div className="flex gap-6">
+              <div className="flex flex-col sm:flex-row gap-6">
                 <Button variant="primary" className="min-w-fit" icon={<BardLine />}>
                   Get Started
                 </Button>
@@ -50,7 +51,7 @@ function USXP() {
                 </Button>
               </div>
             </div>
-            <div className="max-w-[340px] max-h-[340px] min-w-[140px] min-h-[140px] ">
+            <div className="absolute right-1/2 -bottom-1/2 transform -translate-y-1/2 translate-x-1/2 z-0 sm:relative size-[340px]  sm:max-w-[340px] sm:max-h-[340px] sm:right-0 sm:-bottom-0 sm:-translate-0">
               <Image src={UsxpCoin} alt="usxp-coin" width="340" height="340" />
             </div>
           </div>
@@ -59,7 +60,8 @@ function USXP() {
 
       {/* What is USXP */}
       <div className="flex flex-col gap-16 w-full max-w-[1200px] items-center relative">
-        <div className="absolute inset-40 bg-[radial-gradient(circle,#004280_0%,#004280_100%)] blur-[140px] -z-1 rounded-full"></div>
+        <RadialGradientBlur />
+
         <div className="max-w-[600px]">
           <Frame
             icon={<HelpCircle />}
@@ -88,7 +90,7 @@ function USXP() {
 
       {/* How USXP Works? */}
       <div className="flex flex-col gap-16 w-full max-w-[1200px] items-center relative">
-        <div className="absolute inset-50 bg-[radial-gradient(circle,#004280_0%,#004280_100%)] blur-[200px] -z-1 rounded-full"></div>
+        <RadialGradientBlur />
 
         <div className="max-w-[600px]">
           <Frame
@@ -103,7 +105,8 @@ function USXP() {
       {/* Trusted by companies worldwide */}
       <div className="overflow-hidden w-full relative">
         <div className="bg-[url('/images/usxp-earth.webp')] bg-bottom bg-cover w-full h-[800px] flex flex-col justify-center items-center ">
-          <div className="absolute inset-85 bg-[radial-gradient(circle,#004280_0%,#004280_100%)] blur-[200px] -z-1 rounded-full"></div>
+          <RadialGradientBlur inset={85} />
+
           <div className="flex flex-col gap-20 justify-center items-center w-full">
             <div className="flex flex-col justify-center gap-12 max-w-[750px]">
               <Typography size="xl" className="text-center">
