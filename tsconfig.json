@@ -25,6 +25,7 @@
       "@svg/*": ["assets/svg/*"],
       "@images/*": ["assets/images/*"],
       "@styles/*": ["assets/styles/*"],
+      "@json/*": ["assets/json/*"],
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.js", "**/*.tsx", "**/*.jsx", ".next/types/**/*.ts"],

@@ -13,6 +13,7 @@ interface props {
   loading?: boolean
   disabled?: boolean
   icon?: React.ReactNode
+  postIcon?: React.ReactNode
   small?: boolean
 }
 
@@ -25,6 +26,7 @@ export default function Button({
   loading,
   disabled,
   icon,
+  postIcon,
   small,
 }: props) {
   const styles = {
@@ -52,6 +54,7 @@ export default function Button({
       disabled={disabled || loading}>
       {icon && <span className={'flex items-center aspect-square justify-center w-6 h-6'}>{icon}</span>}
       {children}
+      {postIcon && <span className={'flex items-center aspect-square justify-center w-6 h-6'}>{postIcon}</span>}
       {loading && <SpinnerAnimationIcon className="size-4" />}
     </motion.button>
   )
