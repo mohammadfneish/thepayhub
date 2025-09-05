@@ -9,7 +9,8 @@ interface Props {
 function Typography({children, size = 'md', className = ''}: Props) {
   const styles = {
     sm: '',
-    md: 'text-sub-600',
+    sm2: 'text-sub-600 text-sm md:text-md',
+    md: 'text-sub-600 text-sm md:text-md lg:text-lg',
     md2: 'text-sub-600 text-lg',
     lg: 'text-white text-xl sm:text-2xl',
     lg2: 'text-white text-xl sm:text-2xl md:text-3xl',

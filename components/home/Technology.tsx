@@ -7,10 +7,10 @@ import GksSolutionsLogo from '@images/gkssolutions-logo.png'
 import MasseraLogo from '@images/massera-logo.png'
 import MoonlightLogo from '@images/moonlight-logo.png'
 import ChevronRightFill from '@svg/chevronRightFill.svg'
-import NavigationArrowLeft from '@svg/navigationArrowLeft.svg'
-import NavigationArrowRight from '@svg/navigationArrowRight.svg'
 import {useEffect, useState} from 'react'
 import RadialGradientBlur from '@components/common/RadialGradientBlur'
+import LeftArrowScroll from '@components/common/LeftArrowScroll'
+import RightArrowScroll from '@components/common/RightArrowScroll'
 
 interface Card {
   imageSrc: StaticImageData
@@ -20,7 +20,6 @@ interface Card {
 }
 
 function Technology() {
-
   const cards: Card[] = [
     {
       imageSrc: GksSolutionsLogo,
@@ -45,18 +44,20 @@ function Technology() {
 
   return (
     <div className="flex flex-col gap-20 relative w-full">
-      <RadialGradientBlur/>
-      <Typography size="xl" className='text-center'>The Underlying Technology</Typography>
+      <RadialGradientBlur />
+      <Typography size="xl" className="text-center">
+        The Underlying Technology
+      </Typography>
       <div className="flex flex-col gap-6">
-        <div id="scrollable" className="flex flex-nowrap gap-6 h-full overflow-x-auto no-scrollbar">
+        <div id="technology-scrollable" className="flex flex-nowrap gap-6 h-full overflow-x-auto">
           {cards.map((card, index) => (
             <Card key={index} {...card} />
           ))}
         </div>
 
         <div className="flex gap-2 justify-end items-center text-white">
-          <LeftArrow />
-          <RightArrow />
+          <LeftArrowScroll id="technology-scrollable" cardSize={370} />
+          <RightArrowScroll id="technology-scrollable" cardSize={370} />
         </div>
       </div>
     </div>
@@ -93,61 +94,5 @@ const Card = (card: Card) => {
         </Button>
       </div>
     </div>
-  )
-}
-
-const LeftArrow = () => {
-  const handleClicked = () => {
-    console.log('clicked')
-    const div = document.getElementById('scrollable')
-    if (!div) return
-
-    const scrollLeft = div.scrollLeft ?? 0
-    const newScroll = scrollLeft - 375
-
-    if (newScroll > 0) {
-      div.scrollTo({
-        left: newScroll,
-        behavior: 'smooth',
-      })
-    } else {
-      div.scrollTo({
-        left: 0,
-        behavior: 'smooth',
-      })
-    }
-  }
-
-  return (
-    <span onClick={handleClicked} className="opacity-50 hover:opacity-100 cursor-pointer">
-      <NavigationArrowLeft />
-    </span>
-  )
-}
-const RightArrow = () => {
-  const handleClicked = () => {
-    const div = document.getElementById('scrollable')
-    if (!div) return
-    
-    const scrollLeft = div.scrollLeft ?? 0
-    const newScroll = scrollLeft + 375
-
-    if (newScroll > 0) {
-      div.scrollTo({
-        left: newScroll,
-        behavior: 'smooth',
-      })
-    } else {
-      div.scrollTo({
-        left: 0,
-        behavior: 'smooth',
-      })
-    }
-  }
-
-  return (
-    <span onClick={handleClicked} className="opacity-50 hover:opacity-100 cursor-pointer">
-      <NavigationArrowRight />
-    </span>
   )
 }
