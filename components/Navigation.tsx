@@ -103,7 +103,7 @@ export default function Navigation() {
           {/* Mobile Navigation */}
           {isMenuOpen && (
             <div
-              className={`mobile-menu fixed -top-10 left-0 w-[300px] z-[999999] bg-soft-100`}
+              className={`mobile-menu fixed -top-10 left-0 w-[300px] z-[999999] overflow-y-auto bg-soft-100`}
               style={{height: 'calc(100vh + 40px)'}}>
               <div className="mt-[20px] flex flex-col space-y-4 p-4">
                 <button

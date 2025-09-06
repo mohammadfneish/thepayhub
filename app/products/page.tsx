@@ -21,6 +21,7 @@ import ConsoleCursor from '@images/products/console-cursor.png'
 import Building from '@images/products/building.png'
 import Key from '@images/products/key.png'
 import Image from 'next/image'
+import Versus from '@components/products/Versus'
 
 function Products() {
   const SmartLedgerList = [
@@ -175,7 +176,7 @@ function Products() {
       </div>
 
       {/* Solutions */}
-      <div className="flex flex-col gap-20 relative w-full">
+      <div className="flex flex-col gap-20 relative justify-center w-full">
         <RadialGradientBlur />
         <Typography size="xl" className="text-center">
           Tailored solutions for your business
@@ -185,7 +186,8 @@ function Products() {
           businesses, ensuring that we address their specific needs effectively.
         </Typography>
         <div className="flex flex-col gap-6">
-          <div id="solutions-scrollbar" className="flex flex-nowrap gap-6 h-full overflow-x-auto">
+          <div id="solutions-scrollbar" className="flex flex-nowrap gap-6 h-full overflow-x-auto"   style={{ WebkitOverflowScrolling: 'touch' }}
+>
             {solutionsList.map((item, index) => (
               <div
                 key={index}
@@ -211,6 +213,9 @@ function Products() {
           </div>
         </div>
       </div>
+
+      {/* ThePayHub vs other solutions */}
+      <Versus />
     </div>
   )
 }
