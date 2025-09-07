@@ -33,7 +33,11 @@ function PayXG() {
         'A secure system that helps businesses send and receive payments from each other smoothly and quickly',
     },
     {
-      icon: <Bank />,
+      icon: (
+        <span className="min-w-12 min-h-12">
+          <Bank />
+        </span>
+      ),
       title: 'Banking & SWIFT Access',
       description: 'Direct access to global banks and the SWIFT network for easy international money transfers.',
     },

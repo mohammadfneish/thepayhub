@@ -27,8 +27,8 @@ import CheckCircular from '@svg/checkCircular.svg'
 import XPZLogo from '@svg/xpzLogo.svg'
 import PXGLogo from '@svg/pxgLogo.svg'
 import SmartLedgerLogo from '@svg/smartLedgerLogo.svg'
-import ChevronRightFill from '@svg/chevronRightFill.svg'
 import Technology from '@components/home/Technology'
+import FooterTop from '@components/FooterTop'
 
 export default function Home() {
   const preferring = [
@@ -238,6 +238,8 @@ export default function Home() {
           </div>
         </div>
       </div>
+      <FooterTop />
+
     </div>
   )
 }

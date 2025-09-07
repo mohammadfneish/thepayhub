@@ -24,6 +24,7 @@ import Image from 'next/image'
 import Versus from '@components/products/Versus'
 import XPayZ from '@components/products/XPayZ'
 import PayXG from '@components/products/PayXG'
+import FooterTop from '@components/FooterTop'
 
 function Products() {
   const SmartLedgerList = [
@@ -236,6 +237,8 @@ function Products() {
 
       {/* ThePayHub vs other solutions */}
       <Versus />
+
+      <FooterTop />
     </div>
   )
 }

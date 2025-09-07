@@ -21,6 +21,7 @@ import PXGLogo from '@svg/pxgLogo.svg'
 import GKSSolutionsLogo from '@svg/gksSolutionsLogo.svg'
 import MoonlightLogo from '@svg/moonlightLogo.svg'
 import SmartLedgerLogo from '@svg/smartLedgerLogo.svg'
+import CoinSwap from '@svg/coinSwap.svg'
 import Connector from '@svg/connector.svg'
 import Payment from '@svg/payment.svg'
 import Download from '@svg/download.svg'
@@ -43,11 +44,16 @@ import Button from '@components/common/Button'
 import Typography from '@components/common/Typography'
 import Image from 'next/image'
 import RadialGradientBlur from '@components/common/RadialGradientBlur'
+import FooterTop from '@components/FooterTop'
 
 function Solutions() {
   const tokens = [
     {
-      icon: <TokenCircle />,
+      icon: (
+        <span className="w-8 h-8">
+          <TokenCircle />
+        </span>
+      ),
       content: 'Custom token creation for internal use',
     },
     {
@@ -98,7 +104,14 @@ function Solutions() {
   ]
 
   const howItWorksList = [
-    {icon: <Exchange2 />, content: 'Conversion happens instantly via ledger movement'},
+    {
+      icon: (
+        <span className="w-8 h-8">
+          <Exchange2 />
+        </span>
+      ),
+      content: 'Conversion happens instantly via ledger movement',
+    },
     {icon: <LogoutCircle />, content: 'No external exchange involved'},
     {icon: <Analytics />, content: 'Reflects real-world FX rates and balances'},
     {icon: <SearchDollar />, content: 'Fully traceable per user or transaction'},
@@ -152,7 +165,7 @@ function Solutions() {
     },
     {
       content: 'No outside swaps, exchanges, or public tokens',
-      logos: [<XPZLogo />, <SmartLedgerLogo />],
+      logos: [<CoinSwap />],
     },
   ]
 
@@ -373,7 +386,6 @@ function Solutions() {
 
       {/* Compliance & Treasury Mapping */}
       <div className="flex flex-col w-full md:flex-row gap-6 overflow-hidden max-w-[1200px] relative">
-
         <div className="flex flex-col gap-6">
           <Typography size="xl" className="max-w-[600px]">
             Compliance & Treasury Mapping
@@ -514,6 +526,12 @@ function Solutions() {
           </div>
         </div>
       </div>
+      <FooterTop
+        showLogos={false}
+        title={'Custom Deployments'}
+        description="We offer bespoke solutions for fintechs, banks, or enterprise platforms that need to launch their own token infrastructure or compliant treasury system."
+        buttonText="Get in Touch"
+      />
     </div>
   )
 }
