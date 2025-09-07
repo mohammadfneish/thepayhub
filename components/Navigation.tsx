@@ -86,6 +86,14 @@ export default function Navigation() {
       ) {
         setIsMenuOpen(false)
       }
+
+      if (
+        (!target.classList.contains('desktop-menu') && !target.closest('div.desktop-menu')) ||
+        target.classList.contains('desktop-menu-item') ||
+        target.closest('div.desktop-menu-item')
+      ) {
+        setSelectedItem(null)
+      }
     }
 
     document.addEventListener('click', closeMenu)
@@ -276,7 +284,7 @@ export default function Navigation() {
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center justify-between gap-4">
+          <div className="hidden desktop-menu lg:flex items-center justify-between gap-4">
             <Link href="/" className="mx-auto font-medium text-2xl flex items-center gap-3">
               <Logo />
               ThePayHub
@@ -331,7 +339,7 @@ export default function Navigation() {
                   <span className={`mobile-menu-item ${pathname === '/login' ? 'text-white' : ''}`}>Login</span>
                 </Link>
                 <Link href="/login">
-                  <Button variant="primary" className="w-full">
+                  <Button variant="primary" className="mobile-menu-item w-full">
                     Register
                   </Button>
                 </Link>
@@ -446,7 +454,7 @@ const MenuItem = ({item, selectedItem, setSelectedItem, setIsMenuOpen}: MenuItem
       </div>
       {selectedItem?.href === item.href && (
         <div className="flex flex-col gap-5">
-          {item?.items?.map((subItem: any, index: number) => (
+          {item?.items?.map((subItem: MenuItemSub, index: number) => (
             <div key={index} className="flex gap-2">
               {subItem.icon}
               <div className="flex flex-col gap-0.5">
@@ -458,7 +466,7 @@ const MenuItem = ({item, selectedItem, setSelectedItem, setIsMenuOpen}: MenuItem
             </div>
           ))}
           <div className="flex flex-col gap-2.5 bg-soft-200 py-3.5 px-4 rounded-lg w-full">
-            {item?.navigation?.map((nav: any, index: number) => (
+            {item?.navigation?.map((nav: MenuItemNav, index: number) => (
               <Link key={index} href={nav.href} className="flex items-center gap-1">
                 <Typography size="sm" className="text-sub-600!">
                   {nav.title}

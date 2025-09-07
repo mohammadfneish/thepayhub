@@ -149,23 +149,23 @@ function Solutions() {
   const ecosystem = [
     {
       content: 'Tokenized environments with XPZ and SmartLedger',
-      logos: [<XPZLogo />, <SmartLedgerLogo />],
+      logos: [<XPZLogo key={Math.random()} />, <SmartLedgerLogo key={Math.random()} />],
     },
     {
       content: 'Fiat banking bridges with PXG',
-      logos: [<PXGLogo />],
+      logos: [<PXGLogo key={Math.random()} />],
     },
     {
       content: 'Blockchain infrastructure built and maintained by GKS Solutions',
-      logos: [<GKSSolutionsLogo />],
+      logos: [<GKSSolutionsLogo key={Math.random()} />],
     },
     {
       content: 'Liquidity and FX rails operated through Mazzera and Moonlight',
-      logos: [<MazzeraLogo />, <MoonlightLogo />],
+      logos: [<MazzeraLogo key={Math.random()} />, <MoonlightLogo key={Math.random()} />],
     },
     {
       content: 'No outside swaps, exchanges, or public tokens',
-      logos: [<CoinSwap />],
+      logos: [<CoinSwap key={Math.random()} />],
     },
   ]
 
@@ -435,7 +435,8 @@ function Solutions() {
           </Typography>
 
           <Typography size="md2" className="max-w-[400px]">
-            A unified API layer connects ThePayHub's infrastructure to client platforms, partners, and fintech tools.
+            A unified API layer connects ThePayHub`&apos;s infrastructure to client platforms, partners, and fintech
+            tools.
           </Typography>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 ">
@@ -487,14 +488,14 @@ function Solutions() {
         />
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-          {ecosystem.map((item, index) => (
+          {ecosystem.map((item, i) => (
             <div
-              key={index}
-              className=" flex flex-col justify-between gap-8 rounded-lg p-6 border-dashed border border-sub-300">
+              key={i}
+              className="flex flex-col justify-between gap-8 rounded-lg p-6 border-dashed border border-sub-300">
               <Typography size="md3">{item.content}</Typography>
               <div className="flex gap-3">
-                {item.logos.map((logo, index) => (
-                  <span key={index} className="w-[56px] h-[56px]">
+                {item.logos.map((logo, j) => (
+                  <span key={j} className="w-[56px] h-[56px]">
                     {logo}
                   </span>
                 ))}

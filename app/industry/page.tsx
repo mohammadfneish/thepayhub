@@ -159,7 +159,7 @@ function Industry() {
 
       <div className="bg-[url('/images/line-waves.webp')] bg-center bg-cover w-full min-h-[141px] h-fit flex justify-center py-12 relative">
         <Typography size="xl" className="text-center">
-          "We move money as fast as goods move"
+          &quot;We move money as fast as goods move&quot;
         </Typography>
       </div>
 
