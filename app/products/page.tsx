@@ -22,6 +22,8 @@ import Building from '@images/products/building.png'
 import Key from '@images/products/key.png'
 import Image from 'next/image'
 import Versus from '@components/products/Versus'
+import XPayZ from '@components/products/XPayZ'
+import PayXG from '@components/products/PayXG'
 
 function Products() {
   const SmartLedgerList = [
@@ -44,13 +46,21 @@ function Products() {
         'Maps transactions across XPZ, PXG, and affiliated partners. Ensures full visibility of fund flows from entry to payout.',
     },
     {
-      icon: <DashboardBrowsing />,
+      icon: (
+        <span className="w-12 h-12">
+          <DashboardBrowsing />
+        </span>
+      ),
       title: 'Multi-Platform Dashboard Integration',
       description:
         'Unified dashboard linking XPZ, PXG, and SmartLedger. Clients can track and manage all treasury movements in one place.',
     },
     {
-      icon: <Safe />,
+      icon: (
+        <span className="w-12 h-12">
+          <Safe />
+        </span>
+      ),
       title: 'Compliance & Transparency Layer',
       description:
         'End-to-end transaction tracking with detailed reporting. Built-in compliance features to support AML/KYC requirements.',
@@ -106,7 +116,7 @@ function Products() {
     <div className="flex flex-col gap-20 items-center">
       {/* Top */}
       <div className="rounded-3xl overflow-hidden w-full">
-        <div className="bg-[url('/images/products-top.webp')] bg-right-bottom bg-cover w-full h-[600px] md:h-[700px] lg:h-[800px] flex items-center relative">
+        <div className="bg-[url('/images/products-top.webp')] bg-center bg-cover w-full h-[600px] md:h-[700px] lg:h-[800px] flex items-center relative">
           <div className="flex gap-6 sm:gap-8 md:gap-10 lg:gap-12 pl-8 sm:pl-12 md:pl-20 lg:pl-36">
             <div className="flex flex-col gap-12 z-1">
               <Typography size="xxl" className="max-w-[670px]">
@@ -152,11 +162,19 @@ function Products() {
         </div>
       </div>
 
+      {/* XPZ */}
+      <XPayZ />
+
+      {/* PayXG */}
+      <PayXG />
+
       {/* SmartLedger */}
       <div className="flex flex-col gap-16 relative">
         <RadialGradientBlur />
         <div className="flex flex-col gap-4">
-          <SmartLedgerLogo />
+          <span className="w-[120px] h-[124px]">
+            <SmartLedgerLogo />
+          </span>
           <Typography size="lg2">SmartLedger (Powered by Mazzera) - Beta</Typography>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4  gap-7">
             {SmartLedgerList.map((item, index) => (
@@ -186,8 +204,10 @@ function Products() {
           businesses, ensuring that we address their specific needs effectively.
         </Typography>
         <div className="flex flex-col gap-6">
-          <div id="solutions-scrollbar" className="flex flex-nowrap gap-6 h-full overflow-x-auto"   style={{ WebkitOverflowScrolling: 'touch' }}
->
+          <div
+            id="solutions-scrollbar"
+            className="flex flex-nowrap gap-6 h-full overflow-x-auto"
+            style={{WebkitOverflowScrolling: 'touch'}}>
             {solutionsList.map((item, index) => (
               <div
                 key={index}

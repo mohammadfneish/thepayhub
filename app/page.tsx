@@ -18,10 +18,10 @@ import Transaction from '@images/home/transaction.png'
 import Coins from '@images/home/coins.png'
 import Chain from '@images/home/chain.png'
 import Bolt from '@images/home/bolt.png'
-import XpzPhone from '@images/home/xpz-phone.webp'
-import PxgPhone from '@images/home/pxg-phone.webp'
-import XpzPhoneSm from '@images/home/xpz-phone-sm.webp'
-import PxgPhoneSm from '@images/home/pxg-phone-sm.webp'
+import XpzPhone from '@images/xpz-phone.webp'
+import PxgPhone from '@images/pxg-phone.webp'
+import XpzPhoneSm from '@images/xpz-phone-sm.webp'
+import PxgPhoneSm from '@images/pxg-phone-sm.webp'
 import DoneCircular from '@images/home/done-circular.png'
 import CheckCircular from '@svg/checkCircular.svg'
 import XPZLogo from '@svg/xpzLogo.svg'
@@ -56,7 +56,7 @@ export default function Home() {
     <div className="flex flex-col gap-20 items-center">
       {/* Top */}
       <div className="rounded-3xl overflow-hidden w-full">
-        <div className="bg-[url('/images/home-top.webp')] bg-right-bottom bg-cover w-full h-[600px] md:h-[700px] lg:h-[800px] flex items-center relative">
+        <div className="bg-[url('/images/home-top.webp')] bg-center bg-cover w-full h-[600px] md:h-[700px] lg:h-[800px] flex items-center relative">
           <div className="flex gap-6 sm:gap-8 md:gap-10 lg:gap-12 pl-8 sm:pl-12 md:pl-20 lg:pl-36">
             <div className="flex flex-col gap-12 z-1">
               <Typography size="xxl" className="max-w-[600px]">
@@ -132,7 +132,11 @@ export default function Home() {
             'High-Speed Checkout',
             'No Custody Services',
           ]}
-          topIcon={<XPZLogo />}
+          topIcon={
+            <span className="w-32 h-32">
+              <XPZLogo />
+            </span>
+          }
           image={<Image src={XpzPhone} alt="XpzPhone" className="sm:max-w-[340px]  sm:max-h-[750px] " />}
           mobileImage={
             <div className="rounded-4xl overflow-hidden">
@@ -159,7 +163,11 @@ export default function Home() {
             'Ledger-Based Top-Ups',
             'Ecosystem-Connected',
           ]}
-          topIcon={<PXGLogo />}
+          topIcon={
+            <span className="w-32 h-32">
+              <PXGLogo />
+            </span>
+          }
           image={<Image src={PxgPhone} alt="PxgPhone" className="sm:max-w-[340px] sm:max-h-[750px] " />}
           mobileImage={
             <div className="rounded-4xl overflow-hidden">
@@ -169,7 +177,9 @@ export default function Home() {
         />
 
         <div className="flex flex-col gap-10 w-full items-center justify-center mt-10">
-          <SmartLedgerLogo />
+          <span className="w-[120px] h-[124px]">
+            <SmartLedgerLogo />
+          </span>
           <Typography size="lg">Coming soon...</Typography>
           <Button variant="primary" className="min-w-fit" postIcon={<ArrowTopRight />}>
             Contact us to know more
@@ -288,30 +298,6 @@ const Frame = ({
       </div>
       <div className={`${imageOrder == 'left' ? 'order-2 lg:order-1' : ''} hidden sm:flex items-center justify-center`}>
         {image}
-      </div>
-    </div>
-  )
-}
-
-interface CardProps {
-  icon: React.ReactNode
-  title: string
-  description: string
-}
-
-const Card = ({icon, title, description}: CardProps) => {
-  return (
-    <div className="w-[450px] h-auto bg-soft-200 border border-[#262626] rounded-2xl p-6 flex flex-col justify-between shadow-[0_1px_2px_0_rgba(10,13,20,0.03)]">
-      <div className="mb-auto">{icon}</div>
-      <div className="flex flex-col gap-4 p-6">
-        <Typography size="lg">{title}</Typography>
-
-        <Typography size="md2">{description}</Typography>
-      </div>
-      <div>
-        <Button variant="plain" className="" postIcon={<ChevronRightFill />}>
-          Learn More
-        </Button>
       </div>
     </div>
   )

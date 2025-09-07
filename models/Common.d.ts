@@ -1,3 +1,3 @@
 type Variant = 'primary' | 'secondary' | 'plain' | 'outline' | 'custom'
 
-type Size = 'sm' | 'sm2' | 'md' | 'md2' | 'lg' | 'lg2' | 'xl' | 'xxl'
+type Size = 'xs' | 'sm' | 'sm2' | 'md' | 'md2' | 'md3' | 'lg' | 'lg2' | 'xl' | 'xxl'

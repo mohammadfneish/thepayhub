@@ -19,7 +19,7 @@ export default function NotFound() {
                Explore our solutions
              </Button>
            </Link>
-           <Link href={'/solutions'}>
+           <Link href={'/'}>
              <Button variant="outline" className="text-xl !font-bold">
                Return to home
              </Button>

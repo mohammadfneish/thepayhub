@@ -27,7 +27,7 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
       <body className="text-white bg-black">
         <NextTopLoader height={4} color="#fff" />
         <Toaster position="top-right" reverseOrder={true} />
-        <div className="min-h-screen max-w-[1512px] mx-auto overflow-hidden">
+        <div className="min-h-screen max-w-[1512px] mx-auto mt-20">
           <div className="px-3 ">
             <Navigation />
             {children}

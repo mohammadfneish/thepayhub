@@ -8,10 +8,12 @@ interface Props {
 
 function Typography({children, size = 'md', className = ''}: Props) {
   const styles = {
+    xs: 'text-white font-medium text-xs',
     sm: 'text-white font-medium text-sm',
     sm2: 'text-sub-600 font-medium text-sm md:text-md',
     md: 'text-sub-600 font-medium text-sm md:text-md lg:text-lg',
     md2: 'text-sub-600 font-medium text-lg',
+    md3: 'text-white font-medium text-md sm:text-lg md:text-xl',
     lg: 'text-white text-xl sm:text-2xl',
     lg2: 'text-white text-xl sm:text-2xl md:text-3xl',
     xl: 'text-3xl md:text-4xl lg:text-5xl text-transparent bg-clip-text bg-gradient-to-r from-white via-10% to-[#B9D8F4] text-shadow-lg text-shadow-white/10',
