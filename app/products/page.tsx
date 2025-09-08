@@ -200,7 +200,7 @@ function Products() {
         <Typography size="xl" className="text-center">
           Tailored solutions for your business
         </Typography>
-        <Typography size="md2" className="text-center max-w-[800px]">
+        <Typography size="md2" className="text-center max-w-[800px] mx-auto">
           Our company provides tailored solutions designed to meet the unique requirements of various types of
           businesses, ensuring that we address their specific needs effectively.
         </Typography>
