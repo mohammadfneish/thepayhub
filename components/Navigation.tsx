@@ -86,14 +86,6 @@ export default function Navigation() {
       ) {
         setIsMenuOpen(false)
       }
-
-      if (
-        (!target.classList.contains('desktop-menu') && !target.closest('div.desktop-menu')) ||
-        target.classList.contains('desktop-menu-item') ||
-        target.closest('div.desktop-menu-item')
-      ) {
-        setSelectedItem(null)
-      }
     }
 
     document.addEventListener('click', closeMenu)
@@ -260,7 +252,7 @@ export default function Navigation() {
   ]
 
   return (
-    <nav className={`fixed top-2 left-6 right-6 lg:left-0 lg:right-0 max-w-[1512px] z-[99999] `}>
+    <nav className={`fixed top-2 left-6 right-6 lg:left-1/2 lg:-translate-x-1/2 lg:w-full max-w-[1512px] z-[99999] `}>
       <div
         className={`w-full transition-colors duration-300 bg-soft-100 rounded-full p-3 ${
           scrolled ? 'opacity-95' : ''
@@ -381,8 +373,11 @@ const MenuItemDesktop = ({item, selectedItem, setSelectedItem, setIsMenuOpen}: M
         </span>
       </div>
       {selectedItem?.href === item.href && (
-        <div className={`absolute flex bg-soft-200 top-16 left-14 transform -translate-x-1/2 rounded-2xl ${item?.items?.length > 4 ? 'min-w-[700px]' : 'min-w-[340px]'}  p-1 w-full`}>
-          <div className='absolute -top-2 left-1/2 transform -translate-x-full w-5 h-5 bg-soft-200 rotate-45'></div>
+        <div
+          className={`absolute flex bg-soft-200 top-16 left-14 transform -translate-x-1/2 rounded-2xl ${
+            item?.items?.length > 4 ? 'min-w-[700px]' : 'min-w-[340px]'
+          }  p-1 w-full`}>
+          <div className="absolute -top-2 left-1/2 transform -translate-x-full w-5 h-5 bg-soft-200 rotate-45"></div>
           <div className="flex flex-col w-full">
             <div className={`py-5 px-6 grid ${item?.items?.length > 4 ? 'grid-cols-2' : 'grid-cols-1 '} gap-4`}>
               {item?.items?.map((subItem: any, index: number) => (
