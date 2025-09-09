@@ -26,7 +26,7 @@ function USXP() {
     <div className="flex flex-col gap-12 items-center">
       {/* Top */}
       <div className="rounded-3xl overflow-hidden w-full">
-        <div className="bg-[url('/images/usxp-top.webp')] bg-right-bottom bg-cover w-full h-[600px] md:h-[700px] lg:h-[800px] flex items-center relative">
+        <div className="bg-[url('/images/common-top.webp')] bg-right-bottom bg-cover w-full h-[600px] md:h-[700px] lg:h-[800px] flex items-center relative">
           <div className="flex flex-col sm:flex-row gap-6 sm:gap-10 md:gap-14 lg:gap-20 px-8 sm:pr-0 sm:pl-12 md:pl-20 lg:pl-36">
             <div className="flex flex-col gap-12 z-1">
               <Typography size="xxl" className="max-w-[750px]">
