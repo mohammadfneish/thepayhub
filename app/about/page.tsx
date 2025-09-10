@@ -1,3 +1,7 @@
+import NestedCircles from "@images/about/nestedCircles.png"
+import HandCursor from "@images/about/handCursor.png"
+import Shield from "@images/about/shield.png"
+
 import UserAccountHexagon from '@svg/userAccountHexagon.svg'
 import IdeaHexagon from '@svg/ideaHexagon.svg'
 import Target from '@svg/target.svg'
@@ -6,6 +10,7 @@ import Calendar from '@svg/calendar.svg'
 import RadialGradientBlur from '@components/common/RadialGradientBlur'
 import Typography from '@components/common/Typography'
 import FooterTop from '@components/FooterTop'
+import Image from "next/image"
 
 function AboutUs() {
   const storyDates = [
@@ -44,6 +49,24 @@ function AboutUs() {
     },
   ]
 
+  const core = [
+    {
+      imageSrc: NestedCircles,
+      title: 'Simplicity',
+      description: 'We believe the most powerful technology is the one you barely notice. Behind our intuitive interface lies a complex infrastructure working to make every transaction simple, fast, and reliable.',
+    },
+    {
+      imageSrc: HandCursor,
+      title: 'Accessible Innovation',
+      description: 'We built every component of our platform with security and transparency as absolute priorities. We only work with regulated financial partners and implement the most rigorous data protection standards.',
+    },
+    {
+      imageSrc: Shield,
+      title: 'Trust',
+      description: 'We develop cutting-edge technologies that eliminate barriers, not create new ones. Our innovation has a purpose: making global financial operations accessible to businesses of all sizes.',
+    },
+  ]
+
   return (
     <div className="flex flex-col gap-24 items-center">
       {/* Top */}
@@ -52,6 +75,7 @@ function AboutUs() {
           <Typography size="xxl">About Us</Typography>
         </div>
       </div>
+
       {/* Our Story */}
       <div className="flex flex-col md:flex-row gap-8 md:gap-20 pt-12 pb-10 relative">
         <RadialGradientBlur />
@@ -93,28 +117,58 @@ function AboutUs() {
         </div>
       </div>
 
+      {/* we develop */}
+      <div className="grid grid-cols-1 md:grid-cols-2 justify-between items-center gap-20">
+        <div className="h-[300px] rounded-2xl overflow-hidden bg-[url('/images/thepayhub.webp')] bg-left bg-cover "></div>
+        <Typography size="md3" className="max-w-[600px]">
+          &quot;We develop cutting-edge technologies that eliminate barriers, not create new ones. Our innovation has a
+          purpose: making global financial operations accessible to businesses of all sizes.&quot;
+        </Typography>
+      </div>
+
       {/* Our Foundation */}
       <div className="flex flex-col gap-20 relative">
         <RadialGradientBlur />
         <div className="flex flex-col gap-6">
-          <Typography size="xl">Our Foundation</Typography>
+          <Typography size="xl" className="text-center">
+            Our Foundation
+          </Typography>
           <Typography size="md2" className="text-center">
             The mission and vision that guide our journey are fundamental to our purpose and aspirations. They define
             who we are and where we aim to go.
           </Typography>
         </div>
 
-       <div className='grid grid-cols-1 md:grid-cols-2 gap-2 z-10'>
-         {foundation.map((item, index) => (
-          <div className='flex flex-col gap-4 rounded-3xl bg-soft-100 p-8'>
-            {item.icon}
-            <Typography size='lg'>{item.title}</Typography>
-            <Typography size='md2'>{item.description}</Typography>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-2 z-10">
+          {foundation.map((item, index) => (
+            <div key={index} className="flex flex-col gap-4 rounded-3xl bg-soft-100 p-8">
+              {item.icon}
+              <Typography size="lg">{item.title}</Typography>
+              <Typography size="md2">{item.description}</Typography>
+            </div>
+          ))}
+        </div>
+      </div>
 
-          </div>
-        ))}
-
-       </div>
+      <div className="flex flex-col gap-20 relative">
+        <RadialGradientBlur />
+        <div className="flex flex-col gap-6">
+          <Typography size="xl" className="text-center">
+            Our Core Values
+          </Typography>
+          <Typography size="md2" className="text-center">
+            The principles we live by every day
+          </Typography>
+        </div>
+         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 z-10">
+           {core.map((item, index) => (
+             <div key={index} className="flex flex-col gap-4 rounded-3xl p-8">
+               <Image src={item.imageSrc} alt={item.title} width={100} height={100} />
+               <Typography size="lg">{item.title}</Typography>
+               <Typography size="md2">{item.description}</Typography>
+             </div>
+           ))}
+         </div>
       </div>
       {/* Footer */}
       <FooterTop />
