@@ -296,12 +296,7 @@ export default function Navigation() {
                 </div>
               </div>
             </div>
-            <Link href="/login">
-              <Button variant="plain" className="text-sub-600 !text-sm">
-                Login
-              </Button>
-            </Link>
-            <Link href="/login">
+            <Link href="/register">
               <Button variant="primary" className="!text-sm">
                 Register
               </Button>
@@ -324,13 +319,7 @@ export default function Navigation() {
                   />
                 ))}
                 <Divider />
-                <Link
-                  href={'/login'}
-                  className={`block py-2 px-4 nav-link text-sub-600 hover:text-primary-400 transition-colors duration-500`}
-                  onClick={() => setIsMenuOpen(false)}>
-                  <span className={`mobile-menu-item ${pathname === '/login' ? 'text-white' : ''}`}>Login</span>
-                </Link>
-                <Link href="/login">
+                <Link href="/register">
                   <Button variant="primary" className="mobile-menu-item w-full">
                     Register
                   </Button>
