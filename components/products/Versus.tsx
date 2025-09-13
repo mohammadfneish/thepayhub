@@ -1,6 +1,6 @@
 import RadialGradientBlur from '@components/common/RadialGradientBlur'
 import Typography from '@components/common/Typography'
-import ThePayHubLogo from '@svg/thePayHubLogo.svg'
+import ThePayHubLogo from '@svg/ThePayHubLogo.svg'
 import UserCircle from '@svg/userCircle.svg'
 import Blend from '@svg/blend.svg'
 import DashboardSpeed from '@svg/dashboardSpeed.svg'
