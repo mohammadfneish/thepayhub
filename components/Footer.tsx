@@ -9,19 +9,19 @@ export default function Footer() {
   const icons = [
     {
       icon: <Facebook />,
-      link: '#',
+      link: 'https://facebook.com',
     },
     {
       icon: <Twitter />,
-      link: '#',
+      link: 'https://twitter.com',
     },
     {
       icon: <LinkedIn />,
-      link: '#',
+      link: 'https://linkedin.com',
     },
     {
       icon: <Instagram />,
-      link: '#',
+      link: 'https://instagram.com',
     },
   ]
 
@@ -31,27 +31,27 @@ export default function Footer() {
       items: [
         {
           name: 'Home',
-          href: '#',
+          href: '/',
         },
         {
           name: 'Solutions',
-          href: '#',
+          href: '/solutions',
         },
         {
           name: 'About Us',
-          href: '#',
+          href: '/about',
         },
         {
           name: 'News',
-          href: '#',
+          href: '/news',
         },
         {
           name: 'FAQ',
-          href: '#',
+          href: '/faq',
         },
         {
           name: 'Contact',
-          href: '#',
+          href: '/contact',
         },
       ],
     },
@@ -60,19 +60,23 @@ export default function Footer() {
       items: [
         {
           name: 'XPayz (XPZ)',
-          href: '#',
+          href: '/products#xpz',
         },
         {
           name: 'PayXGlobal (PXG)',
-          href: '#',
+          href: '/products#pxg',
+        },
+        {
+          name: 'Smart Ledger (SML)',
+          href: '/products#sml',
         },
         {
           name: 'USXP',
-          href: '#',
+          href: '/usxp',
         },
         {
           name: 'GKS Solution',
-          href: '#',
+          href: '/about',
         },
       ],
     },
@@ -108,7 +112,7 @@ export default function Footer() {
             Our innovative infrastructure is designed for contemporary B2B finance, seamlessly integrating tokenized
             payments with traditional banking systems into one cohesive global ecosystem.
           </p>
-          <div className="flex gap-3">
+          {/* <div className="flex gap-3">
             {icons.map((icon, index) => (
               <Link
                 href={icon.link}
@@ -117,17 +121,19 @@ export default function Footer() {
                 {icon.icon}
               </Link>
             ))}
-          </div>
+          </div> */}
         </div>
 
         <div className="flex flex-wrap gap-x-8 md:gap-x-0 sm:grid grid-cols-2 lg:grid-cols-3 md:w-[572px] gap-y-8">
           {links.map((link, i) => (
             <div key={i} className="flex flex-col gap-6">
               <p className="font-medium text-2xl">{link.title}</p>
-              <ul className='flex flex-col gap-3'>
+              <ul className="flex flex-col gap-3">
                 {link.items.map((item, j) => (
                   <li key={j}>
-                    <Link href={item.href} className="text-sub-600 text-sm font-medium transition-colors hover:text-white">
+                    <Link
+                      href={item.href}
+                      className="text-sub-600 text-sm font-medium transition-colors hover:text-white">
                       {item.name}
                     </Link>
                   </li>

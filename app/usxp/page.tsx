@@ -14,6 +14,7 @@ import LottieClient from '@components/common/LottieClient'
 import Divider from '@components/common/Divider'
 import RadialGradientBlur from '@components/common/RadialGradientBlur'
 import FooterTop from '@components/FooterTop'
+import Link from 'next/link'
 
 interface FrameProps {
   icon: React.ReactNode
@@ -39,12 +40,16 @@ function USXP() {
               </Typography>
 
               <div className="flex flex-col sm:flex-row gap-6">
-                <Button variant="primary" className="min-w-fit" icon={<BardLine />}>
-                  Get Started
-                </Button>
-                <Button variant="secondary" className="min-w-fit" icon={<VideoAiLine />}>
-                  Schedule a Call
-                </Button>
+                <Link href={'/contact'}>
+                  <Button variant="primary" className="min-w-fit" icon={<BardLine />}>
+                    Get Started
+                  </Button>
+                </Link>
+                <Link href="https://calendly.com/thepayhub-sales/30min" target="_blank" rel="noreferrer noopenner">
+                  <Button variant="secondary" className="min-w-fit" icon={<VideoAiLine />}>
+                    Schedule a Call
+                  </Button>
+                </Link>
               </div>
             </div>
             <div className="absolute right-1/2 -bottom-1/2 transform -translate-y-1/2 translate-x-1/2 z-0 sm:relative size-[340px]  sm:max-w-[340px] sm:max-h-[340px] sm:right-0 sm:-bottom-0 sm:-translate-0">

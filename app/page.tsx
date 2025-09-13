@@ -1,3 +1,6 @@
+'use client'
+
+import {useRouter} from 'next/navigation'
 import Button from '@components/common/Button'
 import Typography from '@components/common/Typography'
 import HomeEarth from '@images/home-earth.webp'
@@ -29,8 +32,12 @@ import PXGLogo from '@svg/pxgLogo.svg'
 import SmartLedgerLogo from '@svg/smartLedgerLogo.svg'
 import Technology from '@components/home/Technology'
 import FooterTop from '@components/FooterTop'
+import ChevronRight from '@svg/chevronRight.svg'
+import Link from 'next/link'
 
 export default function Home() {
+  const router = useRouter()
+
   const preferring = [
     {
       icon: Chain,
@@ -69,12 +76,16 @@ export default function Home() {
               </Typography>
 
               <div className="flex flex-col sm:flex-row gap-6">
-                <Button variant="primary" className="min-w-fit" icon={<BardLine />}>
-                  Explore Solutions
-                </Button>
-                <Button variant="secondary" className="min-w-fit" icon={<VideoAiLine />}>
-                  Schedule a Call
-                </Button>
+                <Link href="/contact">
+                  <Button variant="primary" className="min-w-fit" icon={<BardLine />}>
+                    Explore Solutions
+                  </Button>
+                </Link>
+                <Link href="https://calendly.com/thepayhub-sales/30min" target="_blank" rel="noreferrer noopenner">
+                  <Button variant="secondary" className="min-w-fit" icon={<VideoAiLine />}>
+                    Schedule a Call
+                  </Button>
+                </Link>
               </div>
             </div>
             <div className="absolute right-1/2 -bottom-[60%] transform  translate-x-1/2 z-0 sm:relative size-[520px]  sm:max-w-[520px] sm:max-h-[520px] sm:right-0 sm:-bottom-0 sm:-translate-0 ">
@@ -236,10 +247,14 @@ export default function Home() {
               </div>
             ))}
           </div>
+          <div className="flex justify-center items-center">
+            <Button variant="primary" className="w-fit" postIcon={<ChevronRight />}>
+              {'Join Today'}
+            </Button>
+          </div>
         </div>
       </div>
       <FooterTop />
-
     </div>
   )
 }
@@ -269,11 +284,11 @@ const Frame = ({
       <RadialGradientBlur />
       {<div className="flex w-full items-center justify-center sm:hidden">{mobileImage ?? image}</div>}
       <div
-        className={`flex flex-col gap-6 md:gap-8 lg:gap-12 w-full lg:mt-12 items-start sm:items-center lg:items-start ${
+        className={`flex flex-col gap-6 md:gap-8 lg:gap-12 w-full items-start sm:items-center lg:items-start ${
           imageOrder == 'left' ? 'order-1 lg:order-2' : ''
         }`}>
         <div className="hidden sm:block">{topIcon}</div>
-        <Typography size="xl" className="lg:max-w-[550px] text-start sm:text-center lg:text-start">
+        <Typography size="xl" className="lg:max-w-[320px] text-start sm:text-center lg:text-start leading-[70px]">
           {title}
         </Typography>
 

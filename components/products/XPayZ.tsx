@@ -24,6 +24,7 @@ import Route from '@svg/route.svg'
 import MessageQuestion from '@svg/messageQuestion.svg'
 import ArrowsDown from '@svg/arrowsDown.svg'
 import CheckmarkBadge from '@svg/checkmarkBadge.svg'
+import Link from 'next/link'
 
 function XPayZ() {
   const features = [
@@ -119,8 +120,8 @@ function XPayZ() {
   ]
 
   return (
-    <div className="relative w-full">
-            <div
+    <div id="product_xpz_section" className="relative w-full">
+      <div
         className={`absolute left-1/2 transform -translate-x-1/2 bg-[radial-gradient(circle,#00428055_0%,#00428055_100%)] rounded-full w-2/3 h-full blur-[400px]`}
       />
 
@@ -160,9 +161,11 @@ function XPayZ() {
             </div>
 
             <div className="w-full sm:w-fit">
-              <Button variant="primary" className="min-w-fit" postIcon={<ArrowTopRight />}>
-                Go to XPayz
-              </Button>
+              <Link href="https://app.xpayz.us" target="_blank" rel="noopener noreferrer">
+                <Button variant="primary" className="min-w-fit" postIcon={<ArrowTopRight />}>
+                  Go to XPayz
+                </Button>
+              </Link>
             </div>
           </div>
         </div>

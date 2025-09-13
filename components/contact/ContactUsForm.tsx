@@ -10,7 +10,7 @@ import {toast} from 'react-hot-toast'
 import Button from '@components/common/Button'
 import Typography from '@components/common/Typography'
 import {CheckIcon} from '@heroicons/react/24/outline'
-import Input, { Field } from '@components/common/Input'
+import Input, {Field} from '@components/common/Input'
 
 const inquiries = ['Business Inquiry', 'Product Inquiry', 'Other']
 function ContactUsForm() {
@@ -20,16 +20,16 @@ function ContactUsForm() {
 
   const fields: Field[] = [
     {
-      id: 'first_name',
-      model: 'first_name',
+      id: 'firstName',
+      model: 'firstName',
       label: 'First Name',
       placeholder: 'Enter Your First Name',
       icon: <User />,
       required: true,
     },
     {
-      id: 'last_name',
-      model: 'last_name',
+      id: 'lastName',
+      model: 'lastName',
       label: 'Last Name',
       placeholder: 'Enter Your Last Name',
       icon: <User />,
@@ -45,24 +45,24 @@ function ContactUsForm() {
       required: true,
     },
     {
-      id: 'phone_number',
-      model: 'phone_number',
+      id: 'phone',
+      model: 'phone',
       label: 'Phone Number',
       type: 'phone',
       placeholder: '(555) 000-0000',
       required: true,
     },
     {
-      id: 'company_name',
-      model: 'company_name',
+      id: 'company',
+      model: 'company',
       label: 'Company Name',
       placeholder: 'Your company name',
       icon: <BuildingLine />,
       required: true,
     },
     {
-      id: 'inquiry_type',
-      model: 'inquiry_type',
+      id: 'inquiry',
+      model: 'inquiry',
       label: 'Inquiry Type',
       placeholder: 'Select an Inquiry Type',
       icon: <MessageLine />,
@@ -135,7 +135,7 @@ function ContactUsForm() {
       </div>
       <form className="grid grid-cols-1 md:grid-cols-2 gap-4" onSubmit={handleOnSubmit}>
         {fields.map((field, index) => {
-                   return (
+          return (
             <div
               key={index}
               className={`flex flex-col gap-2 ${
@@ -149,9 +149,11 @@ function ContactUsForm() {
           <Button variant="primary" type="submit" loading={loading} postIcon={<ChevronRight />}>
             Send Message
           </Button>
-         {success && <Button variant="secondary" icon={<CheckIcon width={20} height={20} />} className="text-white rounded-xl!">
-            Your message has been sent successfully
-          </Button>}
+          {success && (
+            <Button variant="secondary" icon={<CheckIcon width={20} height={20} />} className="text-white rounded-xl!">
+              Your message has been sent successfully
+            </Button>
+          )}
         </div>
       </form>
     </div>

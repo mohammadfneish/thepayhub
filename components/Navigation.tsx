@@ -37,6 +37,7 @@ interface MenuItemProps {
   item: MenuItem
   selectedItem: MenuItem | null
   setSelectedItem: (item: MenuItem | null) => void
+  isMenuOpen: boolean
   setIsMenuOpen: (b: boolean) => void
 }
 
@@ -57,12 +58,12 @@ interface MenuItemSub {
   icon: React.ReactNode
   title: string
   description: string
+  href: string
 }
 
 export default function Navigation() {
-  const pathname = usePathname()
-
-  const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false)
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false)
+  const [isDesktopMenuOpen, setIsDesktopMenuOpen] = useState<boolean>(false)
   const [selectedItem, setSelectedItem] = useState<MenuItem | null>(null)
 
   const [scrolled, setScrolled] = useState(false)
@@ -72,6 +73,9 @@ export default function Navigation() {
       setScrolled(window.scrollY > 50)
     }
 
+    setIsDesktopMenuOpen(false)
+    setIsMobileMenuOpen(false)
+
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
@@ -80,17 +84,18 @@ export default function Navigation() {
     const closeMenu = (e: Event) => {
       let target = e.target as HTMLElement
       if (
-        (!target.classList.contains('mobile-menu') && !target.closest('div.mobile-menu')) ||
-        target.classList.contains('mobile-menu-item') ||
-        target.closest('div.mobile-menu-item')
+        (!target.classList.contains('app-menu') && !target.closest('div.app-menu')) ||
+        target.classList.contains('app-menu-item') ||
+        target.closest('a.app-menu-item')
       ) {
-        setIsMenuOpen(false)
+        setIsDesktopMenuOpen(false)
+        setIsMobileMenuOpen(false)
       }
     }
 
     document.addEventListener('click', closeMenu)
     return () => document.removeEventListener('click', closeMenu)
-  }, [isMenuOpen])
+  }, [isMobileMenuOpen, isDesktopMenuOpen])
 
   const menuItems: MenuItem[] = [
     {icon: <HomeLine />, href: '/', label: 'Home'},
@@ -107,6 +112,7 @@ export default function Navigation() {
           ),
           title: 'XPayZ',
           description: 'Tokenized payment platform',
+          href: '/products#xpz',
         },
         {
           icon: (
@@ -114,8 +120,9 @@ export default function Navigation() {
               <PXGLogo />
             </span>
           ),
-          title: 'PayXG',
+          title: 'PayXGlobal',
           description: 'Traditional Banking Infrastructure',
+          href: '/products#pxg',
         },
         {
           icon: (
@@ -125,6 +132,7 @@ export default function Navigation() {
           ),
           title: 'Smart Ledger',
           description: 'Coming soon...',
+          href: '/products#sml',
         },
       ],
       navigation: [
@@ -134,11 +142,11 @@ export default function Navigation() {
         },
         {
           title: 'Go to XPZ Website',
-          href: '#',
+          href: 'https://app.xpayz.us',
         },
         {
           title: 'Go to PXG Website',
-          href: '#',
+          href: 'https://app.payxglobal.com',
         },
       ],
     },
@@ -155,6 +163,7 @@ export default function Navigation() {
           ),
           title: 'Tokenized Asset Infrastructure',
           description: 'Closed-loop ecosystems where tokens carry real value.',
+          href: '/solutions#tokenized',
         },
         {
           icon: (
@@ -164,6 +173,7 @@ export default function Navigation() {
           ),
           title: 'Burn & Top-up Logic',
           description: 'Tokens are burned while clients are credited in fiat through our banking infrastructure.',
+          href: '/solutions#burn',
         },
         {
           icon: (
@@ -173,6 +183,7 @@ export default function Navigation() {
           ),
           title: 'Internal Ledger Conversion',
           description: 'Clients swap tokens securely through a permissioned internal ledger.',
+          href: '/solutions#internal',
         },
         {
           icon: (
@@ -182,6 +193,7 @@ export default function Navigation() {
           ),
           title: 'Compliance & Treasury Mapping',
           description: 'KYC, AML, and treasury controls are embedded across all flows.',
+          href: '/solutions#compliance',
         },
         {
           icon: (
@@ -191,6 +203,7 @@ export default function Navigation() {
           ),
           title: 'API & System Integration',
           description: 'A unified API layer links ThePayHub to client platforms and partners.',
+          href: '/solutions#api',
         },
         {
           icon: (
@@ -200,6 +213,7 @@ export default function Navigation() {
           ),
           title: 'Closed-Loop Ecosystem Framework',
           description: 'Built on a closed-loop model ensuring liquidity, compliance, and transparency.',
+          href: '/solutions#ecosystem',
         },
       ],
       navigation: [
@@ -222,6 +236,7 @@ export default function Navigation() {
           ),
           title: 'Industries We Support',
           description: 'Tokenized payment platform',
+          href: '/industry#support',
         },
         {
           icon: (
@@ -231,6 +246,7 @@ export default function Navigation() {
           ),
           title: 'The Engine Behind Fintech',
           description: 'Tokenized payment platform',
+          href: '/industry#engine',
         },
       ],
       navigation: [
@@ -252,11 +268,8 @@ export default function Navigation() {
   ]
 
   return (
-    <nav className={`fixed top-2 left-6 right-6 lg:left-1/2 lg:-translate-x-1/2 lg:w-full max-w-[1512px] z-[99999] `}>
-      <div
-        className={`w-full transition-colors duration-300 bg-soft-100 rounded-full p-3 ${
-          scrolled ? 'opacity-95' : ''
-        }`}>
+    <nav className={`fixed top-2 left-6 right-6 lg:left-1/2 lg:-translate-x-1/2 lg:w-full max-w-[1512px] z-[9] `}>
+      <div className={`w-full transition-colors duration-300 bg-soft-100 rounded-full p-3`}>
         <div className={`max-w-[1512px] mx-auto`}>
           {/* Mobile Menu Button */}
           <div className="lg:hidden flex items-center">
@@ -266,10 +279,10 @@ export default function Navigation() {
             </Link>
             <div className="">
               <button
-                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                 className="hover:text-primary-400 transition-colors duration-500">
                 <span className="h-10 w-10 bg-primary-400 rounded-full flex items-center text-soft-100 justify-center">
-                  {isMenuOpen ? <XMarkIcon className="h-6 w-6" /> : <Menu3Lines />}
+                  {isMobileMenuOpen ? <XMarkIcon className="h-6 w-6" /> : <Menu3Lines />}
                 </span>
               </button>
             </div>
@@ -290,7 +303,8 @@ export default function Navigation() {
                       item={item}
                       selectedItem={selectedItem}
                       setSelectedItem={setSelectedItem}
-                      setIsMenuOpen={setIsMenuOpen}
+                      isMenuOpen={isDesktopMenuOpen}
+                      setIsMenuOpen={setIsDesktopMenuOpen}
                     />
                   ))}
                 </div>
@@ -304,7 +318,7 @@ export default function Navigation() {
           </div>
 
           {/* Mobile Navigation */}
-          {isMenuOpen && (
+          {isMobileMenuOpen && (
             <div
               className={`mobile-menu fixed top-20 left-6 right-6 rounded-3xl z-[999999] overflow-y-auto bg-soft-100`}
               style={{maxHeight: 'calc(100vh - 88px)'}}>
@@ -315,7 +329,8 @@ export default function Navigation() {
                     item={item}
                     selectedItem={selectedItem}
                     setSelectedItem={setSelectedItem}
-                    setIsMenuOpen={setIsMenuOpen}
+                    isMenuOpen={isMobileMenuOpen}
+                    setIsMenuOpen={setIsMobileMenuOpen}
                   />
                 ))}
                 <Divider />
@@ -333,7 +348,7 @@ export default function Navigation() {
   )
 }
 
-const MenuItemDesktop = ({item, selectedItem, setSelectedItem, setIsMenuOpen}: MenuItemProps) => {
+const MenuItemDesktop = ({item, selectedItem, setSelectedItem, isMenuOpen, setIsMenuOpen}: MenuItemProps) => {
   const pathname = usePathname()
   if (!item?.items?.length) {
     return (
@@ -354,23 +369,26 @@ const MenuItemDesktop = ({item, selectedItem, setSelectedItem, setIsMenuOpen}: M
       className={`flex flex-col gap-7 text-sub-600 w-fit rounded-3xl transition-colors duration-500 relative
         ${pathname === item.href ? 'text-white' : ''}`}>
       <div
-        onClick={() => setSelectedItem(selectedItem?.href === item.href ? null : item)}
+        onClick={() => {
+          setSelectedItem(selectedItem?.href === item.href ? null : item)
+          setIsMenuOpen(true)
+        }}
         className="flex items-center justify-between gap-1 cursor-pointer hover:text-primary-400 ">
         {item.label}
         <span className={`transition-all duration-500 ${selectedItem?.href === item.href ? 'rotate-180 ' : ''}`}>
           <ArrowDownLine />
         </span>
       </div>
-      {selectedItem?.href === item.href && (
+      {selectedItem?.href === item.href && isMenuOpen && (
         <div
-          className={`absolute flex bg-soft-200 top-16 left-14 transform -translate-x-1/2 rounded-2xl ${
+          className={`app-menu absolute flex bg-soft-200 top-16 left-14 transform -translate-x-1/2 rounded-2xl ${
             item?.items?.length > 4 ? 'min-w-[700px]' : 'min-w-[340px]'
           }  p-1 w-full`}>
           <div className="absolute -top-2 left-1/2 transform -translate-x-full w-5 h-5 bg-soft-200 rotate-45"></div>
           <div className="flex flex-col w-full">
             <div className={`py-5 px-6 grid ${item?.items?.length > 4 ? 'grid-cols-2' : 'grid-cols-1 '} gap-4`}>
               {item?.items?.map((subItem: any, index: number) => (
-                <div key={index} className="flex gap-2">
+                <Link key={index} href={subItem.href} className="flex gap-2 app-menu-item">
                   {subItem.icon}
                   <div className="flex flex-col gap-0.5">
                     <Typography size="md3">{subItem.title}</Typography>
@@ -378,12 +396,17 @@ const MenuItemDesktop = ({item, selectedItem, setSelectedItem, setIsMenuOpen}: M
                       {subItem.description}
                     </Typography>
                   </div>
-                </div>
+                </Link>
               ))}
             </div>
-            <div className="flex flex-col gap-2.5 bg-soft-300 p-6 rounded-2xl w-full">
+            <div className="flex flex-col gap-2.5 bg-soft-300 p-6 rounded-2xl w-full app-menu-item">
               {item?.navigation?.map((nav: any, index: number) => (
-                <Link key={index} href={nav.href} className="flex items-center gap-1">
+                <Link
+                  key={index}
+                  href={nav.href}
+                  className="flex items-center gap-1"
+                  target={nav.target || '_self'}
+                  rel={nav.target ? 'noopener noreferrer' : undefined}>
                   <Typography size="sm" className="text-sub-600!">
                     {nav.title}
                   </Typography>
@@ -400,7 +423,7 @@ const MenuItemDesktop = ({item, selectedItem, setSelectedItem, setIsMenuOpen}: M
   )
 }
 
-const MenuItem = ({item, selectedItem, setSelectedItem, setIsMenuOpen}: MenuItemProps) => {
+const MenuItem = ({item, selectedItem, setSelectedItem, isMenuOpen, setIsMenuOpen}: MenuItemProps) => {
   const pathname = usePathname()
   if (!item?.items?.length) {
     return (
@@ -421,7 +444,7 @@ const MenuItem = ({item, selectedItem, setSelectedItem, setIsMenuOpen}: MenuItem
 
   return (
     <div
-      className={`flex flex-col gap-7 py-3.5 px-4 w-full nav-link text-sub-600 rounded-3xl transition-colors duration-500 
+      className={`app-menu flex flex-col gap-7 py-3.5 px-4 w-full nav-link text-sub-600 rounded-3xl transition-colors duration-500 
         ${pathname === item.href ? 'bg-soft-200' : ''} ${
         selectedItem?.href === item.href ? 'border border-soft-200' : ''
       } `}>
@@ -436,10 +459,10 @@ const MenuItem = ({item, selectedItem, setSelectedItem, setIsMenuOpen}: MenuItem
           <ArrowDownLine />
         </span>
       </div>
-      {selectedItem?.href === item.href && (
+      {selectedItem?.href === item.href && isMenuOpen && (
         <div className="flex flex-col gap-5">
           {item?.items?.map((subItem: MenuItemSub, index: number) => (
-            <div key={index} className="flex gap-2">
+            <Link href={subItem.href} key={index} className="flex gap-2 app-menu-item">
               {subItem.icon}
               <div className="flex flex-col gap-0.5">
                 <Typography size="md3">{subItem.title}</Typography>
@@ -447,11 +470,11 @@ const MenuItem = ({item, selectedItem, setSelectedItem, setIsMenuOpen}: MenuItem
                   {subItem.description}
                 </Typography>
               </div>
-            </div>
+            </Link>
           ))}
           <div className="flex flex-col gap-2.5 bg-soft-200 py-3.5 px-4 rounded-lg w-full">
             {item?.navigation?.map((nav: MenuItemNav, index: number) => (
-              <Link key={index} href={nav.href} className="flex items-center gap-1">
+              <Link key={index} href={nav.href} className="flex items-center gap-1 app-menu-item">
                 <Typography size="sm" className="text-sub-600!">
                   {nav.title}
                 </Typography>

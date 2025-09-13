@@ -1,4 +1,5 @@
 'use client'
+
 import User from '@svg/user.svg'
 import AtLine from '@svg/atLine.svg'
 import BuildingLine from '@svg/buildingLine.svg'
@@ -14,6 +15,7 @@ import Input, {Field} from '@components/common/Input'
 import Button from '@components/common/Button'
 import FileInput from '@components/common/FileInput'
 import Link from 'next/link'
+import {toast} from 'react-hot-toast'
 
 interface RegisterPlatforms {
   name: string
@@ -22,24 +24,24 @@ interface RegisterPlatforms {
 }
 
 function RegisterForm() {
-  const [errors, setErrors] = useState<string[]>([])
-  const [loading, setLoading] = useState(false)
-  const [file, setFile] = useState<File | null>(null)
   const profile = ['Business', 'Fintech', 'Merchant', 'Institutional Client']
 
-  const [selectedProfile, setSelectedProfile] = useState('Business')
+  const [selectedProfile, setSelectedProfile] = useState('Bussiness')
+  const [loading, setLoading] = useState(false)
+  const [uploadFiles, setUploadFiles] = useState<Array<string>>([])
+
   const fields: Field[] = [
     {
-      id: 'first_name',
-      model: 'first_name',
+      id: 'firstName',
+      model: 'firstName',
       label: 'First Name',
       placeholder: 'Enter Your First Name',
       icon: <User />,
       required: true,
     },
     {
-      id: 'last_name',
-      model: 'last_name',
+      id: 'lastName',
+      model: 'lastName',
       label: 'Last Name',
       placeholder: 'Enter Your Last Name',
       icon: <User />,
@@ -55,16 +57,16 @@ function RegisterForm() {
       required: true,
     },
     {
-      id: 'phone_number',
-      model: 'phone_number',
+      id: 'phone',
+      model: 'phone',
       label: 'Phone Number',
       type: 'phone',
       placeholder: '(555) 000-0000',
       required: true,
     },
     {
-      id: 'company_name',
-      model: 'company_name',
+      id: 'company',
+      model: 'company',
       label: 'Company Name',
       placeholder: 'Your company name',
       icon: <BuildingLine />,
@@ -82,7 +84,102 @@ function RegisterForm() {
     {name: 'GKS', type: 'GKS', desc: 'Global compliance and fund routing'},
   ]
 
-  const handleOnSubmit = async (e: FormEvent<HTMLFormElement>) => {}
+  const handleOnSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.stopPropagation()
+    e.preventDefault()
+
+    if (loading) return
+
+    const fields = ['firstName', 'lastName', 'email', 'phone', 'company']
+    try {
+      const formData = new FormData()
+      formData.append('func', 'create-account')
+
+      if (!selectedProfile) {
+        toast.error('Please select a profile')
+        return false
+      } else {
+        formData.append('profile', selectedProfile)
+      }
+
+      let hasError = false
+      for (let i = 0; i < fields.length; i++) {
+        const field = fields[i]
+        const val = (document.getElementById(field) as HTMLInputElement)?.value
+        if (!val) {
+          toast.error(`${field} is required`)
+          hasError = true
+          break
+        } else {
+          formData.append(field, val)
+        }
+      }
+
+      if (hasError) {
+        return false
+      }
+
+      const platforms = document.querySelectorAll('input[type=checkbox]:checked')
+      if (!platforms.length) {
+        toast.error('Please select at least one platform')
+        return false
+      }
+      platforms.forEach(function (input, key) {
+        formData.append(`platforms[${key}]`, (input as HTMLInputElement).value)
+      })
+
+      const files: FileList | null = (document.getElementById('file-upload-input-kyc') as HTMLInputElement).files
+      if (!files?.length) {
+        toast.error('Please select at least one document')
+        return false
+      }
+      Array.from(files).forEach(function (file, key) {
+        formData.append(`files[${key}]`, file)
+      })
+
+      setLoading(true)
+      const resp: Response = await fetch(process.env.NEXT_PUBLIC_API_URL ?? '/api', {
+        method: 'POST',
+        headers: {
+          Accept: 'application/json',
+        },
+        body: formData,
+      })
+      const json = await resp.json()
+
+      if (json.success) {
+        toast.success(json.message)
+      } else {
+        toast.error(json.message)
+      }
+    } catch (error) {
+      console.error(error)
+      toast.error('Something went wrong')
+    }
+
+    setLoading(false)
+
+    // reset the form
+    ;(document.getElementById('file-upload-input-kyc') as HTMLInputElement).files = null
+    for (let i = 0; i < fields.length; i++) {
+      ;(document.getElementById(fields[i]) as HTMLInputElement).value = ''
+    }
+    document.querySelectorAll('input[type=checkbox]:checked').forEach(function (input) {
+      ;(input as HTMLInputElement).checked = false
+    })
+    setSelectedProfile('Bussiness')
+  }
+
+  const handleFile = (e: any) => {
+    let fileNames = []
+    const files = e.target.files
+    if (files && files.length > 0) {
+      for (let i = 0; i < files.length; i++) {
+        fileNames.push(files[i].name + ` (${(files[i].size / (1024 * 1024)).toFixed(2)} MB)`)
+      }
+    }
+    setUploadFiles(fileNames)
+  }
 
   return (
     <div className="flex flex-col gap-6">
@@ -121,7 +218,7 @@ function RegisterForm() {
                   className={`flex flex-col gap-2 ${
                     fields.length % 2 === 1 && fields.length - 1 === index ? 'col-span-2' : 'col-span-2 md:col-span-1'
                   } `}>
-                  <Input field={field} errors={errors} />
+                  <Input field={field} />
                 </div>
               )
             })}
@@ -150,7 +247,16 @@ function RegisterForm() {
           <Typography size="sm">
             KYC Upload * <span className="text-sub-600">(Upload your required documents once)</span>
           </Typography>
-          <FileInput id={'kyc'} onChange={file => setFile(file)} />
+          <FileInput id={'kyc'} onChange={handleFile} />
+          {uploadFiles?.length > 0 && (
+            <div className="flex flex-col gap-2 overflow-x-auto scrollable-container items-start">
+              {uploadFiles.map((item, index) => (
+                <div key={index} className="m-2 rounded-lg border-b-1 border-gray-500 px-2 opacity-80">
+                  {item}
+                </div>
+              ))}
+            </div>
+          )}
 
           <div className="flex w-full col-span-2 justify-between">
             <Button variant="primary" type="submit" loading={loading} postIcon={<ChevronRight />}>
@@ -161,29 +267,29 @@ function RegisterForm() {
 
         <Divider text="OR ACCESS OUR OTHER APPS" />
         <div className="flex gap-3 mb-10">
-          <Link href={'#'}>
+          <Link href={'https://mazzera.finance/'} target="_blank" rel="noopener noreferrer">
             <Button variant="secondary" postIcon={<ArrowRightUp />}>
               Sign up to Mazzera
             </Button>
           </Link>
-          <Link href={'#'}>
+          <Link href={'https://www.mazzera.finance/'} target="_blank" rel="noopener noreferrer">
             <Button variant="secondary" postIcon={<ArrowRightUp />}>
               Sign up to Moonlight
             </Button>
           </Link>
-          <Link href={'#'}>
+          <Link href={'https://gkssolution.com'} target="_blank" rel="noopener noreferrer">
             <Button variant="secondary" postIcon={<ArrowRightUp />}>
-              Sign up to SKG
+              Sign up to GKS
             </Button>
           </Link>
         </div>
 
-        <div className='flex justify-between gap-3 items-center'>
-            <div className='flex flex-col gap-3'>
-              <Typography size='xl'>Need assistance?</Typography>
-              <Typography size='md3'>Don't hesitate to send us a message</Typography>
-            </div>
-            <Link href={'#'}>
+        <div className="flex justify-between gap-3 items-center">
+          <div className="flex flex-col gap-3">
+            <Typography size="xl">Need assistance?</Typography>
+            <Typography size="md3">Don't hesitate to send us a message</Typography>
+          </div>
+          <Link href={'/contact'}>
             <Button variant="secondary" postIcon={<CustomerService />}>
               Contact Support
             </Button>

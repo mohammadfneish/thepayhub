@@ -1,3 +1,5 @@
+'use client'
+
 import PaymentProcess from '@images/industry/payment-process.webp'
 import ClothingApparel from '@images/industry/clothing-apparel.webp'
 import ConsumerElectronics from '@images/industry/consumer-electronics.webp'
@@ -22,6 +24,8 @@ import RadialGradientBlur from '@components/common/RadialGradientBlur'
 import LeftArrowScroll from '@components/common/LeftArrowScroll'
 import RightArrowScroll from '@components/common/RightArrowScroll'
 import FooterTop from '@components/FooterTop'
+import {useEffect} from 'react'
+import Link from 'next/link'
 
 function Industry() {
   const industries = [
@@ -75,6 +79,21 @@ function Industry() {
     },
   ]
 
+  useEffect(() => {
+    const handleHashChange = () => {
+      const hash = window.location.hash.replace('#', '')
+      const idSection = document.getElementById(hash) as HTMLDivElement
+      if (idSection) {
+        idSection.scrollIntoView({behavior: 'smooth'})
+      }
+    }
+
+    window.addEventListener('hashchange', handleHashChange)
+    handleHashChange()
+
+    return () => window.removeEventListener('hashchange', handleHashChange)
+  }, [])
+
   return (
     <div className="flex flex-col gap-32 items-center">
       {/* Top */}
@@ -94,12 +113,16 @@ function Industry() {
               </div>
 
               <div className="flex flex-col sm:flex-row gap-6">
-                <Button variant="primary" className="min-w-fit" icon={<BardLine />}>
-                  Get Started
-                </Button>
-                <Button variant="secondary" className="min-w-fit" icon={<VideoAiLine />}>
-                  Schedule a Call
-                </Button>
+                <Link href={'/contact'}>
+                  <Button variant="primary" className="min-w-fit" icon={<BardLine />}>
+                    Get Started
+                  </Button>
+                </Link>
+                <Link href="https://calendly.com/thepayhub-sales/30min" target="_blank" rel="noreferrer noopenner">
+                  <Button variant="secondary" className="min-w-fit" icon={<VideoAiLine />}>
+                    Schedule a Call
+                  </Button>
+                </Link>
               </div>
             </div>
             <div className="hidden sm:block sm:max-w-[340px] sm:max-h-[420px] ">
@@ -129,7 +152,7 @@ function Industry() {
             <div
               id="industries-scrollbar"
               className="flex flex-nowrap gap-6 h-full overflow-x-auto"
-              style={{WebkitOverflowScrolling: 'touch'}}>
+              style={{WebkitOverflowScrolling: 'touch', scrollbarWidth: 'none'}}>
               {industries.map((item, index) => (
                 <div
                   key={index}

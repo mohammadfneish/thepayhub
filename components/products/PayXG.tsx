@@ -23,6 +23,7 @@ import LockKey from '@svg/lockKey.svg'
 import MessageQuestion from '@svg/messageQuestion.svg'
 import ArrowsDown from '@svg/arrowsDown.svg'
 import CheckmarkBadge from '@svg/checkmarkBadge.svg'
+import Link from 'next/link'
 
 function PayXG() {
   const features = [
@@ -104,7 +105,7 @@ function PayXG() {
     },
   ]
   return (
-    <div className="relative w-full">
+    <div id="product_pxg_section" className="relative w-full">
       <div
         className={`absolute left-1/2 transform -translate-x-1/2 bg-[radial-gradient(circle,#00428055_0%,#00428055_100%)] rounded-full w-2/3 h-full blur-[400px]`}
       />
@@ -145,9 +146,11 @@ function PayXG() {
             </div>
 
             <div className="w-full sm:w-fit">
-              <Button variant="primary" className="min-w-fit" postIcon={<ArrowTopRight />}>
-                Go to PXG
-              </Button>
+              <Link href="https://app.payxglobal.com" target="_blank" rel="noopener noreferrer">
+                <Button variant="primary" className="min-w-fit" postIcon={<ArrowTopRight />}>
+                  Go to PXG
+                </Button>
+              </Link>
             </div>
           </div>
         </div>

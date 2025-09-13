@@ -12,10 +12,10 @@ export interface Field {
   icon?: React.ReactNode
 }
 
-function Input({field, errors = []}: {field: Field; errors: string[]}) {
+function Input({field}: {field: Field}) {
   const className = `w-full rounded-2xl p-2.5 border border-soft-200 outline-none bg-soft-100 ${
-    field.required && errors.includes(field.model) ? 'border border-error' : ''
-  } ${field.icon ? 'pl-10' : ''}`
+    field.icon ? 'pl-10' : ''
+  }`
 
   return (
     <div className="flex flex-col gap-1">
@@ -53,7 +53,6 @@ function Input({field, errors = []}: {field: Field; errors: string[]}) {
         )}
         {field.icon && <div className="absolute top-1/2 left-3 transform -translate-y-1/2 w-5 h-5">{field.icon}</div>}
       </div>
-      {field.required && errors.includes(field.model) && <p className="text-error text-xs">This field is required</p>}
     </div>
   )
 }

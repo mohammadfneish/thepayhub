@@ -1,5 +1,21 @@
 @import 'tailwindcss';
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap'); */
+
+@font-face {
+  font-family: 'DM Sans';
+  src: url('/fonts/DMSans/Regular.woff2') format('woff2'), url('/fonts/DMSans/Regular.woff') format('woff'),
+    url('/fonts/DMSans/Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'DM Sans';
+  src: url('/fonts/DMSans/Bold.woff2') format('woff2'), url('/fonts/DMSans/Bold.woff') format('woff'),
+    url('/fonts/DMSans/Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
 
 @theme {
   --color-primary-50: #d3f4f8;
@@ -44,7 +60,7 @@
   --color-soft-100: #171717;
   --color-soft-200: #262626;
   --color-soft-300: #333333;
-  --color-sub-300: #5C5C5C;
+  --color-sub-300: #5c5c5c;
   --color-sub-600: #a3a3a3;
   --color-on-secondary: #a3a3a3;
   --color-on-primary: #171717;
@@ -67,7 +83,7 @@
     border-color: var(--color-gray-200, currentcolor);
   }
   body {
-    font-family: DM Sans, sans-serif;
+    font-family: 'DM Sans', sans-serif;
     font-optical-sizing: auto;
     font-style: normal;
   }

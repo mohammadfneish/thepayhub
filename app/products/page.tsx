@@ -1,5 +1,6 @@
+'use client'
+
 import Button from '@components/common/Button'
-import Divider from '@components/common/Divider'
 import Typography from '@components/common/Typography'
 import BardLine from '@svg/bardLine.svg'
 import VideoAiLine from '@svg/videoAiLine.svg'
@@ -25,8 +26,12 @@ import Versus from '@components/products/Versus'
 import XPayZ from '@components/products/XPayZ'
 import PayXG from '@components/products/PayXG'
 import FooterTop from '@components/FooterTop'
+import {useEffect} from 'react'
+import Link from 'next/link'
 
 function Products() {
+  const sections = ['product_xpz_section', 'product_pxg_section', 'product_sml_section']
+
   const SmartLedgerList = [
     {
       icon: <Purse />,
@@ -113,6 +118,21 @@ function Products() {
     },
   ]
 
+  useEffect(() => {
+    const handleHashChange = () => {
+      const hash = window.location.hash.replace('#', '')
+      const idSection = document.getElementById(`product_${hash}_section`) as HTMLDivElement
+      if (idSection) {
+        idSection.scrollIntoView({behavior: 'smooth'})
+      }
+    }
+
+    window.addEventListener('hashchange', handleHashChange)
+    handleHashChange()
+
+    return () => window.removeEventListener('hashchange', handleHashChange)
+  }, [])
+
   return (
     <div className="flex flex-col gap-20 items-center">
       {/* Top */}
@@ -151,12 +171,16 @@ function Products() {
               </div>
 
               <div className="flex flex-col sm:flex-row gap-6">
-                <Button variant="primary" className="min-w-fit" icon={<BardLine />}>
-                  Get Started
-                </Button>
-                <Button variant="secondary" className="min-w-fit" icon={<VideoAiLine />}>
-                  Schedule a Call
-                </Button>
+                <Link href="/contact">
+                  <Button variant="primary" className="min-w-fit" icon={<BardLine />}>
+                    Get Started
+                  </Button>
+                </Link>
+                <Link href="https://calendly.com/thepayhub-sales/30min" target="_blank" rel="noreferrer noopenner">
+                  <Button variant="secondary" className="min-w-fit" icon={<VideoAiLine />}>
+                    Schedule a Call
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>
@@ -170,7 +194,7 @@ function Products() {
       <PayXG />
 
       {/* SmartLedger */}
-      <div className="flex flex-col gap-16 relative">
+      <div id="product_sml_section" className="flex flex-col gap-16 relative">
         <RadialGradientBlur />
         <div className="flex flex-col gap-4">
           <span className="w-[120px] h-[124px]">
@@ -189,8 +213,10 @@ function Products() {
             ))}
           </div>
         </div>
-        <div>
-          <Button postIcon={<ArrowTopRight />}>Learn More</Button>
+        <div className="flex flex-col">
+          <Link href="/contact">
+            <Button postIcon={<ArrowTopRight />}>Learn More</Button>
+          </Link>
         </div>
       </div>
 
@@ -208,7 +234,7 @@ function Products() {
           <div
             id="solutions-scrollbar"
             className="flex flex-nowrap gap-6 h-full overflow-x-auto"
-            style={{WebkitOverflowScrolling: 'touch'}}>
+            style={{WebkitOverflowScrolling: 'touch', scrollbarWidth: 'none'}}>
             {solutionsList.map((item, index) => (
               <div
                 key={index}

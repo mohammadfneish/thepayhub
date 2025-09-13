@@ -1,3 +1,6 @@
+'use client'
+
+import {useEffect} from 'react'
 import LogosGroup from '@images/solutions/logos-group.webp'
 import Flame from '@images/solutions/flame.webp'
 import Code from '@images/solutions/code.webp'
@@ -73,6 +76,7 @@ function Solutions() {
       content: 'Fully integrated into XPZ and SmartLedger',
     },
   ]
+
   const mapping = [
     {
       icon: <Agreement />,
@@ -169,6 +173,21 @@ function Solutions() {
     },
   ]
 
+  useEffect(() => {
+    const handleHashChange = () => {
+      const hash = window.location.hash.replace('#', '')
+      const idSection = document.getElementById(hash) as HTMLDivElement
+      if (idSection) {
+        idSection.scrollIntoView({behavior: 'smooth'})
+      }
+    }
+
+    window.addEventListener('hashchange', handleHashChange)
+    handleHashChange()
+
+    return () => window.removeEventListener('hashchange', handleHashChange)
+  }, [])
+
   return (
     <div className="flex flex-col gap-32 items-center">
       {/* Top */}
@@ -202,8 +221,11 @@ function Solutions() {
           </div>
         </div>
       </div>
+
       {/* Tokenized Asset Infrastructure */}
-      <div className="flex flex-col w-full md:flex-row gap-6 overflow-hidden max-w-[1200px] relative">
+      <div
+        id="solution_tokenized_section"
+        className="flex flex-col w-full md:flex-row gap-6 overflow-hidden max-w-[1200px] relative">
         <div className="flex flex-col gap-24">
           <div className="flex flex-col gap-6 max-w-[600px]">
             <Typography size="xl" className="">
@@ -239,7 +261,7 @@ function Solutions() {
       </div>
 
       {/* Burn & Top-up Logic */}
-      <div className="flex flex-col gap-20 w-full max-w-[1200px] relative">
+      <div id="solution_burn_section" className="flex flex-col gap-20 w-full max-w-[1200px] relative">
         <RadialGradientBlur />
 
         <TopFrame
@@ -319,8 +341,8 @@ function Solutions() {
         </div>
       </div>
 
-      {/* Burn & Top-up Logic */}
-      <div className="flex flex-col gap-20 w-full max-w-[1200px] relative">
+      {/* Internal Ledger Conversion */}
+      <div id="solution_internal_section" className="flex flex-col gap-20 w-full max-w-[1200px] relative">
         <RadialGradientBlur />
 
         <TopFrame
@@ -385,7 +407,9 @@ function Solutions() {
       </div>
 
       {/* Compliance & Treasury Mapping */}
-      <div className="flex flex-col w-full md:flex-row gap-6 overflow-hidden max-w-[1200px] relative">
+      <div
+        id="solution_compliance_section"
+        className="flex flex-col w-full md:flex-row gap-6 overflow-hidden max-w-[1200px] relative">
         <div className="flex flex-col gap-6">
           <Typography size="xl" className="max-w-[600px]">
             Compliance & Treasury Mapping
@@ -420,7 +444,7 @@ function Solutions() {
       </div>
 
       {/* API & System Integration */}
-      <div className="flex flex-col gap-20 w-full max-w-[1200px] relative">
+      <div id="solution_api_section" className="flex flex-col gap-20 w-full max-w-[1200px] relative">
         <RadialGradientBlur inset={10} />
         <TopFrame
           title={'API & System Integration'}
@@ -477,7 +501,7 @@ function Solutions() {
       </div>
 
       {/* Closed-Loop Ecosystem Framework */}
-      <div className="flex flex-col gap-20 w-full max-w-[1200px] relative">
+      <div id="solution_ecosystem_section" className="flex flex-col gap-20 w-full max-w-[1200px] relative">
         <RadialGradientBlur />
         <TopFrame
           title={'Closed-Loop Ecosystem Framework'}
@@ -527,6 +551,7 @@ function Solutions() {
           </div>
         </div>
       </div>
+
       <FooterTop
         showLogos={false}
         title={'Custom Deployments'}

@@ -9,6 +9,7 @@ import AlchemyLogo from '@svg/alchemyLogo.svg'
 import PolygonLogo from '@svg/polygonLogo.svg'
 import MetaMapLogo from '@svg/metaMapLogo.svg'
 import ChevronRight from '@svg/chevronRight.svg'
+import Link from 'next/link'
 
 function FooterTop({
   showLogos = true,
@@ -38,9 +39,11 @@ function FooterTop({
             </Typography>
           </div>
           <div className="flex justify-center items-center">
-            <Button variant="primary" className="min-w-fit" postIcon={<ChevronRight />}>
-              {buttonText ?? 'Start Today'}
-            </Button>
+            <Link href="/contact">
+              <Button variant="primary" className="min-w-fit" postIcon={<ChevronRight />}>
+                {buttonText ?? 'Start Today'}
+              </Button>
+            </Link>
           </div>
           {showLogos && (
             <div className="flex flex-col gap-10 w-full">
