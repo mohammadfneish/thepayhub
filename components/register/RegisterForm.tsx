@@ -287,7 +287,7 @@ function RegisterForm() {
         <div className="flex justify-between gap-3 items-center">
           <div className="flex flex-col gap-3">
             <Typography size="xl">Need assistance?</Typography>
-            <Typography size="md3">Don't hesitate to send us a message</Typography>
+            <Typography size="md3">Don`t hesitate to send us a message</Typography>
           </div>
           <Link href={'/contact'}>
             <Button variant="secondary" postIcon={<CustomerService />}>

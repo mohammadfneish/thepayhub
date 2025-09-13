@@ -131,7 +131,7 @@ function ContactUsForm() {
     <div className="flex flex-col gap-6">
       <div className="flex flex-col gap-3">
         <Typography size="lg">Send us a message</Typography>
-        <Typography size="md2">Fill out the form below and we'll get back to you as soon as possible</Typography>
+        <Typography size="md2">Fill out the form below and we`ll get back to you as soon as possible</Typography>
       </div>
       <form className="grid grid-cols-1 md:grid-cols-2 gap-4" onSubmit={handleOnSubmit}>
         {fields.map((field, index) => {
@@ -141,7 +141,7 @@ function ContactUsForm() {
               className={`flex flex-col gap-2 ${
                 field?.type === 'textarea' ? 'col-span-2' : 'col-span-2 md:col-span-1'
               } `}>
-              <Input field={field} errors={errors} />
+              <Input field={field} />
             </div>
           )
         })}
