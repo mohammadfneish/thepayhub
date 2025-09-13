@@ -15,7 +15,7 @@ import Input, {Field} from '@components/common/Input'
 import Button from '@components/common/Button'
 import FileInput from '@components/common/FileInput'
 import Link from 'next/link'
-import {toast} from 'react-hot-toast'
+import { errorToast, successToast } from 'utils/Toast'
 
 interface RegisterPlatforms {
   name: string
@@ -26,7 +26,7 @@ interface RegisterPlatforms {
 function RegisterForm() {
   const profile = ['Business', 'Fintech', 'Merchant', 'Institutional Client']
 
-  const [selectedProfile, setSelectedProfile] = useState('Bussiness')
+  const [selectedProfile, setSelectedProfile] = useState('Business')
   const [loading, setLoading] = useState(false)
   const [uploadFiles, setUploadFiles] = useState<Array<string>>([])
 
@@ -96,7 +96,7 @@ function RegisterForm() {
       formData.append('func', 'create-account')
 
       if (!selectedProfile) {
-        toast.error('Please select a profile')
+        errorToast('Please select a profile')
         return false
       } else {
         formData.append('profile', selectedProfile)
@@ -107,7 +107,7 @@ function RegisterForm() {
         const field = fields[i]
         const val = (document.getElementById(field) as HTMLInputElement)?.value
         if (!val) {
-          toast.error(`${field} is required`)
+          errorToast(`${field} is required`)
           hasError = true
           break
         } else {
@@ -121,7 +121,7 @@ function RegisterForm() {
 
       const platforms = document.querySelectorAll('input[type=checkbox]:checked')
       if (!platforms.length) {
-        toast.error('Please select at least one platform')
+        errorToast('Please select at least one platform')
         return false
       }
       platforms.forEach(function (input, key) {
@@ -130,7 +130,7 @@ function RegisterForm() {
 
       const files: FileList | null = (document.getElementById('file-upload-input-kyc') as HTMLInputElement).files
       if (!files?.length) {
-        toast.error('Please select at least one document')
+        errorToast('Please select at least one document')
         return false
       }
       Array.from(files).forEach(function (file, key) {
@@ -148,13 +148,12 @@ function RegisterForm() {
       const json = await resp.json()
 
       if (json.success) {
-        toast.success(json.message)
+        successToast(json.message)
       } else {
-        toast.error(json.message)
+        errorToast(json.message)
       }
     } catch (error) {
-      console.error(error)
-      toast.error('Something went wrong')
+      errorToast('Something went wrong')
     }
 
     setLoading(false)
@@ -182,7 +181,7 @@ function RegisterForm() {
   }
 
   return (
-    <div className="flex flex-col gap-6">
+    <div className="flex flex-col gap-6 w-fit">
       <div className="flex flex-col gap-3">
         <Typography size="lg">Create your account</Typography>
         <Typography size="md2">One account to use on all our apps</Typography>
@@ -192,9 +191,9 @@ function RegisterForm() {
         {/* Choose your profile */}
         <div className="flex flex-col gap-2">
           <Typography size="sm">Choose your profile*</Typography>
-          <div className="flex gap-3">
+          <div className="flex gap-3 flex-wrap">
             {profile.map((item, index) => (
-              <span
+              <div
                 className={`flex items-center gap-2 p-2.5 border rounded-2xl  bg-soft-100 cursor-pointer ${
                   selectedProfile === item ? 'text-white border-white' : 'text-sub-600 border-soft-200'
                 } `}
@@ -202,7 +201,7 @@ function RegisterForm() {
                 onClick={() => setSelectedProfile(item)}>
                 {selectedProfile === item && <CheckIcon width={20} height={20} />}
                 {item}
-              </span>
+              </div>
             ))}
           </div>
         </div>
@@ -251,7 +250,7 @@ function RegisterForm() {
           {uploadFiles?.length > 0 && (
             <div className="flex flex-col gap-2 overflow-x-auto scrollable-container items-start">
               {uploadFiles.map((item, index) => (
-                <div key={index} className="m-2 rounded-lg border-b-1 border-gray-500 px-2 opacity-80">
+                <div key={index} className="m-2 border-b-1 border-gray-500 px-2 opacity-80">
                   {item}
                 </div>
               ))}
@@ -266,7 +265,7 @@ function RegisterForm() {
         </form>
 
         <Divider text="OR ACCESS OUR OTHER APPS" />
-        <div className="flex gap-3 mb-10">
+        <div className="flex gap-3 flex-wrap justify-center mb-10">
           <Link href={'https://mazzera.finance/'} target="_blank" rel="noopener noreferrer">
             <Button variant="secondary" postIcon={<ArrowRightUp />}>
               Sign up to Mazzera
@@ -284,7 +283,7 @@ function RegisterForm() {
           </Link>
         </div>
 
-        <div className="flex justify-between gap-3 items-center">
+        <div className="flex justify-between gap-3 flex-wrap items-center">
           <div className="flex flex-col gap-3">
             <Typography size="xl">Need assistance?</Typography>
             <Typography size="md3">Don`t hesitate to send us a message</Typography>

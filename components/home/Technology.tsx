@@ -11,12 +11,14 @@ import {useEffect, useState} from 'react'
 import RadialGradientBlur from '@components/common/RadialGradientBlur'
 import LeftArrowScroll from '@components/common/LeftArrowScroll'
 import RightArrowScroll from '@components/common/RightArrowScroll'
+import Link from 'next/link'
 
 interface Card {
   imageSrc: StaticImageData
   imgWidth?: number
   title: string
   description: string
+  link: string
 }
 
 function Technology() {
@@ -27,18 +29,21 @@ function Technology() {
       title: 'Global compliance and fund routing',
       description:
         'Atrusted partner in transforming traditional B2B operations through secure, efficient, and transparent ledger-based systems. By using the power of blockchain and tokenization.',
+        link: 'https://gkssolution.com'
     },
     {
       imageSrc: MasseraLogo,
       title: 'Cross-Border Liquidity Provider',
       description:
         'Cross-border payment processor and liquidity provider that facilitates international settlements  through secure banking rails and supports fiat conversions for digital asset ecosystems.',
+        link: 'https://mazzera.finance/'
     },
     {
       imageSrc: MoonlightLogo,
       title: 'FX and Merchant Services',
       description:
         'Moonlight is a financial service provider that facilitates currency conversion and liquidity management for stablecoin transactions within connected digital  payment platforms.',
+        link: 'https://www.mazzera.finance'
     },
   ]
 
@@ -49,7 +54,7 @@ function Technology() {
         The Underlying Technology
       </Typography>
       <div className="flex flex-col gap-6">
-        <div id="technology-scrollable" className="flex flex-nowrap gap-6 h-full overflow-x-auto">
+        <div id="technology-scrollable" className="flex flex-nowrap gap-6 h-full overflow-x-auto no-scrollbar">
           {cards.map((card, index) => (
             <Card key={index} {...card} />
           ))}
@@ -89,9 +94,11 @@ const Card = (card: Card) => {
         <Typography size="md2" className="flex-1">
           {card.description}
         </Typography>
-        <Button variant="plain" postIcon={<ChevronRightFill />} className="w-fit ml-auto hover:bg-[#211d2d]">
-          Learn More
-        </Button>
+        <Link href={card.link} target="_blank" rel="noopener noreferrer">
+          <Button variant="plain" postIcon={<ChevronRightFill />} className="w-fit ml-auto hover:bg-[#211d2d]">
+            Learn More
+          </Button>
+        </Link>
       </div>
     </div>
   )

@@ -24,7 +24,7 @@ function FooterTop({
 }) {
   return (
     <div className="overflow-hidden w-full relative">
-      <div className="bg-[url('/images/usxp-earth.webp')] bg-bottom bg-cover w-full h-[800px] flex flex-col justify-center items-center ">
+      <div className="bg-[url('/images/usxp-earth.webp')] bg-bottom bg-cover w-full h-[400px] md:h-[500px] lg:h-[600px] flex flex-col justify-center items-center ">
         <RadialGradientBlur inset={250} />
 
         <div className="flex flex-col gap-20 justify-center items-center w-full">

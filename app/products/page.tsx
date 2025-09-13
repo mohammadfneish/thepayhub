@@ -171,13 +171,13 @@ function Products() {
               </div>
 
               <div className="flex flex-col sm:flex-row gap-6">
-                <Link href="/contact">
-                  <Button variant="primary" className="min-w-fit" icon={<BardLine />}>
+                <Link className='w-full' href="/contact">
+                  <Button variant="primary" className="min-w-fit w-full" icon={<BardLine />}>
                     Get Started
                   </Button>
                 </Link>
-                <Link href="https://calendly.com/thepayhub-sales/30min" target="_blank" rel="noreferrer noopenner">
-                  <Button variant="secondary" className="min-w-fit" icon={<VideoAiLine />}>
+                <Link className='w-full' href="https://calendly.com/thepayhub-sales/30min" target="_blank" rel="noreferrer noopenner">
+                  <Button variant="secondary" className="min-w-fit w-full" icon={<VideoAiLine />}>
                     Schedule a Call
                   </Button>
                 </Link>
@@ -194,7 +194,7 @@ function Products() {
       <PayXG />
 
       {/* SmartLedger */}
-      <div id="product_sml_section" className="flex flex-col gap-16 relative">
+      <div id="product_sml_section" className="flex flex-col gap-16 relative max-w-[1200px]">
         <RadialGradientBlur />
         <div className="flex flex-col gap-4">
           <span className="w-[120px] h-[124px]">
@@ -203,7 +203,7 @@ function Products() {
           <Typography size="lg2">SmartLedger (Powered by Mazzera) - Beta</Typography>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4  gap-7">
             {SmartLedgerList.map((item, index) => (
-              <div key={index} className="flex flex-col gap-2 max-w-64">
+              <div key={index} className="flex flex-col gap-2 ">
                 {item.icon}
                 <Typography size="md2" className="text-white">
                   {item.title}
@@ -233,12 +233,12 @@ function Products() {
         <div className="flex flex-col gap-6">
           <div
             id="solutions-scrollbar"
-            className="flex flex-nowrap gap-6 h-full overflow-x-auto"
+            className="flex flex-nowrap gap-6 h-full overflow-x-auto no-scrollbar"
             style={{WebkitOverflowScrolling: 'touch', scrollbarWidth: 'none'}}>
             {solutionsList.map((item, index) => (
               <div
                 key={index}
-                className="flex flex-col gap-4 py-6 px-4 items-center rounded-2xl bg-soft-100 border border-soft-200 shadow-[0_1px_2px_0_rgba(10,13,20,0.03)] min-w-[350px]">
+                className="flex flex-col gap-4 py-6 px-4 z-[1] items-center rounded-2xl bg-soft-100 border border-soft-200 shadow-[0_1px_2px_0_rgba(10,13,20,0.03)] min-w-[350px]">
                 <Image
                   src={item.imageSrc}
                   alt={item.title}

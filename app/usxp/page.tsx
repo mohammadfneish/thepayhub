@@ -39,14 +39,14 @@ function USXP() {
                 payments across services like XPZ and PXG.
               </Typography>
 
-              <div className="flex flex-col sm:flex-row gap-6">
-                <Link href={'/contact'}>
-                  <Button variant="primary" className="min-w-fit" icon={<BardLine />}>
+              <div className="flex flex-col sm:flex-row gap-6 max-w-[400px]">
+                <Link className='w-full' href={'/contact'}>
+                  <Button variant="primary" className="w-full min-w-fit" icon={<BardLine />}>
                     Get Started
                   </Button>
                 </Link>
-                <Link href="https://calendly.com/thepayhub-sales/30min" target="_blank" rel="noreferrer noopenner">
-                  <Button variant="secondary" className="min-w-fit" icon={<VideoAiLine />}>
+                <Link className='w-full' href="https://calendly.com/thepayhub-sales/30min" target="_blank" rel="noreferrer noopenner">
+                  <Button variant="secondary" className="w-full min-w-fit" icon={<VideoAiLine />}>
                     Schedule a Call
                   </Button>
                 </Link>

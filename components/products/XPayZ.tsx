@@ -120,7 +120,7 @@ function XPayZ() {
   ]
 
   return (
-    <div id="product_xpz_section" className="relative w-full">
+    <div id="product_xpz_section" className="relative w-full max-w-[1200px]">
       <div
         className={`absolute left-1/2 transform -translate-x-1/2 bg-[radial-gradient(circle,#00428055_0%,#00428055_100%)] rounded-full w-2/3 h-full blur-[400px]`}
       />
@@ -187,7 +187,7 @@ function XPayZ() {
                 (isEvenRow && isEvenItemInRow) || (!isEvenRow && !isEvenItemInRow) ? 'bg-soft-200' : 'bg-soft-100'
 
               return (
-                <div key={index} className={`flex flex-col gap-7 max-w-[250px] p-6 rounded-lg ${bg}`}>
+                <div key={index} className={`flex flex-col gap-7 md:max-w-[250px] p-6 rounded-lg ${bg}`}>
                   <div className="w-12 h-12">{item.icon}</div>
                   <Typography size="lg">{item.title}</Typography>
                   <Typography size="xs">{item.description}</Typography>

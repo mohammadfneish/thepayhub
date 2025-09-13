@@ -74,6 +74,7 @@ export default function Navigation() {
     }
 
     setIsDesktopMenuOpen(false)
+    setSelectedItem(null)
     setIsMobileMenuOpen(false)
 
     window.addEventListener('scroll', handleScroll)
@@ -89,6 +90,7 @@ export default function Navigation() {
         target.closest('a.app-menu-item')
       ) {
         setIsDesktopMenuOpen(false)
+        setSelectedItem(null)
         setIsMobileMenuOpen(false)
       }
     }
@@ -268,7 +270,7 @@ export default function Navigation() {
   ]
 
   return (
-    <nav className={`fixed top-2 left-6 right-6 lg:left-1/2 lg:-translate-x-1/2 lg:w-full max-w-[1512px] z-[9] `}>
+    <nav className={`fixed top-2 left-6 right-6 lg:left-1/2 lg:-translate-x-1/2 lg:w-full max-w-[1512px] z-[9999] `}>
       <div className={`w-full transition-colors duration-300 bg-soft-100 rounded-full p-3`}>
         <div className={`max-w-[1512px] mx-auto`}>
           {/* Mobile Menu Button */}
@@ -320,7 +322,7 @@ export default function Navigation() {
           {/* Mobile Navigation */}
           {isMobileMenuOpen && (
             <div
-              className={`mobile-menu fixed top-20 left-6 right-6 rounded-3xl z-[999999] overflow-y-auto bg-soft-100`}
+              className={`mobile-menu fixed top-20 left-6 right-6 rounded-3xl z-[9999] overflow-y-auto bg-soft-100`}
               style={{maxHeight: 'calc(100vh - 88px)'}}>
               <div className="flex flex-col space-y-4 p-4">
                 {menuItems.map((item, index) => (

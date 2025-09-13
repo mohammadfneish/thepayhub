@@ -76,13 +76,13 @@ export default function Home() {
               </Typography>
 
               <div className="flex flex-col sm:flex-row gap-6">
-                <Link href="/contact">
-                  <Button variant="primary" className="min-w-fit" icon={<BardLine />}>
+                <Link className='w-full' href="/contact">
+                  <Button variant="primary" className="min-w-fit w-full" icon={<BardLine />}>
                     Explore Solutions
                   </Button>
                 </Link>
-                <Link href="https://calendly.com/thepayhub-sales/30min" target="_blank" rel="noreferrer noopenner">
-                  <Button variant="secondary" className="min-w-fit" icon={<VideoAiLine />}>
+                <Link className='w-full' href="https://calendly.com/thepayhub-sales/30min" target="_blank" rel="noreferrer noopenner">
+                  <Button variant="secondary" className="min-w-fit w-full" icon={<VideoAiLine />}>
                     Schedule a Call
                   </Button>
                 </Link>
@@ -192,9 +192,11 @@ export default function Home() {
             <SmartLedgerLogo />
           </span>
           <Typography size="lg">Coming soon...</Typography>
-          <Button variant="primary" className="min-w-fit" postIcon={<ArrowTopRight />}>
-            Contact us to know more
-          </Button>
+          <Link href="/contact">
+            <Button variant="primary" className="min-w-fit" postIcon={<ArrowTopRight />}>
+              Contact us to know more
+            </Button>
+          </Link>
         </div>
 
         {/* Technology */}
@@ -248,9 +250,11 @@ export default function Home() {
             ))}
           </div>
           <div className="flex justify-center items-center">
-            <Button variant="primary" className="w-fit" postIcon={<ChevronRight />}>
-              {'Join Today'}
-            </Button>
+            <Link href="/contact">
+              <Button variant="primary" className="w-fit" postIcon={<ChevronRight />}>
+                {'Join Today'}
+              </Button>
+            </Link>
           </div>
         </div>
       </div>

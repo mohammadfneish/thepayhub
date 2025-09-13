@@ -48,6 +48,7 @@ import Typography from '@components/common/Typography'
 import Image from 'next/image'
 import RadialGradientBlur from '@components/common/RadialGradientBlur'
 import FooterTop from '@components/FooterTop'
+import Link from 'next/link'
 
 function Solutions() {
   const tokens = [
@@ -207,12 +208,16 @@ function Solutions() {
               </div>
 
               <div className="flex flex-col sm:flex-row gap-6">
-                <Button variant="primary" className="min-w-fit" icon={<BardLine />}>
-                  Get Started
-                </Button>
-                <Button variant="secondary" className="min-w-fit" icon={<VideoAiLine />}>
-                  Schedule a Call
-                </Button>
+                <Link className='w-full' href="/contact">
+                  <Button variant="primary" className="w-full min-w-fit" icon={<BardLine />}>
+                    Get Started
+                  </Button>
+                </Link>
+                <Link className='w-full' href="https://calendly.com/thepayhub-sales/30min" target="_blank" rel="noreferrer noopenner">
+                  <Button variant="secondary" className="w-full min-w-fit" icon={<VideoAiLine />}>
+                    Schedule a Call
+                  </Button>
+                </Link>
               </div>
             </div>
             <div className="hidden sm:block sm:max-w-[340px] sm:max-h-[420px] ">
@@ -273,7 +278,7 @@ function Solutions() {
         />
         <div className="grid grid-cols-1 md:grid-cols-2 gap-3  ">
           {/* Where is it used? */}
-          <div className="rounded-3xl flex flex-col gap-6 p-8 bg-soft-100 ">
+          <div className="rounded-3xl flex flex-col gap-6 p-8 bg-soft-100 z-[1]">
             <Typography size="lg">Where is it used?</Typography>
             <div className="py-6 flex flex-col gap-4">
               {/* XPZ */}
@@ -325,7 +330,7 @@ function Solutions() {
           </div>
 
           {/* Why it matters? */}
-          <div className="rounded-3xl flex flex-col gap-6 p-8 bg-soft-100 ">
+          <div className="rounded-3xl flex flex-col gap-6 p-8 bg-soft-100 z-[1]">
             <Typography size="lg">Why it matters?</Typography>
             <ul className="py-6 flex flex-col gap-5">
               {whyItMattersList.map((item, index) => (
@@ -352,7 +357,7 @@ function Solutions() {
           }
           image={<Image src={Recycle} alt="Recycle" width="180" height="180" />}
         />
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-3  ">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-3 z-[1] ">
           {/* How it works (simplified) */}
           <div className="rounded-3xl flex flex-col gap-6 p-8 bg-soft-100 ">
             <Typography size="lg">How it works (simplified)</Typography>
@@ -371,7 +376,7 @@ function Solutions() {
           </div>
 
           {/* Built for */}
-          <div className="rounded-3xl flex flex-col gap-6 p-8 bg-soft-100 ">
+          <div className="rounded-3xl flex flex-col gap-6 p-8 bg-soft-100 z-[1] ">
             <Typography size="lg">Built for</Typography>
             <ul className="py-6 flex flex-col gap-5">
               {builtForList.map((item, index) => (
@@ -396,9 +401,11 @@ function Solutions() {
                   </Typography>
                 </div>
                 <div className="w-full sm:w-fit">
-                  <Button variant="primary" className="min-w-fit" postIcon={<ArrowTopRight />}>
-                    Get in touch
-                  </Button>
+                  <Link href="/contact">
+                    <Button variant="primary" className="min-w-fit" postIcon={<ArrowTopRight />}>
+                      Get in touch
+                    </Button>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -409,7 +416,7 @@ function Solutions() {
       {/* Compliance & Treasury Mapping */}
       <div
         id="solution_compliance_section"
-        className="flex flex-col w-full md:flex-row gap-6 overflow-hidden max-w-[1200px] relative">
+        className="flex flex-col w-full md:flex-row gap-6 overflow-hidden max-w-[1200px] relative ">
         <div className="flex flex-col gap-6">
           <Typography size="xl" className="max-w-[600px]">
             Compliance & Treasury Mapping
@@ -421,7 +428,7 @@ function Solutions() {
           </Typography>
         </div>
 
-        <div className="flex flex-nowrap overflow-x-auto overflow-auto w-full md:w-auto  md:grid grid-cols-2 lg:grid-cols-3 gap-2">
+        <div className="flex flex-nowrap overflow-x-auto overflow-auto w-full md:w-auto  md:grid grid-cols-2 lg:grid-cols-3 gap-2 no-scrollbar">
           <div></div>
           {mapping.map((item, index) => (
             <div
@@ -465,7 +472,7 @@ function Solutions() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 ">
             {integrations.map((item, index) => (
-              <div key={index} className="flex flex-col gap-5 rounded-lg p-6 bg-soft-200">
+              <div key={index} className="flex flex-col gap-5 rounded-lg p-6 z-[1] bg-soft-200">
                 <div className="flex justify-between gap-2">
                   <span className="w-[72px] h-[72px]">{item.logo}</span>
                   <span className="rounded-full bg-soft-100 flex items-center justify-center w-12 h-12">

@@ -5,12 +5,12 @@ import BuildingLine from '@svg/buildingLine.svg'
 import MessageLine from '@svg/messageLine.svg'
 import ChevronRight from '@svg/chevronRight.svg'
 
-import {FormEvent, useEffect, useState} from 'react'
-import {toast} from 'react-hot-toast'
+import {FormEvent, useState} from 'react'
 import Button from '@components/common/Button'
 import Typography from '@components/common/Typography'
 import {CheckIcon} from '@heroicons/react/24/outline'
 import Input, {Field} from '@components/common/Input'
+import { errorToast, successToast } from 'utils/Toast'
 
 const inquiries = ['Business Inquiry', 'Product Inquiry', 'Other']
 function ContactUsForm() {
@@ -111,13 +111,12 @@ function ContactUsForm() {
 
       if (json.success) {
         setSuccess(true)
-        toast.success(json.message)
+        successToast(json.message)
       } else {
-        toast.error(json.message)
+        errorToast(json.message)
       }
     } catch (error) {
-      console.error(error)
-      toast.error('Something went wrong')
+      errorToast('Something went wrong')
     }
     setLoading(false)
 

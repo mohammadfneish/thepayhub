@@ -93,17 +93,17 @@ function AboutUs() {
           </Typography>
         </div>
         <div className="flex flex-col py-6 pl-3 relative">
-          <div className="absolute top-0 -left-4 w-[1px] h-full bg-white/50 "></div>
+          <div className="absolute top-0 -left-0 sm:-left-4 w-[1px] h-full bg-white/50 "></div>
           {storyDates.map((story, index) => (
             <div key={index} className="flex flex-col gap-4 justify-center py-6 pl-3 relative">
               <Typography size="lg2">
                 {index === 0 && (
-                  <span className="absolute -left-7 -top-[30px] w-[1px] h-[50px] bg-linear-to-t from-white/50 to-[#000] z-0"></span>
+                  <span className="absolute -left-3 sm:-left-7 -top-[30px] w-[1px] h-[50px] bg-linear-to-t from-white/50 to-[#000] z-0"></span>
                 )}
                 {storyDates.length - 1 === index && (
-                  <span className="absolute -left-7 -bottom-[30px] w-[1px] h-[50px] bg-linear-to-t from-[#000] to-white/50 z-0"></span>
+                  <span className="absolute -left-3 sm:-left-7 -bottom-[30px] w-[1px] h-[50px] bg-linear-to-t from-[#000] to-white/50 z-0"></span>
                 )}
-                <span className="absolute -left-7 top-[80px] transform -translate-x-3 z-20 bg-linear-to-b from-[#00274C] to-[#000000] w-5 h-5 rounded-full flex items-center justify-center ">
+                <span className="absolute -left-3 sm:-left-7 top-[80px] transform -translate-x-3 z-20 bg-linear-to-b from-[#00274C] to-[#000000] w-5 h-5 rounded-full flex items-center justify-center ">
                   <Calendar />
                 </span>
                 {story.title}
@@ -139,7 +139,7 @@ function AboutUs() {
           </Typography>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-2 z-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-2 z-[1]">
           {foundation.map((item, index) => (
             <div key={index} className="flex flex-col gap-4 rounded-3xl bg-soft-100 p-8">
               {item.icon}

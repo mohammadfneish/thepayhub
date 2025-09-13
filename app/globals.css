@@ -158,3 +158,14 @@ html {
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch; /* smoother scroll on iOS */
 }
+
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE/Edge */
+  scrollbar-width: none;    /* Firefox */
+  -webkit-overflow-scrolling: touch;
+}
+.no-scrollbar::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  background: transparent;
+}
