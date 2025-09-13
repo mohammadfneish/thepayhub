@@ -1,6 +1,5 @@
 'use client'
 
-import {useRouter} from 'next/navigation'
 import Button from '@components/common/Button'
 import Typography from '@components/common/Typography'
 import HomeEarth from '@images/home-earth.webp'
@@ -36,8 +35,6 @@ import ChevronRight from '@svg/chevronRight.svg'
 import Link from 'next/link'
 
 export default function Home() {
-  const router = useRouter()
-
   const preferring = [
     {
       icon: Chain,
@@ -76,12 +73,16 @@ export default function Home() {
               </Typography>
 
               <div className="flex flex-col sm:flex-row gap-6">
-                <Link className='w-full' href="/contact">
+                <Link className="w-full" href="/contact">
                   <Button variant="primary" className="min-w-fit w-full" icon={<BardLine />}>
                     Explore Solutions
                   </Button>
                 </Link>
-                <Link className='w-full' href="https://calendly.com/thepayhub-sales/30min" target="_blank" rel="noreferrer noopenner">
+                <Link
+                  className="w-full"
+                  href="https://calendly.com/thepayhub-sales/30min"
+                  target="_blank"
+                  rel="noreferrer noopenner">
                   <Button variant="secondary" className="min-w-fit w-full" icon={<VideoAiLine />}>
                     Schedule a Call
                   </Button>
