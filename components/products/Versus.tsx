@@ -81,7 +81,7 @@ export default Versus
 
 const Table = ({data}: {data: DataProps}) => {
   return (
-    <table className="rounded-4xl bg-soft-100 w-full ">
+    <table className="rounded-4xl bg-soft-100 w-full z-10">
       <thead className="">
         <tr>
           <th className="px-6 pb-3 pt-9 text-sub-600 text-start font-medium">Feature</th>
@@ -119,7 +119,7 @@ const Table = ({data}: {data: DataProps}) => {
 
 const Card = ({name, item}: {name: string; item: DataValueProps}) => {
   return (
-    <div className="flex flex-col rounded-2xl bg-soft-100 w-full ">
+    <div className="flex flex-col rounded-2xl bg-soft-100 w-full z-10">
       <div className="flex items-center gap-3 py-3 px-4 md:px-6 ">
         {item.icon}
         <Typography size="sm">{name}</Typography>

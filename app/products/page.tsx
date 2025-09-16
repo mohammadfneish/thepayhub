@@ -138,7 +138,7 @@ function Products() {
       {/* Top */}
       <div className="rounded-3xl overflow-hidden w-full">
         <div className="bg-[url('/images/products-top.webp')] bg-center bg-cover w-full h-[600px] md:h-[700px] lg:h-[800px] flex items-center relative">
-          <div className="flex gap-6 sm:gap-8 md:gap-10 lg:gap-12 pl-8 sm:pl-12 md:pl-20 lg:pl-36">
+          <div className="flex gap-6 sm:gap-8 md:gap-10 lg:gap-12 px-8 sm:pl-12 sm:pr-0 md:pl-20 lg:pl-36">
             <div className="flex flex-col gap-12 z-1">
               <Typography size="xxl" className="max-w-[670px]">
                 Powerful products for modern business
@@ -203,7 +203,7 @@ function Products() {
           <Typography size="lg2">SmartLedger (Powered by Mazzera) - Beta</Typography>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4  gap-7">
             {SmartLedgerList.map((item, index) => (
-              <div key={index} className="flex flex-col gap-2 ">
+              <div key={index} className="flex flex-col gap-2 z-10 ">
                 {item.icon}
                 <Typography size="md2" className="text-white">
                   {item.title}

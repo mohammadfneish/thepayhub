@@ -97,8 +97,8 @@ function Industry() {
   return (
     <div className="flex flex-col gap-32 items-center">
       {/* Top */}
-      <div className="rounded-3xl w-full">
-        <div className="bg-[url('/images/solutions-top.webp')] bg-center bg-cover w-full h-[600px] md:h-[700px] lg:h-[800px] flex items-center relative">
+      <div className="rounded-3xl overflow-hidden w-full">
+        <div className="bg-[url('/images/industry-top.webp')] bg-center bg-cover w-full h-[600px] md:h-[700px] lg:h-[800px] flex items-center relative">
           <div className="flex justify-between items-center gap-6 sm:gap-8 md:gap-10 lg:gap-12 px-8 sm:px-12 md:px-20 w-full lg:px-36">
             <div className="flex flex-col gap-12 z-1">
               <div className="flex flex-col gap-6 z-1">

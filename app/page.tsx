@@ -61,7 +61,7 @@ export default function Home() {
       {/* Top */}
       <div className="rounded-3xl overflow-hidden w-full">
         <div className="bg-[url('/images/home-top.webp')] bg-center bg-cover w-full h-[600px] md:h-[700px] lg:h-[800px] flex items-center relative">
-          <div className="flex gap-6 sm:gap-8 md:gap-10 lg:gap-12 pl-8 sm:pl-12 md:pl-20 lg:pl-36">
+          <div className="flex gap-6 sm:gap-8 md:gap-10 lg:gap-12 pl-8 pr-8 sm:pl-12 sm:pr-0 md:pl-20 lg:pl-36">
             <div className="flex flex-col gap-12 z-1">
               <Typography size="xxl" className="max-w-[600px]">
                 Your gateway to smarter B2B payments

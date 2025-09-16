@@ -19,7 +19,7 @@ function RadialGradientBlur({
         left: `${inset}px`,
         filter: `blur(${blur}px)`,
       }}
-      className={`absolute bg-[radial-gradient(circle,#00428055_0%,#00428055_100%)] rounded-full ${className}`}
+      className={`absolute bg-[radial-gradient(circle,#00428055_0%,#00428055_100%)] z-[-1] rounded-full ${className}`}
       {...props}></div>
   )
 }

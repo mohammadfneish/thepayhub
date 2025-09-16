@@ -107,7 +107,7 @@ function PayXG() {
   return (
     <div id="product_pxg_section" className="relative w-full max-w-[1200px]">
       <div
-        className={`absolute left-1/2 transform -translate-x-1/2 bg-[radial-gradient(circle,#00428055_0%,#00428055_100%)] rounded-full w-2/3 h-full blur-[400px]`}
+        className={`absolute left-1/2 transform -translate-x-1/2 bg-[radial-gradient(circle,#00428055_0%,#00428055_100%)] rounded-full w-2/3 h-full z-[-1] blur-[400px]`}
       />
 
       <div className="flex flex-col justify-between md:flex-row gap-20 w-full h-fit">
@@ -172,7 +172,7 @@ function PayXG() {
                 (isEvenRow && isEvenItemInRow) || (!isEvenRow && !isEvenItemInRow) ? 'bg-soft-200' : 'bg-soft-100'
 
               return (
-                <div key={index} className={`flex flex-col gap-7 md:max-w-[250px] p-6 rounded-lg ${bg}`}>
+                <div key={index} className={`flex flex-col gap-7 md:max-w-[250px] p-6 rounded-lg z-10 ${bg}`}>
                   <div className="w-8 h-8">{item.icon}</div>
                   <Typography size="lg">{item.title}</Typography>
                   <Typography size="xs">{item.description}</Typography>
@@ -183,7 +183,7 @@ function PayXG() {
 
           <div className="flex flex-col items-center gap-2.5">
             {/* Problem */}
-            <div className={`flex flex-col gap-4 max-w-[460px] p-6 rounded-2xl bg-soft-100`}>
+            <div className={`flex flex-col gap-4 max-w-[460px] p-6 rounded-2xl bg-soft-100 z-10 `}>
               <div className="flex justify-between items-center gap-6">
                 <Typography size="lg">The Problem</Typography>
                 <MessageQuestion />
@@ -198,7 +198,7 @@ function PayXG() {
             <ArrowsDown />
 
             {/* Solution */}
-            <div className={`flex flex-col gap-4 max-w-[460px] p-6 rounded-2xl bg-soft-100`}>
+            <div className={`flex flex-col gap-4 max-w-[460px] p-6 rounded-2xl bg-soft-100 z-10`}>
               <div className="flex justify-between items-center gap-6">
                 <Typography size="lg">The Solution</Typography>
                 <CheckmarkBadge />

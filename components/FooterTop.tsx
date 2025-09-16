@@ -24,7 +24,7 @@ function FooterTop({
 }) {
   return (
     <div className="overflow-hidden w-full relative">
-      <div className="bg-[url('/images/usxp-earth.webp')] bg-bottom bg-cover w-full h-[400px] md:h-[500px] lg:h-[600px] flex flex-col justify-center items-center ">
+      <div className="bg-[url('/images/usxp-earth.webp')] bg-bottom bg-cover w-full min-h-[500px] md:min-h-[500px] lg:min-h-[600px] flex flex-col justify-center items-center ">
         <RadialGradientBlur inset={250} />
 
         <div className="flex flex-col gap-20 justify-center items-center w-full">
@@ -54,7 +54,7 @@ function FooterTop({
                 <PolygonLogo className="w-40 h-[50px]  md:w-[265px] md:h-[52px]" />
                 <MetaMapLogo className="w-32 h-16 md:w-[200px] md:h-[68px]" />
               </div>
-              <Divider />
+              <Divider className='mb-2' />
             </div>
           )}
         </div>
