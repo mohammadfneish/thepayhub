@@ -8,7 +8,6 @@ import LegalDocument from '@svg/legalDocument.svg'
 import Typography from '@components/common/Typography'
 import RadialGradientBlur from '@components/common/RadialGradientBlur'
 import Accordion from '@components/common/Accordion'
-import FooterTop from '@components/FooterTop'
 
 function FAQ() {
   const informations = [
@@ -187,7 +186,6 @@ function FAQ() {
         </div>
       </div>
 
-      <FooterTop />
     </div>
   )
 }

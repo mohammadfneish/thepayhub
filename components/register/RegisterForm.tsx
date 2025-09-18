@@ -10,12 +10,12 @@ import ArrowRightUp from '@svg/arrowRightUp.svg'
 import Divider from '@components/common/Divider'
 import Typography from '@components/common/Typography'
 import {CheckIcon} from '@heroicons/react/24/outline'
-import React, {FormEvent, useState} from 'react'
+import React, {FormEvent, useEffect, useState} from 'react'
 import Input, {Field} from '@components/common/Input'
 import Button from '@components/common/Button'
 import FileInput from '@components/common/FileInput'
 import Link from 'next/link'
-import { errorToast, successToast } from 'utils/Toast'
+import {errorToast, successToast} from 'utils/Toast'
 
 interface RegisterPlatforms {
   name: string
@@ -77,11 +77,6 @@ function RegisterForm() {
   const registerPlatforms: RegisterPlatforms[] = [
     {name: 'PXG', type: 'PXG', desc: 'USD settlement & wire services'},
     {name: 'XPZ', type: 'XPZ', desc: 'Token-based payment gateway'},
-    {name: 'Moonlight', type: 'Moonlight', desc: 'FX & liquidity services'},
-    {name: 'Mazzera', type: 'Mazzera', desc: 'Global compliance and fund routing'},
-    {name: 'STM', type: 'STM', desc: 'Crypto-to-fiat & fiat-to-crypto services in LATAM & Europe'},
-    {name: 'NSegundos', type: 'NSegundos', desc: 'Crypto-to-fiat & fiat-to-crypto services in LATAM & Europe'},
-    {name: 'GKS', type: 'GKS', desc: 'Global compliance and fund routing'},
   ]
 
   const handleOnSubmit = async (e: FormEvent<HTMLFormElement>) => {
@@ -90,7 +85,7 @@ function RegisterForm() {
 
     if (loading) return
 
-    const fields = ['firstName', 'lastName', 'email', 'phone', 'company']
+    const fields = ['firstName', 'lastName', 'email', 'phone', 'country_code', 'company']
     try {
       const formData = new FormData()
       formData.append('func', 'create-account')
@@ -257,7 +252,7 @@ function RegisterForm() {
             </div>
           )}
 
-          <div className="flex w-full col-span-2 justify-between">
+          <div className="flex w-full col-span-2 justify-center sm:justify-start">
             <Button variant="primary" type="submit" loading={loading} postIcon={<ChevronRight />}>
               Create Account
             </Button>
@@ -283,12 +278,12 @@ function RegisterForm() {
           </Link>
         </div>
 
-        <div className="flex justify-between gap-3 flex-wrap items-center">
+        <div className="flex justify-between gap-6 flex-wrap items-center">
           <div className="flex flex-col gap-3">
             <Typography size="xl">Need assistance?</Typography>
             <Typography size="md3">Don`t hesitate to send us a message</Typography>
           </div>
-          <Link href={'/contact'}>
+          <Link href={'/contact'} className="flex justify-center w-full sm:w-fit">
             <Button variant="secondary" postIcon={<CustomerService />}>
               Contact Support
             </Button>

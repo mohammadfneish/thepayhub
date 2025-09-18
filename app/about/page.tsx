@@ -9,7 +9,6 @@ import Calendar from '@svg/calendar.svg'
 
 import RadialGradientBlur from '@components/common/RadialGradientBlur'
 import Typography from '@components/common/Typography'
-import FooterTop from '@components/FooterTop'
 import Image from "next/image"
 
 function AboutUs() {
@@ -170,8 +169,6 @@ function AboutUs() {
            ))}
          </div>
       </div>
-      {/* Footer */}
-      <FooterTop />
     </div>
   )
 }

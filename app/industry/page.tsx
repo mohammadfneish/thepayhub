@@ -23,29 +23,28 @@ import Image from 'next/image'
 import RadialGradientBlur from '@components/common/RadialGradientBlur'
 import LeftArrowScroll from '@components/common/LeftArrowScroll'
 import RightArrowScroll from '@components/common/RightArrowScroll'
-import FooterTop from '@components/FooterTop'
 import {useEffect} from 'react'
 import Link from 'next/link'
 
 function Industry() {
   const industries = [
     {
-      imageSrc: ClothingApparel,
+      imageSrc: ConsumerElectronics,
       title: ' Consumer Electronics',
       description: 'Rapid settlements for high-ticket items like phones & devices.',
     },
     {
-      imageSrc: ConsumerElectronics,
+      imageSrc: PerfumesCosmetics,
       title: 'Perfumes & Cosmetics',
       description: 'Treasury solutions for bulk shipments and international buyers.',
     },
     {
-      imageSrc: ImportExportCompanies,
+      imageSrc: ClothingApparel,
       title: 'Clothing & Apparel',
       description: 'Scalable payments for seasonal demand and global supply chains.',
     },
     {
-      imageSrc: PerfumesCosmetics,
+      imageSrc: ImportExportCompanies,
       title: 'Import & Export Companies',
       description: 'Reliable movement of funds across multiple jurisdictions.',
     },
@@ -244,11 +243,6 @@ function Industry() {
         </Typography>
       </div>
 
-      <FooterTop
-        showLogos={false}
-        title={'Ready to Scale?'}
-        description="No matter if you operate a wholesale business or are a cutting-edge fintech innovator, ThePayHub provides the essential infrastructure to help you reach your goals and thrive in the digital economy."
-      />
     </div>
   )
 }

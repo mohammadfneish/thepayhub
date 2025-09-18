@@ -30,7 +30,7 @@ export default function Button({
   small,
 }: props) {
   const styles = {
-    main: 'relative flex flex-row flex-nowrap gap-2 items-center justify-center h-fit p-2.5 rounded-full font-medium text-sm sm:text-base',
+    main: 'relative flex flex-row flex-nowrap gap-2 items-center justify-center h-fit py-2.5 pl-5 pr-4 rounded-full font-medium text-sm sm:text-base',
     primary: 'bg-primary-400 text-on-primary hover:bg-white',
     secondary: 'bg-soft-100 text-on-secondary hover:text-white',
     plain: 'bg-transparent',

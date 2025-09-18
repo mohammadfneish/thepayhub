@@ -160,7 +160,7 @@ function XPayZ() {
               ))}
             </div>
 
-            <div className="w-full sm:w-fit">
+            <div className="w-full flex justify-center sm:justify-start sm:w-fit">
               <Link href="https://app.xpayz.us" target="_blank" rel="noopener noreferrer">
                 <Button variant="primary" className="min-w-fit" postIcon={<ArrowTopRight />}>
                   Go to XPayz

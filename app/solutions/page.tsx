@@ -47,7 +47,6 @@ import Button from '@components/common/Button'
 import Typography from '@components/common/Typography'
 import Image from 'next/image'
 import RadialGradientBlur from '@components/common/RadialGradientBlur'
-import FooterTop from '@components/FooterTop'
 import Link from 'next/link'
 
 function Solutions() {
@@ -146,7 +145,9 @@ function Solutions() {
     },
     {
       logo: <USXPLogo />,
-      icon: <TokenCircle />,
+      icon: <span className='w-8 h-8'>
+        <TokenCircle />
+      </span>,
       content: 'White-label token or treasury integrations',
     },
   ]
@@ -256,7 +257,7 @@ function Solutions() {
               className={`flex flex-col gap-2 min-w-[250px] md:min-w-auto max-w-[250px] h-[250px] justify-between rounded-lg p-6 ${
                 index % 2 === 0 ? 'bg-soft-200' : 'bg-soft-100'
               }`}>
-              {token.icon}
+              <span className={`p-2 rounded-full w-fit flex items-center justify-center ${index % 2 === 1 ? 'bg-soft-200' : 'bg-soft-100'}`}>{token.icon}</span>
               <Typography size="md" className="text-white">
                 {token.content}
               </Typography>
@@ -394,13 +395,13 @@ function Solutions() {
               </span>
               <div className="flex flex-col gap-6">
                 <div className="flex flex-col gp-2">
-                  <Typography size="md3">For more in-depth information</Typography>
-                  <Typography size="md2">
+                  <Typography size="md3" className=''>For more in-depth information</Typography>
+                  <Typography size="md2" className=''>
                     Our examples simplify the real processes. If you want to learn more about our full process, feel
                     free to reach out.
                   </Typography>
                 </div>
-                <div className="w-full sm:w-fit">
+                <div className="w-full flex justify-center items-center sm:justify-start sm:w-fit">
                   <Link href="/contact">
                     <Button variant="primary" className="min-w-fit" postIcon={<ArrowTopRight />}>
                       Get in touch
@@ -559,12 +560,6 @@ function Solutions() {
         </div>
       </div>
 
-      <FooterTop
-        showLogos={false}
-        title={'Custom Deployments'}
-        description="We offer bespoke solutions for fintechs, banks, or enterprise platforms that need to launch their own token infrastructure or compliant treasury system."
-        buttonText="Get in Touch"
-      />
     </div>
   )
 }

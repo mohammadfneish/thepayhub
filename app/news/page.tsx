@@ -1,17 +1,16 @@
 'use client'
-import Featured from '@images/news/featured.webp'
-import New1 from '@images/news/news-1.webp'
-import New2 from '@images/news/news-2.webp'
-import New3 from '@images/news/news-3.webp'
-import New4 from '@images/news/news-4.webp'
-import New5 from '@images/news/news-5.webp'
-import New6 from '@images/news/news-6.webp'
+import Featured from '@images/news/featured.png'
+import New1 from '@images/news/news-1.jpg'
+import New2 from '@images/news/news-2.jpg'
+import New3 from '@images/news/news-3.jpg'
+import New4 from '@images/news/news-4.jpg'
+import New5 from '@images/news/news-5.jpg'
+import New6 from '@images/news/news-6.jpg'
 
 import Typography from '@components/common/Typography'
 import {CheckIcon} from '@heroicons/react/24/outline'
 import {useState} from 'react'
 import Image, {StaticImageData} from 'next/image'
-import FooterTop from '@components/FooterTop'
 
 type News = {
   imageSrc: StaticImageData
@@ -72,7 +71,7 @@ function News() {
     <div className="flex flex-col gap-24 items-center">
       {/* Top */}
       <div className="rounded-3xl overflow-hidden w-full">
-        <div className="bg-[url('/images/common-top.webp')] bg-top bg-cover w-full h-[320px] flex items-center justify-center relative">
+        <div className="bg-[url('/images/common-top.webp')] bg-top bg-cover w-full h-[180px] md:h-[240px] lg:h-[320px] flex items-center justify-start sm:justify-center p-6 relative">
           <Typography size="xxl">Latest News</Typography>
         </div>
       </div>
@@ -139,8 +138,6 @@ function News() {
         )}
       </div>
 
-      {/* Footer */}
-      <FooterTop />
     </div>
   )
 }

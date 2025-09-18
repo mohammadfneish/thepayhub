@@ -1,5 +1,4 @@
 import Typography from '@components/common/Typography'
-import FooterTop from '@components/FooterTop'
 import RegisterForm from '@components/register/RegisterForm'
 import React from 'react'
 
@@ -15,8 +14,6 @@ function Register() {
 
       {/* Forum */}
       <RegisterForm />
-      {/* Footer */}
-      <FooterTop />
     </div>
   )
 }

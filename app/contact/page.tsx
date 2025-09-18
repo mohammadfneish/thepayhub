@@ -1,6 +1,5 @@
 import Typography from '@components/common/Typography'
 import ContactUsForm from '@components/contact/ContactUsForm'
-import FooterTop from '@components/FooterTop'
 import React from 'react'
 
 function Contact() {
@@ -16,8 +15,6 @@ function Contact() {
       {/* Forum */}
       <ContactUsForm />
 
-      {/* Footer */}
-      <FooterTop />
     </div>
   )
 }

@@ -1,7 +1,13 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
    images: {
-    domains: ['cdn.lottielab.com'], // Add any external image hostnames here
+    domains: ['cdn.lottielab.com', 'https://flagcdn.com'], // Add any external image hostnames here
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'upload.wikimedia.org',
+      },
+    ],
   },
   webpack(config) {
     const fileLoaderRule = config.module.rules.find(rule => rule.test?.test?.('.svg'))

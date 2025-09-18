@@ -89,6 +89,7 @@ function ContactUsForm() {
     setErrors([])
     const formData = new FormData(e.currentTarget)
     const data = Object.fromEntries(formData)
+    console.log(data)
 
     const requiredFields = fields.filter(field => field.required)
     const missingFields = requiredFields.filter(field => !data[field.model])
@@ -144,15 +145,10 @@ function ContactUsForm() {
             </div>
           )
         })}
-        <div className="flex w-full col-span-2 justify-between">
+        <div className="flex w-full col-span-2 justify-center sm:justify-start">
           <Button variant="primary" type="submit" loading={loading} postIcon={<ChevronRight />}>
             Send Message
           </Button>
-          {success && (
-            <Button variant="secondary" icon={<CheckIcon width={20} height={20} />} className="text-white rounded-xl!">
-              Your message has been sent successfully
-            </Button>
-          )}
         </div>
       </form>
     </div>

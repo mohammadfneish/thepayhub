@@ -25,7 +25,6 @@ import Image from 'next/image'
 import Versus from '@components/products/Versus'
 import XPayZ from '@components/products/XPayZ'
 import PayXG from '@components/products/PayXG'
-import FooterTop from '@components/FooterTop'
 import {useEffect} from 'react'
 import Link from 'next/link'
 
@@ -213,8 +212,8 @@ function Products() {
             ))}
           </div>
         </div>
-        <div className="flex flex-col">
-          <Link href="/contact">
+        <div className="flex justify-center sm:justify-start">
+          <Link href="/contact" className='w-fit'>
             <Button postIcon={<ArrowTopRight />}>Learn More</Button>
           </Link>
         </div>
@@ -263,8 +262,6 @@ function Products() {
 
       {/* ThePayHub vs other solutions */}
       <Versus />
-
-      <FooterTop />
     </div>
   )
 }

@@ -30,7 +30,6 @@ import XPZLogo from '@svg/xpzLogo.svg'
 import PXGLogo from '@svg/pxgLogo.svg'
 import SmartLedgerLogo from '@svg/smartLedgerLogo.svg'
 import Technology from '@components/home/Technology'
-import FooterTop from '@components/FooterTop'
 import ChevronRight from '@svg/chevronRight.svg'
 import Link from 'next/link'
 
@@ -133,9 +132,11 @@ export default function Home() {
             'Our blockchain-based solution enables instant settlement, programmable payments, and reduced transaction costs through our proprietary USXP stablecoin.'
           }
           button={
-            <Button variant="primary" className="min-w-fit" postIcon={<ArrowTopRight />}>
-              Go to XPayz
-            </Button>
+            <Link href="https://app.xpayz.us" target="_blank">
+              <Button variant="primary" className="min-w-fit" postIcon={<ArrowTopRight />}>
+                Go to XPayz
+              </Button>
+            </Link>
           }
           list={[
             'Tokenized Payments',
@@ -164,9 +165,11 @@ export default function Home() {
             'Access a global network of banking partners, manage multi-currency accounts, and optimize traditional payment operations through a single powerful platform.'
           }
           button={
-            <Button variant="primary" className="min-w-fit" postIcon={<ArrowTopRight />}>
-              Go to XPayz
-            </Button>
+            <Link href="https://app.payxglobal.com" target="_blank">
+              <Button variant="primary" className="min-w-fit" postIcon={<ArrowTopRight />}>
+                Go to PayXG
+              </Button>
+            </Link>
           }
           list={[
             'B2B Payment Platform',
@@ -259,7 +262,6 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <FooterTop />
     </div>
   )
 }
@@ -316,7 +318,7 @@ const Frame = ({
           </div>
         )}
 
-        {button && <div className="w-full sm:w-fit">{button}</div>}
+        {button && <div className="w-full flex justify-center sm:justify-start sm:w-fit">{button}</div>}
       </div>
       <div className={`${imageOrder == 'left' ? 'order-2 lg:order-1' : ''} hidden sm:flex items-center justify-center`}>
         {image}

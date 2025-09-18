@@ -263,7 +263,7 @@ export default function Navigation() {
       ],
     },
     {icon: <BriefcaseLine />, href: '/usxp', label: 'USXP'},
-    {icon: <InformationLine />, href: '/about', label: 'About GKS'},
+    {icon: <InformationLine />, href: '/about', label: 'About The Hub'},
     {icon: <NewspaperLine />, href: '/news', label: 'News'},
     {icon: <QuestionLine />, href: '/faq', label: 'FAQ'},
     {icon: <QuestionAnswerLine />, href: '/contact', label: 'Contact'},

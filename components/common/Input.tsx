@@ -1,4 +1,5 @@
-import React from 'react'
+'use client'
+import {useEffect, useState} from 'react'
 
 export interface Field {
   id: string
@@ -16,6 +17,29 @@ function Input({field}: {field: Field}) {
   const className = `w-full rounded-2xl p-2.5 border border-soft-200 outline-none bg-soft-100 ${
     field.icon ? 'pl-10' : ''
   }`
+
+  const [countries, setCountries] = useState([])
+
+  const fetchCountries = async () => {
+    const res = await fetch('https://restcountries.com/v3/all?fields=name,flags,idd')
+    const data = await res.json()
+    const cs = data.map((c: any) => ({
+      name: c.name.common,
+      flag: c.flags[1],
+      code: c.idd.root ? `${c.idd.root}${c.idd.suffixes?.[0] || ''}` : '',
+    }))
+    return cs
+      .filter((c: any) => c.code)
+      .sort((a: any, b: any) => Number(a.code.replace('+', '')) - Number(b.code.replace('+', '')))
+  }
+
+  useEffect(() => {
+    const loadCountries = async () => {
+      const cs = await fetchCountries()
+      setCountries(cs)
+    }
+    loadCountries()
+  }, [])
 
   return (
     <div className="flex flex-col gap-1">
@@ -41,6 +65,28 @@ function Input({field}: {field: Field}) {
               </option>
             ))}
           </select>
+        ) : field?.type === 'phone' ? (
+          <div className="flex ">
+            <select
+              id={'country_code'}
+              name={'country_code'}
+              className={`${className} w-20! rounded-r-none!`}>
+              {countries.map((country: any, index: number) => (
+                <option key={index} value={country.code} className="pr-5 flex gap-1 items-center justify-center">
+                  {country.code}
+                </option>
+              ))}
+            </select>
+
+            <input
+              id={field.id}
+              type={field?.type ?? 'text'}
+              name={field.model}
+              placeholder={field.placeholder}
+              required={field.required}
+              className={`${className} rounded-l-none!`}
+            />
+          </div>
         ) : (
           <input
             id={field.id}
