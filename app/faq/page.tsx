@@ -159,7 +159,9 @@ function FAQ() {
         <RadialGradientBlur />
         <div className="flex flex-col gap-4">
           <Typography size="lg">Frequently Asked Questions</Typography>
-          <Typography size="md2">Find answers to common questions about ThePayHub`s solutions and services</Typography>
+          <Typography size="md2">
+            Find answers to common questions about ThePayHub&apos;s solutions and services
+          </Typography>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">
           {informations.map((info, index) => (
@@ -185,7 +187,6 @@ function FAQ() {
           ))}
         </div>
       </div>
-
     </div>
   )
 }

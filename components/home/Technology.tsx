@@ -28,22 +28,22 @@ function Technology() {
       imgWidth: 128,
       title: 'Global compliance and fund routing',
       description:
-        'Atrusted partner in transforming traditional B2B operations through secure, efficient, and transparent ledger-based systems. By using the power of blockchain and tokenization.',
-        link: 'https://gkssolution.com'
+        'A trusted partner in transforming traditional B2B operations through secure, efficient, and transparent ledger-based systems. By using the power of blockchain and tokenization.',
+      link: 'https://gkssolution.com',
     },
     {
       imageSrc: MasseraLogo,
       title: 'Cross-Border Liquidity Provider',
       description:
         'Cross-border payment processor and liquidity provider that facilitates international settlements  through secure banking rails and supports fiat conversions for digital asset ecosystems.',
-        link: 'https://mazzera.finance/'
+      link: 'https://mazzera.finance/',
     },
     {
       imageSrc: MoonlightLogo,
       title: 'FX and Merchant Services',
       description:
         'Moonlight is a financial service provider that facilitates currency conversion and liquidity management for stablecoin transactions within connected digital  payment platforms.',
-        link: 'https://www.mazzera.finance'
+      link: 'https://www.mazzera.finance',
     },
   ]
 

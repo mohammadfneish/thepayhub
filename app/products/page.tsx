@@ -42,7 +42,7 @@ function Products() {
       icon: <SimCardDual />,
       title: 'Dual Balance System',
       description:
-        'Clients see both incoming funds and a main balance. Clear separation for tracking and reconciliation.',
+        'Clients can view both incoming funds and their main balance, ensuring clear separation for reconciliation.',
     },
     {
       icon: <FlowConnection />,
@@ -170,12 +170,16 @@ function Products() {
               </div>
 
               <div className="flex flex-col sm:flex-row gap-6">
-                <Link className='w-full' href="/contact">
+                <Link className="w-full" href="/contact">
                   <Button variant="primary" className="min-w-fit w-full" icon={<BardLine />}>
                     Get Started
                   </Button>
                 </Link>
-                <Link className='w-full' href="https://calendly.com/thepayhub-sales/30min" target="_blank" rel="noreferrer noopenner">
+                <Link
+                  className="w-full"
+                  href="https://calendly.com/thepayhub-sales/30min"
+                  target="_blank"
+                  rel="noreferrer noopenner">
                   <Button variant="secondary" className="min-w-fit w-full" icon={<VideoAiLine />}>
                     Schedule a Call
                   </Button>
@@ -213,7 +217,7 @@ function Products() {
           </div>
         </div>
         <div className="flex justify-center sm:justify-start">
-          <Link href="/contact" className='w-fit'>
+          <Link href="/contact" className="w-fit">
             <Button postIcon={<ArrowTopRight />}>Learn More</Button>
           </Link>
         </div>
@@ -260,7 +264,7 @@ function Products() {
         </div>
       </div>
 
-      {/* ThePayHub vs other solutions */}
+      {/* ThePayHub Solutions VS Others */}
       <Versus />
     </div>
   )

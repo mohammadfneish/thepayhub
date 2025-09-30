@@ -39,7 +39,7 @@ function FooterTop() {
         setShowLogos(false)
         setTitle('Ready to Scale?')
         setDescription(
-          'No matter if you operate a wholesale business or are a cutting-edge fintech innovator, ThePayHub provides the essential infrastructure to help you reach your goals and thrive in the digital economy.',
+          'Whether you operate a wholesale business or a cutting-edge fintech, ThePayHub provides the infrastructure you need to achieve your goals and thrive in the digital economy.',
         )
         setButtonText('Start Today')
         break
@@ -56,7 +56,7 @@ function FooterTop() {
         setShowLogos(true)
         setTitle('Trusted by companies worldwide')
         setDescription(
-          'Over 4,000 businesses rely on our infrastructure to process more than $65 million in monthly transaction volume. Join the growing network of forward-thinking companies transforming how they manage global payments.',
+          'Over 4,000 businesses rely on our infrastructure to process more than $90 million in monthly transaction volume. Join the growing network of forward-thinking companies transforming how they manage global payments.',
         )
         setButtonText('Start Today')
     }

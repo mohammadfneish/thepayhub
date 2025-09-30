@@ -31,7 +31,7 @@ function Versus() {
     'Technical Integration': {
       icon: <Blend />,
       thePayHub: 'One unified API',
-      others: 'Multiple different APIs and interfaces',
+      others: 'Multiple distinct APIs and interfaces',
     },
     'Settlement Speed': {
       icon: <DashboardSpeed />,
@@ -59,7 +59,7 @@ function Versus() {
       <RadialGradientBlur />
       <div className="flex flex-col gap-6">
         <Typography size="xl" className="text-center">
-          ThePayHub vs other solutions
+          ThePayHub Solutions VS Others
         </Typography>
         <Typography size="md" className="text-center">
           See how our ecosystem compares to fragmented alternatives

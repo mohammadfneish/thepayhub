@@ -31,17 +31,17 @@ function Industry() {
     {
       imageSrc: ConsumerElectronics,
       title: ' Consumer Electronics',
-      description: 'Rapid settlements for high-ticket items like phones & devices.',
+      description: 'Rapid settlements for high-ticket such as phones & devices.',
     },
     {
       imageSrc: PerfumesCosmetics,
       title: 'Perfumes & Cosmetics',
-      description: 'Treasury solutions for bulk shipments and international buyers.',
+      description: 'Treasury solutions tailored for bulk shipments and international buyers.',
     },
     {
       imageSrc: ClothingApparel,
       title: 'Clothing & Apparel',
-      description: 'Scalable payments for seasonal demand and global supply chains.',
+      description: 'Scalable payments designed for seasonal demand and global supply chains.',
     },
     {
       imageSrc: ImportExportCompanies,
@@ -112,12 +112,16 @@ function Industry() {
               </div>
 
               <div className="flex flex-col sm:flex-row gap-6">
-                <Link className='w-full' href={'/contact'}>
+                <Link className="w-full" href={'/contact'}>
                   <Button variant="primary" className="min-w-fit w-full" icon={<BardLine />}>
                     Get Started
                   </Button>
                 </Link>
-                <Link className='w-full' href="https://calendly.com/thepayhub-sales/30min" target="_blank" rel="noreferrer noopenner">
+                <Link
+                  className="w-full"
+                  href="https://calendly.com/thepayhub-sales/30min"
+                  target="_blank"
+                  rel="noreferrer noopenner">
                   <Button variant="secondary" className="min-w-fit w-full" icon={<VideoAiLine />}>
                     Schedule a Call
                   </Button>
@@ -140,8 +144,8 @@ function Industry() {
           </Typography>
 
           <Typography size="md2" className="max-w-[600px]">
-            We work with high-volume wholesale businesses and import/export companies, ensuring speed, transparency, and
-            compliance at every step.
+            We support high-ticket wholesale businesses and import/export companies, ensuring speed, transparency, and
+            compliance at every stage.
           </Typography>
         </div>
         <div className="flex flex-col gap-6 justify-center w-full overflow-hidden">
@@ -181,7 +185,7 @@ function Industry() {
 
       <div className="bg-[url('/images/line-waves.webp')] bg-center bg-cover w-full min-h-[141px] h-fit flex justify-center py-12 relative">
         <Typography size="xl" className="text-center">
-          &quot;We move money as fast as goods move&quot;
+          &quot;We move money as fast as goods&quot;
         </Typography>
       </div>
 
@@ -242,7 +246,6 @@ function Industry() {
           “With ThePayHub, fintechs scale faster, smarter, and stronger”
         </Typography>
       </div>
-
     </div>
   )
 }

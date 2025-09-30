@@ -115,7 +115,7 @@ export default function Home() {
         <Frame
           title={'An entire ecosystem of payment solutions'}
           description={
-            'Uniting tokenized and traditional banking into a seamless ecosystem that improves financial interactions and accessibility for all.'
+            'A unified ecosystem of proprietary platforms delivering instant, compliant, and transparent treasury movement for businesses worldwide.'
           }
           button={
             <Button variant="primary" className="min-w-fit" postIcon={<ArrowTopRight />}>
@@ -242,7 +242,7 @@ export default function Home() {
           <RadialGradientBlur />
 
           <Typography size="xl" className="text-start sm:text-center">
-            Why businesses are preferring our services
+            Why businesses trust our platform
           </Typography>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {preferring.map((item, index) => (

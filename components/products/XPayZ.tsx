@@ -204,9 +204,12 @@ function XPayZ() {
                 <MessageQuestion />
               </div>
               <Typography size="md">
-                In a world where instant transactions are the expectation, why do B2B payments still take days to
-                process? Why do global companies still face delays, unpredictable fees, and lack of transparency in
-                their financial operations?
+                • In a world where instant transactions are the expectation, why do B2B payments still take days to
+                process?
+              </Typography>
+              <Typography size="md">
+                • Why do global companies still face delays, unpredictable fees, and lack of transparency in their
+                financial operations?
               </Typography>
             </div>
 
@@ -218,10 +221,9 @@ function XPayZ() {
                 <Typography size="lg">The Solution</Typography>
                 <CheckmarkBadge />
               </div>
+              <Typography size="md">• They still run on old banking rails with too many intermediaries.</Typography>
               <Typography size="md">
-                In a world where instant transactions are the expectation, why do B2B payments still take days to
-                process? Why do global companies still face delays, unpredictable fees, and lack of transparency in
-                their financial operations?
+                • Cross-border payments involve hidden costs, slow checks, and no real-time tracking.
               </Typography>
             </div>
           </div>

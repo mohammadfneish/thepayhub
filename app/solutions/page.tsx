@@ -145,9 +145,11 @@ function Solutions() {
     },
     {
       logo: <USXPLogo />,
-      icon: <span className='w-8 h-8'>
-        <TokenCircle />
-      </span>,
+      icon: (
+        <span className="w-8 h-8">
+          <TokenCircle />
+        </span>
+      ),
       content: 'White-label token or treasury integrations',
     },
   ]
@@ -170,7 +172,7 @@ function Solutions() {
       logos: [<MazzeraLogo key={Math.random()} />, <MoonlightLogo key={Math.random()} />],
     },
     {
-      content: 'No outside swaps, exchanges, or public tokens',
+      content: 'No external swaps, exchanges, or public tokens are involved.',
       logos: [<CoinSwap key={Math.random()} />],
     },
   ]
@@ -209,12 +211,16 @@ function Solutions() {
               </div>
 
               <div className="flex flex-col sm:flex-row gap-6">
-                <Link className='w-full' href="/contact">
+                <Link className="w-full" href="/contact">
                   <Button variant="primary" className="w-full min-w-fit" icon={<BardLine />}>
                     Get Started
                   </Button>
                 </Link>
-                <Link className='w-full' href="https://calendly.com/thepayhub-sales/30min" target="_blank" rel="noreferrer noopenner">
+                <Link
+                  className="w-full"
+                  href="https://calendly.com/thepayhub-sales/30min"
+                  target="_blank"
+                  rel="noreferrer noopenner">
                   <Button variant="secondary" className="w-full min-w-fit" icon={<VideoAiLine />}>
                     Schedule a Call
                   </Button>
@@ -257,7 +263,12 @@ function Solutions() {
               className={`flex flex-col gap-2 min-w-[250px] md:min-w-auto max-w-[250px] h-[250px] justify-between rounded-lg p-6 ${
                 index % 2 === 0 ? 'bg-soft-200' : 'bg-soft-100'
               }`}>
-              <span className={`p-2 rounded-full w-fit flex items-center justify-center ${index % 2 === 1 ? 'bg-soft-200' : 'bg-soft-100'}`}>{token.icon}</span>
+              <span
+                className={`p-2 rounded-full w-fit flex items-center justify-center ${
+                  index % 2 === 1 ? 'bg-soft-200' : 'bg-soft-100'
+                }`}>
+                {token.icon}
+              </span>
               <Typography size="md" className="text-white">
                 {token.content}
               </Typography>
@@ -273,7 +284,7 @@ function Solutions() {
         <TopFrame
           title={'Burn & Top-up Logic'}
           description={
-            "The foundation of how ThePayHub settles token transactions. Instead of 'exchanging,' tokens are burned, and clients are topped up in fiat or credited value via our banking infrastructure."
+            "The foundation of how ThePayHub settles token transactions. Instead of 'exchanging,' tokens are burned, and clients are credited in fiat or equivalent value through our banking infrastructure."
           }
           image={<Image src={Flame} alt="Flame" width="180" height="180" />}
         />
@@ -395,8 +406,10 @@ function Solutions() {
               </span>
               <div className="flex flex-col gap-6">
                 <div className="flex flex-col gp-2">
-                  <Typography size="md3" className=''>For more in-depth information</Typography>
-                  <Typography size="md2" className=''>
+                  <Typography size="md3" className="">
+                    For more in-depth information
+                  </Typography>
+                  <Typography size="md2" className="">
                     Our examples simplify the real processes. If you want to learn more about our full process, feel
                     free to reach out.
                   </Typography>
@@ -467,7 +480,7 @@ function Solutions() {
           </Typography>
 
           <Typography size="md2" className="max-w-[400px]">
-            A unified API layer connects ThePayHub`&apos;s infrastructure to client platforms, partners, and fintech
+            A unified API layer connects ThePayHub&apos;s infrastructure to client platforms, partners, and fintech
             tools.
           </Typography>
 
@@ -559,7 +572,6 @@ function Solutions() {
           </div>
         </div>
       </div>
-
     </div>
   )
 }

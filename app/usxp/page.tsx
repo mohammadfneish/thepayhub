@@ -38,12 +38,16 @@ function USXP() {
               </Typography>
 
               <div className="flex flex-col sm:flex-row gap-6 max-w-[400px]">
-                <Link className='w-full' href={'/contact'}>
+                <Link className="w-full" href={'/contact'}>
                   <Button variant="primary" className="w-full min-w-fit" icon={<BardLine />}>
                     Get Started
                   </Button>
                 </Link>
-                <Link className='w-full' href="https://calendly.com/thepayhub-sales/30min" target="_blank" rel="noreferrer noopenner">
+                <Link
+                  className="w-full"
+                  href="https://calendly.com/thepayhub-sales/30min"
+                  target="_blank"
+                  rel="noreferrer noopenner">
                   <Button variant="secondary" className="w-full min-w-fit" icon={<VideoAiLine />}>
                     Schedule a Call
                   </Button>
@@ -67,7 +71,7 @@ function USXP() {
             title="What is USXP"
             description="USXP is a settlement token used exclusively within ThePayHub ecosystem to facilitate transactions between
               platforms and clients. It enables faster, more secure, and transparent payments by acting as an internal
-              unit of settlement across affiliated services like XPZ and PXG. is not available for public trading or
+              unit of settlement across affiliated services like XPZ and PXG. it's not available for public trading or
               speculation and is strictly used to support operational efficiency, compliance, and reconciliation within
               the ecosystem."
           />
@@ -100,7 +104,6 @@ function USXP() {
           <LottieClient animationData={UsxpLineRoad} />
         </div>
       </div>
-
     </div>
   )
 }
