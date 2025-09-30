@@ -204,12 +204,9 @@ function XPayZ() {
                 <MessageQuestion />
               </div>
               <Typography size="md">
-                • In a world where instant transactions are the expectation, why do B2B payments still take days to
-                process?
-              </Typography>
-              <Typography size="md">
-                • Why do global companies still face delays, unpredictable fees, and lack of transparency in their
-                financial operations?
+                Xpayz makes B2B payments instant, transparent, and predictable removing delays, hidden fees, and
+                uncertainty. Its tokenized payment gateway ensures every transaction is ledger-based and fully
+                compliant, giving global companies real-time settlement with the regulatory clarity banks require.
               </Typography>
             </div>
 

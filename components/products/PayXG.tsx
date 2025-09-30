@@ -204,10 +204,9 @@ function PayXG() {
                 <CheckmarkBadge />
               </div>
               <Typography size="md">
-                Fast Settlements We process SWIFT and FedWire payments within 15-30 minutes through trusted banking
-                partners. Reliable Account Access Clients get standalone digital accounts, improving transparency and
-                reducing dependency on intermediaries. Simplified Compliance Our shared KYC across PXG, XPZ, and
-                partners makes onboarding and ongoing compliance faster and easier.
+                Companies need reliable treasury rails for large-value payments. PayXGlobal provides compliant,
+                standalone digital bank accounts with same-day Fedwire and SWIFT settlements, ensuring predictable,
+                secure access to funds across jurisdictions.
               </Typography>
             </div>
           </div>
