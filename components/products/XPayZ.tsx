@@ -204,9 +204,9 @@ function XPayZ() {
                 <MessageQuestion />
               </div>
               <Typography size="md">
-                Xpayz makes B2B payments instant, transparent, and predictable removing delays, hidden fees, and
-                uncertainty. Its tokenized payment gateway ensures every transaction is ledger-based and fully
-                compliant, giving global companies real-time settlement with the regulatory clarity banks require.
+                B2B Businesses Face Slow and unreliable cross-border payments. B2B companies—especially in emerging
+                markets—struggle to receive international payments quickly and securely. Traditional banking is slow.
+                expensive, and full of compliance friction, often delaying or blocking legitimate transactions.
               </Typography>
             </div>
 
@@ -218,9 +218,10 @@ function XPayZ() {
                 <Typography size="lg">The Solution</Typography>
                 <CheckmarkBadge />
               </div>
-              <Typography size="md">• They still run on old banking rails with too many intermediaries.</Typography>
               <Typography size="md">
-                • Cross-border payments involve hidden costs, slow checks, and no real-time tracking.
+                Xpayz makes B2B payments instant, transparent, and predictable removing delays, hidden fees, and
+                uncertainty. Its tokenized payment gateway ensures every transaction is ledger-based and fully
+                compliant, giving global companies real-time settlement with the regulatory clarity banks require.
               </Typography>
             </div>
           </div>
