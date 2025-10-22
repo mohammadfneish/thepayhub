@@ -1,3 +1,5 @@
+'use client'
+
 import FooterLogo from '@svg/footerLogo.svg'
 import Facebook from '@svg/facebook.svg'
 import Twitter from '@svg/twitter.svg'
@@ -5,6 +7,8 @@ import LinkedIn from '@svg/linkedIn.svg'
 import Instagram from '@svg/instagram.svg'
 import Link from 'next/link'
 import Typography from './common/Typography'
+import {useState} from 'react'
+import DocsDialog from './common/DocsDialog'
 
 export default function Footer() {
   const icons = [
@@ -104,9 +108,21 @@ export default function Footer() {
     },
   ]
 
+  const [showDocDialog, setShowDocDialog] = useState(false)
+  const docs = [
+    {
+      title: 'ThePayHub Patent Ecosystem',
+      url: '/docs/spec.pdf',
+    },
+    {
+      title: 'TPH Patent filing number',
+      url: '/docs/n417.pdf',
+    },
+  ]
+
   return (
     <footer className="h-auto max-w-full flex flex-col gap-4 py-4  px-10 bg-soft-100/60">
-      <div className='flex justify-center py-16'>
+      <div className="flex justify-center py-16">
         <div className="flex flex-col md:flex-row gap-8 gap-y-12 justify-between w-full max-w-[1200px]">
           <div className="flex flex-col gap-[30px]">
             <FooterLogo />
@@ -125,7 +141,7 @@ export default function Footer() {
               ))}
             </div> */}
           </div>
-        
+
           <div className="flex flex-wrap gap-x-8 md:gap-x-0 sm:grid grid-cols-2 lg:grid-cols-3 md:w-[572px] gap-y-8">
             {links.map((link, i) => (
               <div key={i} className="flex flex-col gap-6">
@@ -146,9 +162,16 @@ export default function Footer() {
           </div>
         </div>
       </div>
-      <Typography size="sm" className="text-end text-sub-600">
-          &copy; {new Date().getFullYear()}  ThePayHub. All rights reserved
-      </Typography>
+      <div className="flex flex-row gap-2 items-center justify-end">
+        <Typography size="sm" className="text-end text-sub-600">
+          &copy; {new Date().getFullYear()} ThePayHub. All rights reserved.
+        </Typography>
+        <div onClick={() => setShowDocDialog(true)} className="underline cursor-pointer text-sm text-primary-400">
+          Patent pending
+        </div>
+      </div>
+      {/* Docs Dialog */}
+      <DocsDialog open={showDocDialog} onClose={() => setShowDocDialog(false)} docs={docs} />
     </footer>
   )
 }
