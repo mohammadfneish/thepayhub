@@ -16,7 +16,7 @@ export default function DocsDialog({
   if (!open) return null
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm">
+    <div className="fixed inset-0 z-[99999] flex items-center justify-center bg-black/50 backdrop-blur-sm">
       <div className="bg-gray-900 rounded-2xl shadow-xl w-[95%] lg:w-[80%] overflow-hidden animate-fadeIn">
         {/* Header */}
         <div className="flex justify-between items-center px-6 py-4 border-b border-gray-700">

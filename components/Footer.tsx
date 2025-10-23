@@ -162,12 +162,12 @@ export default function Footer() {
           </div>
         </div>
       </div>
-      <div className="flex flex-row gap-2 items-center justify-end">
+      <div className="flex flex-col sm:flex-row gap-2 items-center justify-center sm:justify-end">
         <Typography size="sm" className="text-end text-sub-600">
           &copy; {new Date().getFullYear()} ThePayHub. All rights reserved.
         </Typography>
         <div onClick={() => setShowDocDialog(true)} className="underline cursor-pointer text-sm text-primary-400">
-          Patent pending
+          Patent pending
         </div>
       </div>
       {/* Docs Dialog */}
