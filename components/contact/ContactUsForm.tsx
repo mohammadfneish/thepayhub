@@ -10,7 +10,7 @@ import Button from '@components/common/Button'
 import Typography from '@components/common/Typography'
 import {CheckIcon} from '@heroicons/react/24/outline'
 import Input, {Field} from '@components/common/Input'
-import { errorToast, successToast } from 'utils/Toast'
+import {errorToast, successToast} from 'utils/Toast'
 
 const inquiries = ['Business Inquiry', 'Product Inquiry', 'Other']
 function ContactUsForm() {
@@ -89,7 +89,6 @@ function ContactUsForm() {
     setErrors([])
     const formData = new FormData(e.currentTarget)
     const data = Object.fromEntries(formData)
-    console.log(data)
 
     const requiredFields = fields.filter(field => field.required)
     const missingFields = requiredFields.filter(field => !data[field.model])

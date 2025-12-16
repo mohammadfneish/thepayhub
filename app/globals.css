@@ -9,14 +9,6 @@
   font-style: normal;
 }
 
-@font-face {
-  font-family: 'DM Sans';
-  src: url('/fonts/DMSans/Bold.woff2') format('woff2'), url('/fonts/DMSans/Bold.woff') format('woff'),
-    url('/fonts/DMSans/Bold.ttf') format('truetype');
-  font-weight: 700;
-  font-style: normal;
-}
-
 @theme {
   --color-primary-50: #d3f4f8;
   --color-primary-100: #a8e8f0;
@@ -161,7 +153,7 @@ html {
 
 .no-scrollbar {
   -ms-overflow-style: none; /* IE/Edge */
-  scrollbar-width: none;    /* Firefox */
+  scrollbar-width: none; /* Firefox */
   -webkit-overflow-scrolling: touch;
 }
 .no-scrollbar::-webkit-scrollbar {

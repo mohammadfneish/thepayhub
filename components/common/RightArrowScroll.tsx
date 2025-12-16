@@ -2,10 +2,9 @@
 
 import NavigationArrowRight from '@svg/navigationArrowRight.svg'
 
-function RightArrowScroll({id = 'scrollable', cardSize = 350}: {id?: string, cardSize?: number}) {
+function RightArrowScroll({id = 'scrollable', cardSize = 350}: {id?: string; cardSize?: number}) {
   const handleClicked = () => {
     const div = document.getElementById(id)
-    console.log(div)
     if (!div) return
     const scrollLeft = div.scrollLeft ?? 0
     const newScroll = scrollLeft + cardSize
