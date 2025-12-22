@@ -15,6 +15,7 @@ import ArrowDownLine from '@svg/arrowDownLine.svg'
 import XPZLogo from '@svg/xpzLogo.svg'
 import PXGLogo from '@svg/pxgLogo.svg'
 import SmartLedgerLogo from '@svg/smartLedgerLogo.svg'
+import XpayzMarketLogo from '@svg/xpayzMarketLogo.svg'
 
 import TokenCircle from '@svg/tokenCircle.svg'
 import Fire from '@svg/fire.svg'
@@ -135,6 +136,16 @@ export default function Navigation() {
           title: 'Smart Ledger',
           description: 'Coming soon...',
           href: '/products#sml',
+        },
+        {
+          icon: (
+            <span className="min-w-12 min-h-12">
+              <XpayzMarketLogo />
+            </span>
+          ),
+          title: 'xPayz Market',
+          description: 'Coming soon...',
+          href: '/products#xpm',
         },
       ],
       navigation: [

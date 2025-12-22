@@ -203,7 +203,7 @@ function Products() {
           <span className="w-[120px] h-[124px]">
             <SmartLedgerLogo />
           </span>
-          <Typography size="lg2">SmartLedger (Powered by Mazzera) - Beta</Typography>
+          <Typography size="lg2">SmartLedger (Powered by GKS Solutions) - Beta</Typography>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4  gap-7">
             {SmartLedgerList.map((item, index) => (
               <div key={index} className="flex flex-col gap-2 z-10 ">

@@ -29,6 +29,7 @@ import CheckCircular from '@svg/checkCircular.svg'
 import XPZLogo from '@svg/xpzLogo.svg'
 import PXGLogo from '@svg/pxgLogo.svg'
 import SmartLedgerLogo from '@svg/smartLedgerLogo.svg'
+import XpayzMarketLogo from '@svg/xpayzMarketLogo.svg'
 import Technology from '@components/home/Technology'
 import ChevronRight from '@svg/chevronRight.svg'
 import Link from 'next/link'
@@ -194,6 +195,18 @@ export default function Home() {
         <div className="flex flex-col gap-10 w-full items-center justify-center mt-10">
           <span className="w-[120px] h-[124px]">
             <SmartLedgerLogo />
+          </span>
+          <Typography size="lg">Coming soon...</Typography>
+          <Link href="/contact">
+            <Button variant="primary" className="min-w-fit" postIcon={<ArrowTopRight />}>
+              Contact us to know more
+            </Button>
+          </Link>
+        </div>
+
+        <div className="flex flex-col gap-10 w-full items-center justify-center mt-10">
+          <span className="w-[120px] h-[124px]">
+            <XpayzMarketLogo />
           </span>
           <Typography size="lg">Coming soon...</Typography>
           <Link href="/contact">
