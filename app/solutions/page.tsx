@@ -236,7 +236,7 @@ function Solutions() {
 
       {/* Tokenized Asset Infrastructure */}
       <div
-        id="solution_tokenized_section"
+        id="tokenized"
         className="flex flex-col w-full md:flex-row gap-6 overflow-hidden max-w-[1200px] relative">
         <div className="flex flex-col gap-24">
           <div className="flex flex-col gap-6 max-w-[600px]">
@@ -278,7 +278,7 @@ function Solutions() {
       </div>
 
       {/* Burn & Top-up Logic */}
-      <div id="solution_burn_section" className="flex flex-col gap-20 w-full max-w-[1200px] relative">
+      <div id="burn" className="flex flex-col gap-20 w-full max-w-[1200px] relative">
         <RadialGradientBlur />
 
         <TopFrame
@@ -359,7 +359,7 @@ function Solutions() {
       </div>
 
       {/* Internal Ledger Conversion */}
-      <div id="solution_internal_section" className="flex flex-col gap-20 w-full max-w-[1200px] relative">
+      <div id="internal" className="flex flex-col gap-20 w-full max-w-[1200px] relative">
         <RadialGradientBlur />
 
         <TopFrame
@@ -429,7 +429,7 @@ function Solutions() {
 
       {/* Compliance & Treasury Mapping */}
       <div
-        id="solution_compliance_section"
+        id="compliance"
         className="flex flex-col w-full md:flex-row gap-6 overflow-hidden max-w-[1200px] relative ">
         <div className="flex flex-col gap-6">
           <Typography size="xl" className="max-w-[600px]">
@@ -465,7 +465,7 @@ function Solutions() {
       </div>
 
       {/* API & System Integration */}
-      <div id="solution_api_section" className="flex flex-col gap-20 w-full max-w-[1200px] relative">
+      <div id="api" className="flex flex-col gap-20 w-full max-w-[1200px] relative">
         <RadialGradientBlur inset={10} />
         <TopFrame
           title={'API & System Integration'}
@@ -522,7 +522,7 @@ function Solutions() {
       </div>
 
       {/* Closed-Loop Ecosystem Framework */}
-      <div id="solution_ecosystem_section" className="flex flex-col gap-20 w-full max-w-[1200px] relative">
+      <div id="ecosystem" className="flex flex-col gap-20 w-full max-w-[1200px] relative">
         <RadialGradientBlur />
         <TopFrame
           title={'Closed-Loop Ecosystem Framework'}
