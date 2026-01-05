@@ -136,7 +136,7 @@ function Industry() {
       </div>
 
       {/* B2B Wholesale – Powering Global Trade */}
-      <div className="flex flex-col gap-20 relative w-full max-w-[1200px] ">
+      <div id="support" className="flex flex-col gap-20 relative w-full max-w-[1200px] ">
         <RadialGradientBlur />
         <div className="flex flex-col gap-6 max-w-[600px]">
           <Typography size="xl" className="">
@@ -183,7 +183,7 @@ function Industry() {
         </div>
       </div>
 
-      <div className="bg-[url('/images/line-waves.webp')] bg-center bg-cover w-full min-h-[141px] h-fit flex justify-center py-12 relative">
+      <div id="engine" className="bg-[url('/images/line-waves.webp')] bg-center bg-cover w-full min-h-[141px] h-fit flex justify-center py-12 relative">
         <Typography size="xl" className="text-center">
           &quot;We move money as fast as goods&quot;
         </Typography>

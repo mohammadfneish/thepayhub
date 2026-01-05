@@ -120,7 +120,7 @@ function XPayZ() {
   ]
 
   return (
-    <div id="product_xpz_section" className="relative w-full max-w-[1200px]">
+    <div id={'xpz'} className="relative w-full max-w-[1200px]">
       <div
         className={`absolute left-1/2 transform -translate-x-1/2 bg-[radial-gradient(circle,#00428055_0%,#00428055_100%)] rounded-full w-2/3 h-full z-[-1] blur-[400px]`}
       />

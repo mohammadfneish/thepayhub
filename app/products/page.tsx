@@ -29,7 +29,6 @@ import {useEffect} from 'react'
 import Link from 'next/link'
 
 function Products() {
-  const sections = ['product_xpz_section', 'product_pxg_section', 'product_sml_section']
 
   const SmartLedgerList = [
     {
@@ -197,7 +196,7 @@ function Products() {
       <PayXG />
 
       {/* SmartLedger */}
-      <div id="product_sml_section" className="flex flex-col gap-16 relative max-w-[1200px]">
+      <div id="sml" className="flex flex-col gap-16 relative max-w-[1200px]">
         <RadialGradientBlur />
         <div className="flex flex-col gap-4">
           <span className="w-[120px] h-[124px]">
