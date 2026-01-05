@@ -143,7 +143,7 @@ export default function Navigation() {
               <XpayzMarketLogo />
             </span>
           ),
-          title: 'xPayz Market',
+          title: 'xPayzMarket',
           description: 'Coming soon...',
           href: '/products#xpm',
         },

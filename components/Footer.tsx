@@ -64,7 +64,7 @@ export default function Footer() {
       title: 'Services',
       items: [
         {
-          name: 'XPayz (XPZ)',
+          name: 'xPayz (XPZ)',
           href: '/products#xpz',
         },
         {

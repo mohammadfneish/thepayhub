@@ -163,7 +163,7 @@ function XPayZ() {
             <div className="w-full flex justify-center sm:justify-start sm:w-fit">
               <Link href="https://app.xpayz.us" target="_blank" rel="noopener noreferrer">
                 <Button variant="primary" className="min-w-fit" postIcon={<ArrowTopRight />}>
-                  Go to XPayz
+                  Go to xPayz
                 </Button>
               </Link>
             </div>
@@ -219,7 +219,7 @@ function XPayZ() {
                 <CheckmarkBadge />
               </div>
               <Typography size="md">
-                Xpayz makes B2B payments instant, transparent, and predictable removing delays, hidden fees, and
+                xPayz makes B2B payments instant, transparent, and predictable removing delays, hidden fees, and
                 uncertainty. Its tokenized payment gateway ensures every transaction is ledger-based and fully
                 compliant, giving global companies real-time settlement with the regulatory clarity banks require.
               </Typography>

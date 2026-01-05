@@ -126,7 +126,7 @@ export default function Home() {
           image={<LottieClient animationData={ProductLineRoad} className="sm:max-w-[550px] sm:max-h-[550px]" />}
         />
 
-        {/* XPayz */}
+        {/* xPayz */}
         <Frame
           title={'Tokenized Payment Platform'}
           description={
@@ -135,7 +135,7 @@ export default function Home() {
           button={
             <Link href="https://app.xpayz.us" target="_blank">
               <Button variant="primary" className="min-w-fit" postIcon={<ArrowTopRight />}>
-                Go to XPayz
+                Go to xPayz
               </Button>
             </Link>
           }
