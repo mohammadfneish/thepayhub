@@ -173,7 +173,7 @@ function XPayZ() {
         <div className="flex flex-col gap-20">
           <Image
             src={XpzPhone}
-            alt="XPayZ"
+            alt="xPayz"
             className="hidden md:block sm:max-w-[340px] sm:max-h-[750px] "
             width={340}
             height={750}

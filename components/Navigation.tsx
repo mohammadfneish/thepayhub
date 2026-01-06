@@ -113,7 +113,7 @@ export default function Navigation() {
               <XPZLogo />
             </span>
           ),
-          title: 'XPayZ',
+          title: 'xPayz',
           description: 'Tokenized payment platform',
           href: '/products#xpz',
         },
