@@ -88,6 +88,9 @@ export default function Home() {
                   </Button>
                 </Link>
               </div>
+              <Typography size="md2" className="max-w-[500px] text-white">
+                $5B+ in transaction volume across ThePayHub ecosystem.
+              </Typography>
             </div>
             <div className="absolute right-1/2 -bottom-[60%] transform  translate-x-1/2 z-0 sm:relative size-[520px]  sm:max-w-[520px] sm:max-h-[520px] sm:right-0 sm:-bottom-0 sm:-translate-0 ">
               <Image src={HomeEarth} alt="usxp-coin" width="520" height="520" />
@@ -206,7 +209,7 @@ export default function Home() {
 
         <div className="flex flex-col gap-10 w-full items-center justify-center mt-10">
           <span className="w-[120px] h-[124px]">
-            <XpayzMarketLogo />
+            <XpayzMarketLogo width={120} height={124} />
           </span>
           <Typography size="lg">Coming soon...</Typography>
           <Link href="/contact">

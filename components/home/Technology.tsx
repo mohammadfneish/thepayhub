@@ -2,12 +2,10 @@
 import Typography from '@components/common/Typography'
 import Image, {StaticImageData} from 'next/image'
 import Button from '@components/common/Button'
-
 import GksSolutionsLogo from '@images/gkssolutions-logo.png'
 import MasseraLogo from '@images/massera-logo.png'
 import MoonlightLogo from '@images/moonlight-logo.png'
 import ChevronRightFill from '@svg/chevronRightFill.svg'
-import {useEffect, useState} from 'react'
 import RadialGradientBlur from '@components/common/RadialGradientBlur'
 import LeftArrowScroll from '@components/common/LeftArrowScroll'
 import RightArrowScroll from '@components/common/RightArrowScroll'
