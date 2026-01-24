@@ -132,7 +132,17 @@ function ContactUsForm() {
         <Typography size="lg">Send us a message</Typography>
         <Typography size="md2">Fill out the form below and we&apos;ll get back to you as soon as possible</Typography>
       </div>
-      <form className="grid grid-cols-1 md:grid-cols-2 gap-4" onSubmit={handleOnSubmit}>
+      <form
+        className="grid grid-cols-1 md:grid-cols-2 gap-4"
+        onSubmit={handleOnSubmit}
+        data-netlify-recaptcha="true"
+        netlify-honeypot="bot-field"
+        data-netlify="true">
+        <p className="hidden">
+          <label>
+            Don’t fill this out if you’re human: <input name="bot-field" type="text" />
+          </label>
+        </p>
         {fields.map((field, index) => {
           return (
             <div
@@ -144,6 +154,7 @@ function ContactUsForm() {
             </div>
           )
         })}
+        <div data-netlify-recaptcha="true" />
         <div className="flex w-full col-span-2 justify-center sm:justify-start">
           <Button variant="primary" type="submit" loading={loading} postIcon={<ChevronRight />}>
             Send Message
