@@ -105,10 +105,12 @@ function RegisterForm() {
         <form
           name="register-form"
           method="POST"
+          action="/thank-you"
           className="flex flex-col gap-5 mb-10"
           data-netlify-recaptcha="true"
           netlify-honeypot="bot-field"
           data-netlify="true">
+          <input type="hidden" name="form-name" value="register-form" />
           <p className="hidden">
             <label>
               Don’t fill this out if you’re human: <input name="bot-field" type="text" />

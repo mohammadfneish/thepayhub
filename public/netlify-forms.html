@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+  <body>
+    <!-- Contact Us Form -->
+    <form
+      name="contact-us"
+      method="POST"
+      data-netlify="true"
+      data-netlify-recaptcha="true"
+      netlify-honeypot="bot-field"
+      hidden>
+      <input type="hidden" name="form-name" value="contact-us" />
+      <input name="firstName" />
+      <input name="lastName" />
+      <input name="email" />
+      <input name="phone" />
+      <input name="company" />
+      <input name="inquiry" />
+      <textarea name="message"></textarea>
+      <input name="bot-field" />
+    </form>
+
+    <!-- Register Form -->
+    <form
+      name="register-form"
+      method="POST"
+      data-netlify="true"
+      data-netlify-recaptcha="true"
+      netlify-honeypot="bot-field"
+      enctype="multipart/form-data"
+      hidden>
+      <input type="hidden" name="form-name" value="register-form" />
+      <input name="firstName" />
+      <input name="lastName" />
+      <input name="email" />
+      <input name="phone" />
+      <input name="company" />
+      <input name="platforms" />
+      <input type="file" name="kyc-file" />
+      <input name="bot-field" />
+    </form>
+  </body>
+</html>

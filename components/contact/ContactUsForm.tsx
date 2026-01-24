@@ -82,10 +82,12 @@ function ContactUsForm() {
       <form
         name="contact-us"
         method="POST"
+        action="/thank-you"
         className="grid grid-cols-1 md:grid-cols-2 gap-4"
         data-netlify-recaptcha="true"
         netlify-honeypot="bot-field"
         data-netlify="true">
+        <input type="hidden" name="form-name" value="contact-us" />
         <p className="hidden">
           <label>
             Don’t fill this out if you’re human: <input name="bot-field" type="text" />
