@@ -6,16 +6,13 @@ import BuildingLine from '@svg/buildingLine.svg'
 import CustomerService from '@svg/customerService.svg'
 import ChevronRight from '@svg/chevronRight.svg'
 import ArrowRightUp from '@svg/arrowRightUp.svg'
-
 import Divider from '@components/common/Divider'
 import Typography from '@components/common/Typography'
 import {CheckIcon} from '@heroicons/react/24/outline'
-import React, {FormEvent, useEffect, useState} from 'react'
+import {useState} from 'react'
 import Input, {Field} from '@components/common/Input'
 import Button from '@components/common/Button'
-import FileInput from '@components/common/FileInput'
 import Link from 'next/link'
-import {errorToast, successToast} from 'utils/Toast'
 
 interface RegisterPlatforms {
   name: string
@@ -27,8 +24,6 @@ function RegisterForm() {
   const profile = ['Business', 'Fintech', 'Merchant', 'Institutional Client']
 
   const [selectedProfile, setSelectedProfile] = useState('Business')
-  const [loading, setLoading] = useState(false)
-  const [uploadFiles, setUploadFiles] = useState<Array<string>>([])
 
   const fields: Field[] = [
     {
@@ -79,102 +74,6 @@ function RegisterForm() {
     {name: 'XPZ', type: 'XPZ', desc: 'Token-based payment gateway'},
   ]
 
-  const handleOnSubmit = async (e: FormEvent<HTMLFormElement>) => {
-    e.stopPropagation()
-    e.preventDefault()
-
-    if (loading) return
-
-    const fields = ['firstName', 'lastName', 'email', 'phone', 'country_code', 'company']
-    try {
-      const formData = new FormData()
-      formData.append('func', 'create-account')
-
-      if (!selectedProfile) {
-        errorToast('Please select a profile')
-        return false
-      } else {
-        formData.append('profile', selectedProfile)
-      }
-
-      let hasError = false
-      for (let i = 0; i < fields.length; i++) {
-        const field = fields[i]
-        const val = (document.getElementById(field) as HTMLInputElement)?.value
-        if (!val) {
-          errorToast(`${field} is required`)
-          hasError = true
-          break
-        } else {
-          formData.append(field, val)
-        }
-      }
-
-      if (hasError) {
-        return false
-      }
-
-      const platforms = document.querySelectorAll('input[type=checkbox]:checked')
-      if (!platforms.length) {
-        errorToast('Please select at least one platform')
-        return false
-      }
-      platforms.forEach(function (input, key) {
-        formData.append(`platforms[${key}]`, (input as HTMLInputElement).value)
-      })
-
-      const files: FileList | null = (document.getElementById('file-upload-input-kyc') as HTMLInputElement).files
-      if (!files?.length) {
-        errorToast('Please select at least one document')
-        return false
-      }
-      Array.from(files).forEach(function (file, key) {
-        formData.append(`files[${key}]`, file)
-      })
-
-      setLoading(true)
-      const resp: Response = await fetch(process.env.NEXT_PUBLIC_API_URL ?? '/api', {
-        method: 'POST',
-        headers: {
-          Accept: 'application/json',
-        },
-        body: formData,
-      })
-      const json = await resp.json()
-
-      if (json.success) {
-        successToast(json.message)
-      } else {
-        errorToast(json.message)
-      }
-    } catch (error) {
-      errorToast('Something went wrong')
-    }
-
-    setLoading(false)
-
-    // reset the form
-    ;(document.getElementById('file-upload-input-kyc') as HTMLInputElement).files = null
-    for (let i = 0; i < fields.length; i++) {
-      ;(document.getElementById(fields[i]) as HTMLInputElement).value = ''
-    }
-    document.querySelectorAll('input[type=checkbox]:checked').forEach(function (input) {
-      ;(input as HTMLInputElement).checked = false
-    })
-    setSelectedProfile('Bussiness')
-  }
-
-  const handleFile = (e: any) => {
-    let fileNames = []
-    const files = e.target.files
-    if (files && files.length > 0) {
-      for (let i = 0; i < files.length; i++) {
-        fileNames.push(files[i].name + ` (${(files[i].size / (1024 * 1024)).toFixed(2)} MB)`)
-      }
-    }
-    setUploadFiles(fileNames)
-  }
-
   return (
     <div className="flex flex-col gap-6 w-fit">
       <div className="flex flex-col gap-3">
@@ -204,8 +103,8 @@ function RegisterForm() {
 
         {/* Form */}
         <form
+          name="register-form"
           className="flex flex-col gap-5 mb-10"
-          onSubmit={handleOnSubmit}
           data-netlify-recaptcha="true"
           netlify-honeypot="bot-field"
           data-netlify="true">
@@ -251,20 +150,11 @@ function RegisterForm() {
           <Typography size="sm">
             KYC Upload * <span className="text-sub-600">(Upload your required documents once)</span>
           </Typography>
-          <FileInput id={'kyc'} onChange={handleFile} />
-          {uploadFiles?.length > 0 && (
-            <div className="flex flex-col gap-2 overflow-x-auto scrollable-container items-start">
-              {uploadFiles.map((item, index) => (
-                <div key={index} className="m-2 border-b-1 border-gray-500 px-2 opacity-80">
-                  {item}
-                </div>
-              ))}
-            </div>
-          )}
+          <input type="file" name="kyc-file" id="file-upload-input-kyc" accept=".pdf,.jpg,.jpeg,.png" />
 
           <div data-netlify-recaptcha="true" />
           <div className="flex w-full col-span-2 justify-center sm:justify-start">
-            <Button variant="primary" type="submit" loading={loading} postIcon={<ChevronRight />}>
+            <Button variant="primary" type="submit" postIcon={<ChevronRight />}>
               Create Account
             </Button>
           </div>
