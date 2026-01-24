@@ -104,6 +104,7 @@ function RegisterForm() {
         {/* Form */}
         <form
           name="register-form"
+          method="POST"
           className="flex flex-col gap-5 mb-10"
           data-netlify-recaptcha="true"
           netlify-honeypot="bot-field"

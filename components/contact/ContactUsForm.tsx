@@ -81,6 +81,7 @@ function ContactUsForm() {
       </div>
       <form
         name="contact-us"
+        method="POST"
         className="grid grid-cols-1 md:grid-cols-2 gap-4"
         data-netlify-recaptcha="true"
         netlify-honeypot="bot-field"
