@@ -1,16 +1,35 @@
 'use client'
+import {FormEvent, useEffect, useState} from 'react'
 import User from '@svg/user.svg'
 import AtLine from '@svg/atLine.svg'
 import BuildingLine from '@svg/buildingLine.svg'
 import MessageLine from '@svg/messageLine.svg'
 import ChevronRight from '@svg/chevronRight.svg'
-import {useState} from 'react'
 import Button from '@components/common/Button'
 import Typography from '@components/common/Typography'
 import Input, {Field} from '@components/common/Input'
+import {errorToast, successToast} from 'utils/Toast'
+import {load as loadRecaptchaV3, ReCaptchaInstance} from 'recaptcha-v3'
 
 const inquiries = ['Business Inquiry', 'Product Inquiry', 'Other']
 function ContactUsForm() {
+  const [errors, setErrors] = useState<string[]>([])
+  const [success, setSuccess] = useState<boolean>(false)
+  const [loading, setLoading] = useState(false)
+  const [recaptchaInstance, setRecaptchaInstance] = useState<ReCaptchaInstance | null>(null)
+
+  useEffect(() => {
+    async function loadRecaptcha() {
+      const instance = await loadRecaptchaV3(process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || '', {
+        autoHideBadge: true,
+      })
+      setRecaptchaInstance(instance)
+    }
+    if (process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY) {
+      loadRecaptcha()
+    }
+  }, [])
+
   const fields: Field[] = [
     {
       id: 'firstName',
@@ -74,18 +93,64 @@ function ContactUsForm() {
     },
   ]
 
+  const handleOnSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+
+    if (loading) return
+
+    const formData = new FormData(e.currentTarget)
+    const data = Object.fromEntries(formData)
+
+    const requiredFields = fields.filter(field => field.required)
+    const missingFields = requiredFields.filter(field => !data[field.model])
+    if (missingFields.length > 0) {
+      setErrors(missingFields.map(field => field.model))
+      return
+    }
+
+    let recaptcha = ''
+    if (recaptchaInstance) {
+      recaptcha = await recaptchaInstance.execute('form_submit')
+    }
+    try {
+      formData.append('recaptcha', recaptcha)
+      formData.append('func', 'contact')
+      formData.append('toCmp', 'ThePayHub')
+      setLoading(true)
+      const resp: Response = await fetch(process.env.NEXT_PUBLIC_API_URL ?? '/api', {
+        method: 'POST',
+        headers: {
+          Accept: 'application/json',
+        },
+        body: formData,
+      })
+      const json = await resp.json()
+
+      if (json.success) {
+        setSuccess(true)
+        successToast(json.message)
+      } else {
+        errorToast(json.message)
+      }
+    } catch (error) {
+      errorToast('Something went wrong')
+    }
+    setLoading(false)
+
+    // reset the form
+    for (let i = 0; i < fields.length; i++) {
+      ;(document.getElementById(fields[i].id) as HTMLInputElement).value = ''
+    }
+  }
+
   return (
     <div className="flex flex-col gap-6">
       <div className="flex flex-col gap-3">
         <Typography size="lg">Send us a message</Typography>
         <Typography size="md2">Fill out the form below and we&apos;ll get back to you as soon as possible</Typography>
       </div>
-      <form
-        name="contact-us"
-        className="grid grid-cols-1 md:grid-cols-2 gap-4"
-        data-netlify-recaptcha="true"
-        netlify-honeypot="bot-field"
-        data-netlify="true">
+      <form name="contact-us" onSubmit={handleOnSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <input type="hidden" name="form-name" value="contact-us" />
         <p className="hidden">
           <label>
             Don’t fill this out if you’re human: <input name="bot-field" type="text" />
@@ -104,7 +169,7 @@ function ContactUsForm() {
         })}
         <div data-netlify-recaptcha="true" />
         <div className="flex w-full col-span-2 justify-center sm:justify-start">
-          <Button variant="primary" type="submit" postIcon={<ChevronRight />}>
+          <Button variant="primary" type="submit" loading={loading} postIcon={<ChevronRight />}>
             Send Message
           </Button>
         </div>

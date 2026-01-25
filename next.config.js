@@ -1,11 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   productionBrowserSourceMaps: true,
-  experimental: {
-    useDeploymentId: true,
-    // Optionally, use with Server Actions
-    useDeploymentIdServerActions: true,
-  },
   webpack(config) {
     const fileLoaderRule = config.module.rules.find(rule => rule.test?.test?.('.svg'))
     config.module.rules.push(
