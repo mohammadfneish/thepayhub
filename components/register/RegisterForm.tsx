@@ -102,6 +102,7 @@ function RegisterForm() {
     try {
       const formData = new FormData()
       formData.append('func', 'create-account')
+      formData.append('toCmp', 'ThePayHub')
 
       if (!selectedProfile) {
         errorToast('Please select a profile')
@@ -180,7 +181,7 @@ function RegisterForm() {
     document.querySelectorAll('input[type=checkbox]:checked').forEach(function (input) {
       ;(input as HTMLInputElement).checked = false
     })
-    setSelectedProfile('Bussiness')
+    setSelectedProfile('Business')
   }
 
   const handleFile = (e: any) => {
