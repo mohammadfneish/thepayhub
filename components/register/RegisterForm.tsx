@@ -180,7 +180,7 @@ function RegisterForm() {
     document.querySelectorAll('input[type=checkbox]:checked').forEach(function (input) {
       ;(input as HTMLInputElement).checked = false
     })
-    setSelectedProfile('Bussiness')
+    setSelectedProfile('Business')
   }
 
   const handleFile = (e: any) => {
