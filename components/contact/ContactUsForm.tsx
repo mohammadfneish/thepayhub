@@ -115,6 +115,7 @@ function ContactUsForm() {
     try {
       formData.append('recaptcha', recaptcha)
       formData.append('func', 'contact')
+      formData.append('toCmp', 'ThePayHub')
       setLoading(true)
       const resp: Response = await fetch(process.env.NEXT_PUBLIC_API_URL ?? '/api', {
         method: 'POST',

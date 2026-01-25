@@ -102,6 +102,7 @@ function RegisterForm() {
     try {
       const formData = new FormData()
       formData.append('func', 'create-account')
+      formData.append('toCmp', 'ThePayHub')
 
       if (!selectedProfile) {
         errorToast('Please select a profile')
